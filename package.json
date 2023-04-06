@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.17",
     "next": "13.1.6",
     "next-auth": "^4.19.0",
     "react": "18.2.0",
