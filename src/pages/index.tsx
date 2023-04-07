@@ -4,6 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { Header } from "../components/sections/home/Header";
 import { Hero } from "../components/sections/home/Hero";
 import { Cards } from "../components/sections/home/Cards";
+import { About } from "../components/sections/home/About";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <Header />
         <Hero />
         <Cards />
+        <About />
       </main>
     </>
   );
