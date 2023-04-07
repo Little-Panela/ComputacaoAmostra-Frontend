@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section className="bg-[url('/about-bg.png')] bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8">
+    <section className="bg-[url('/img/about-bg.png')] bg-cover bg-center bg-no-repeat px-4 pb-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <h1 className="pt-9 text-center text-3xl font-bold text-white">
           Sobre

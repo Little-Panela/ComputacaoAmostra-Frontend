@@ -28,7 +28,7 @@ export function Navbar() {
                     className="block w-auto"
                     height={8}
                     width={8}
-                    src="logo.svg"
+                    src="/icons/logo.svg"
                     alt="Computação amostra"
                   />
                   <h1 className="w-10 text-xs sm:text-sm">

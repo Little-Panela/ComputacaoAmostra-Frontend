@@ -5,6 +5,9 @@ import { Header } from "../components/sections/home/Header";
 import { Hero } from "../components/sections/home/Hero";
 import { Cards } from "../components/sections/home/Cards";
 import { About } from "../components/sections/home/About";
+import { Winners } from "../components/sections/home/Winners";
+import { Logos } from "../components/sections/home/Logos";
+import { Footer } from "../components/sections/home/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +23,9 @@ const Home: NextPage = () => {
         <Hero />
         <Cards />
         <About />
+        <Winners />
+        <Logos />
+        <Footer />
       </main>
     </>
   );
