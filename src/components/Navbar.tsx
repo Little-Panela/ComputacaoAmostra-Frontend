@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { Fragment, HTMLAttributes, ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
+import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
@@ -162,36 +163,50 @@ export function Navbar() {
                 Vencedores
               </Disclosure.Button>
             </div>
-            <div className="border-t border-gray-700 pb-3 pt-4">
-              <div className="flex items-center px-5">
-                <div className="flex-shrink-0">
-                  <Image
-                    className="rounded-full"
-                    height={40}
-                    width={40}
-                    src={user?.image ?? "/empty-avatar.jpg"}
-                    alt={`${user?.name ?? "user"}} avatar`}
-                  />
+            {isUserLoggedIn ? (
+              <div className="border-t border-gray-700 pb-3 pt-4">
+                <div className="flex items-center px-5">
+                  <div className="flex-shrink-0">
+                    <Image
+                      className="rounded-full"
+                      height={40}
+                      width={40}
+                      src={user?.image ?? "/empty-avatar.jpg"}
+                      alt={`${user?.name ?? "user"}} avatar`}
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <div className="text-base font-medium text-white">
+                      {user?.name ?? "Usuário"}
+                    </div>
+                    <div className="text-sm font-medium text-gray-400">
+                      {user?.email ?? ""}
+                    </div>
+                  </div>
                 </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-white">
-                    {user?.name ?? "Usuário"}
-                  </div>
-                  <div className="text-sm font-medium text-gray-400">
-                    {user?.email ?? ""}
-                  </div>
+                <div className="mt-3 space-y-1 px-2">
+                  <Disclosure.Button
+                    as="button"
+                    onClick={() => signOut()}
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                  >
+                    Sair
+                  </Disclosure.Button>
                 </div>
               </div>
-              <div className="mt-3 space-y-1 px-2">
-                <Disclosure.Button
-                  as="button"
-                  onClick={() => signOut()}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Sair
-                </Disclosure.Button>
+            ) : (
+              <div className="border-t border-gray-700 pb-3 pt-4">
+                <div className="space-y-1 px-2">
+                  <Disclosure.Button
+                    as="button"
+                    onClick={() => signIn()}
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                  >
+                    Login
+                  </Disclosure.Button>
+                </div>
               </div>
-            </div>
+            )}
           </Disclosure.Panel>
         </>
       )}

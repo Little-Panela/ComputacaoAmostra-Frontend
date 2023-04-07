@@ -1,11 +1,9 @@
 import { type NextPage } from "next";
-import { useSession } from "next-auth/react";
 import Head from "next/head";
 import { Navbar } from "../components/Navbar";
+import { Header } from "../components/sections/home/Header";
 
 const Home: NextPage = () => {
-  const { data: session } = useSession();
-
   return (
     <>
       <Head>
@@ -15,6 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="">
         <Navbar />
+        <Header />
       </main>
     </>
   );
