@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-				sans: "Inter, sans-serif",
-			},
+        sans: "Inter, sans-serif",
+      },
+      gridTemplateColumns: {
+        "project-cards": "repeat(auto-fill, minmax(355px, 1fr))",
+      }
     },
   },
   plugins: [],

@@ -13,18 +13,30 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 flex justify-center space-x-10">
-          <a href="#">
+          <a
+            href="https://www.facebook.com/CesupaOnline"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/icons/facebook.svg" alt="facebook logo" />
           </a>
-          <a href="#">
+          <a
+            href="https://www.instagram.com/cesupaonline/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/icons/instagram.svg" alt="instagram logo" />
           </a>
-          <a href="#">
+          <a
+            href="https://www.youtube.com/c/CesupaOnline"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src="/icons/youtube.svg" alt="youtube logo" />
           </a>
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2023 CESUPA, Inc. All rights reserved.
+          &copy; 2023 CESUPA. Todos os direitos reservados.
         </p>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
           Feito com ♥ por Panic

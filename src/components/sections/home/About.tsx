@@ -1,11 +1,18 @@
+import { Heading } from "../../elements/Heading"
+
 export function About() {
   return (
     <section className="bg-[url('/img/about-bg.png')] bg-cover bg-center bg-no-repeat px-4 pb-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <h1 className="pt-9 text-center text-3xl font-bold text-white">
+        {/* <h1 className="pt-9 text-center text-3xl font-bold text-white">
           Sobre
-        </h1>
+        </h1> */}
+        <Heading size="lg" className="md:text-4xl pt-9 text-center text-white">
+          Sobre
+        </Heading>
+
         <div className="mx-auto my-6 h-[400px] w-full rounded-2xl bg-red-50"></div>
+
         <p className="text-xl text-white">
           A Estimular alunos do CESUPA ao desenvolvimento de novas tecnologias e
           soluções inovadoras, incentivando o desenvolvimento do pensar
