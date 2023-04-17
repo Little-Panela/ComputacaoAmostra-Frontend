@@ -4,15 +4,14 @@ export function Footer() {
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <div
-          className="-mb-6 sm:flex sm:justify-center sm:space-x-12"
+          className="-mb-6 flex justify-center space-x-12"
           aria-label="Footer"
         >
           <div className="flex items-center gap-2">
-            <img src="/icons/logo.svg" alt="logo computação amostra" />
-            <span className="text-2xl">Computação amostra</span>
+            <img src="/img/logo-comp-amostra.png" alt="logo computação amostra"  className="w-44"/>
           </div>
         </div>
-        <div className="mt-10 flex justify-center space-x-10">
+        <div className="mt-10 flex justify-center items-center space-x-10">
           <a
             href="https://www.facebook.com/CesupaOnline"
             target="_blank"
