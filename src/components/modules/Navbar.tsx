@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import type { HTMLAttributes, ReactNode } from "react";
 import { Fragment } from "react";
+import { useRouter } from "next/router";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -12,6 +13,7 @@ function classNames(...classes: string[]) {
 }
 
 export function Navbar() {
+  const router = useRouter();
   const { data: session } = useSession();
 
   const isUserLoggedIn = session !== null;
@@ -57,7 +59,7 @@ export function Navbar() {
                       Sobre
                     </a> */}
                     <Link
-                      href="/projetos"
+                      href="/projects"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Projetos
@@ -119,7 +121,7 @@ export function Navbar() {
                 </div>
               </div>
               <div className="-mr-2 flex gap-2 sm:hidden">
-                <NavButton>PROJETOS</NavButton>
+                <NavButton onClick={() => router.push('/projects')}>PROJETOS</NavButton>
 
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -139,21 +141,21 @@ export function Navbar() {
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/"
                 className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
               >
                 Início
               </Disclosure.Button>
-              <Disclosure.Button
+              {/* <Disclosure.Button
                 as="a"
                 href="#"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Sobre
-              </Disclosure.Button>
+              </Disclosure.Button> */}
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/projects"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Projetos
