@@ -3,7 +3,7 @@ import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 
 import { AppProvider } from "../contexts/AppProvider";
-import { GoogleAnalytics } from "../util/google-analytics";
+import { GoogleAnalytics } from "../utils/google-analytics";
 
 import "../styles/globals.css";
 

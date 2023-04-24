@@ -15,7 +15,7 @@ import { env } from "../env.mjs";
 const api = axios.create({
   baseURL: env.API_URL,
   headers: {
-    api: `${env.API_KEY}`,
+    api: `${env.API_KEY as string}`,
   },
 });
 
@@ -90,7 +90,7 @@ export async function proxy(req: NextApiRequest, res: NextApiResponse) {
 
         const cookie = headers["set-cookie"][0];
         const token = {} as any;
-        cookie!.split(";").forEach((rawItem) => {
+        cookie.split(";").forEach((rawItem) => {
           const name = rawItem.substring(0, rawItem.indexOf("="));
           const value = rawItem.substring(name.length + 1);
           token[name] = value;
