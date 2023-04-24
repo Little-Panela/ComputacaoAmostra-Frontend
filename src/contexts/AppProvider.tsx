@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GenerateSessionProvider } from "./GenerateSessionProvider";
 
 import { ReactQueryProvider } from "./ReactQueryProvider";
 
@@ -7,5 +8,9 @@ type AppProviderProps = {
 };
 
 export function AppProvider({ children }: AppProviderProps) {
-  return <ReactQueryProvider>{children}</ReactQueryProvider>;
+  return (
+    <ReactQueryProvider>
+      <GenerateSessionProvider>{children}</GenerateSessionProvider>
+    </ReactQueryProvider>
+  );
 }

@@ -4,7 +4,6 @@ import { SessionProvider } from "next-auth/react";
 
 import { AppProvider } from "../contexts/AppProvider";
 import { GoogleAnalytics } from "../util/google-analytics";
-import { GenerateSession } from "../util/generate-session";
 
 import "../styles/globals.css";
 
@@ -17,7 +16,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <AppProvider>
         <Component {...pageProps} />
         <GoogleAnalytics />
-        <GenerateSession />
       </AppProvider>
     </SessionProvider>
   );
