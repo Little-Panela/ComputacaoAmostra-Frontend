@@ -7,13 +7,8 @@ import {
 import GoogleProvider from "next-auth/providers/google";
 import { env } from "../env.mjs";
 
-/**
- * Module augmentation for `next-auth` types.
- * Allows us to add custom properties to the `session` object and keep type
- * safety.
- *
- * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
- **/
+import { putGenerateSession } from "../services/put-generate-session";
+
 declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
@@ -22,25 +17,19 @@ declare module "next-auth" {
       // role: UserRole;
     } & DefaultSession["user"];
   }
-
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
 }
 
-/**
- * Options for NextAuth.js used to configure adapters, providers, callbacks,
- * etc.
- *
- * @see https://next-auth.js.org/configuration/options
- **/
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    signIn({ user }) {
-      console.log(user);
+    async signIn({ user }) {
+      if (!user || !user.email || !user.name) return false;
 
-      return true;
+      try {
+        await putGenerateSession({ email: user.email, name: user.name });
+        return true;
+      } catch (error) {
+        return false;
+      }
     },
   },
   providers: [
@@ -48,25 +37,23 @@ export const authOptions: NextAuthOptions = {
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
-    /**
-     * ...add more providers here
-     *
-     * Most other providers require a bit more work than the Discord provider.
-     * For example, the GitHub provider requires you to add the
-     * `refresh_token_expires_in` field to the Account model. Refer to the
-     * NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     **/
   ],
+  theme: {
+    colorScheme: "light", // "auto" | "dark" | "light"
+    // brandColor: "rgb(74 222 128)", // Hex color code
+    logo: "/icons/logo.svg", // Absolute URL to image
+    // buttonText: "" // Hex color code
+  },
+  // TODO: CREATE LOGIN PAGE
+  // pages: {
+  //   signIn: '/auth/login',
+  //   // signOut: '/auth/logout',
+  //   // error: '/auth/error', // Error code passed in query string as ?error=
+  //   // verifyRequest: '/auth/verify-request', // (used for check email message)
+  //   // newUser: undefined // If set, new users will be directed here on first sign in
+  // }
 };
 
-/**
- * Wrapper for `getServerSession` so that you don't need to import the
- * `authOptions` in every file.
- *
- * @see https://next-auth.js.org/configuration/nextjs
- **/
 export const getServerAuthSession = (ctx: {
   req: GetServerSidePropsContext["req"];
   res: GetServerSidePropsContext["res"];

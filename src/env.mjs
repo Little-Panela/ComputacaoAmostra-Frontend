@@ -20,6 +20,8 @@ const server = z.object({
   // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
   GOOGLE_CLIENT_ID: z.string().min(1),
   GOOGLE_CLIENT_SECRET: z.string().min(1),
+  API_KEY: z.string().min(1),
+  API_URL: z.string().url().min(1),
 });
 
 /**
@@ -28,6 +30,8 @@ const server = z.object({
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 const client = z.object({
+  NEXT_PUBLIC_API_URL: z.string().url().min(1),
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.NODE_ENV === "production" ? z.string().min(1) : z.string().min(1).optional(),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 
@@ -42,6 +46,10 @@ const processEnv = {
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+  API_KEY: process.env.API_KEY,
+  API_URL: process.env.API_URL,
+  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 
