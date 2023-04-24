@@ -15,7 +15,7 @@ export function VotingGallery() {
         </Text>
       </div>
 
-      <div className="grid w-full grid-cols-project-cards gap-6 px-5 md:gap-16 md:px-16">
+      <div className="grid w-full grid-cols-project-cards gap-6 px-5 md:gap-16 md:px-16 max-md:px-1">
         <CardProject
           name="Projeto 1"
           description="Corem ipsum dolor sit amet, consectetur adipiscing elit."

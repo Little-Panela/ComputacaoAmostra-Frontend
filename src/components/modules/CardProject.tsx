@@ -8,7 +8,7 @@ interface CardProjectProps {
 
 export function CardProject({ name, description }: CardProjectProps) {
   return (
-    <div className="flex min-w-[22rem] flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
+    <div className="flex flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
       <div className="flex gap-2">
         <img src="/icons/github.svg" alt="Logo do github" />
         <Text asChild size="md" className="md:text-2xl">
@@ -16,7 +16,7 @@ export function CardProject({ name, description }: CardProjectProps) {
         </Text>
       </div>
       <Text className="text-xs md:text-lg">{description}</Text>
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3 max-sm:flex-col">
         <button className="flex-1 rounded-md border bg-green-600 py-1 px-3 text-white  transition-colors hover:bg-green-500">
           Votar
         </button>

@@ -7,7 +7,7 @@ module.exports = {
         sans: "Inter, sans-serif",
       },
       gridTemplateColumns: {
-        "project-cards": "repeat(auto-fill, minmax(355px, 1fr))",
+        "project-cards": "repeat(auto-fill, minmax(330px, 1fr))",
       }
     },
   },
