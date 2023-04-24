@@ -3,7 +3,7 @@ import { Default } from "../../components/layouts/Default";
 import { Header } from "../../components/sections/projects/Header";
 import { VotingGallery } from "../../components/sections/projects/VotingGallery";
 
-const Projetos: NextPage = () => {
+const projects: NextPage = () => {
   return (
       <Default title="Projetos">
         <Header />
@@ -12,4 +12,4 @@ const Projetos: NextPage = () => {
   );
 };
 
-export default Projetos;
+export default projects;
