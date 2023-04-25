@@ -9,19 +9,19 @@ export function Logos() {
           {/* <span className="text-white">LOGO</span> */}
           {/* <span className="text-white">LOGO</span> */}
           {/* <img
-              src="/icons/wavy-bars.svg"
+              src="/static/icons/wavy-bars.svg"
               alt=""
               className="w-20 md:w-32"
             /> */}
           <Image
-            src="img/ArgoLogo.svg"
+            src="/static/img/ArgoLogo.svg"
             alt=""
             width={20}
             height={20}
             className="md:w-32"
           />
           <Image
-            src="img/OmniLogo.svg"
+            src="/static/img/OmniLogo.svg"
             alt=""
             width={20}
             height={20}

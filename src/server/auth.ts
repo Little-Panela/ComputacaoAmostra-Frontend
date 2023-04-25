@@ -41,7 +41,7 @@ export const authOptions: NextAuthOptions = {
   theme: {
     colorScheme: "light", // "auto" | "dark" | "light"
     // brandColor: "rgb(74 222 128)", // Hex color code
-    logo: "/icons/logo.svg", // Absolute URL to image
+    logo: "/static/icons/logo.svg", // Absolute URL to image
     // buttonText: "" // Hex color code
   },
   // TODO: CREATE LOGIN PAGE

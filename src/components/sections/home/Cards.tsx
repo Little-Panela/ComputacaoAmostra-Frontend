@@ -11,7 +11,7 @@ function Card({ title, description }: CardProps) {
   return (
     <div className="flex max-w-xs flex-col gap-2 rounded-md border p-4 shadow-md">
       <div className="flex flex-col items-center gap-1">
-        <Image src="/icons/circles.svg" width={25} height={40} alt="circles" />
+        <Image src="/static/icons/circles.svg" width={25} height={40} alt="circles" />
         <Heading className="text-base md:text-xl">{title}</Heading>
       </div>
 

@@ -14,7 +14,7 @@ export function Hero() {
       </div>
       <div className="flex flex-wrap justify-center md:py-6">
         <img
-          src="/img/island.svg"
+          src="/static/img/island.svg"
           alt="island picture"
           className="h-auto w-full max-w-xl"
         />

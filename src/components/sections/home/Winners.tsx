@@ -6,9 +6,9 @@ export function Winners() {
       <div className="flex flex-col items-center gap-10 lg:flex-row">
         <div className="flex h-96 w-full max-w-sm flex-col items-center border p-4 shadow-md">
           <div className="flex items-center gap-4">
-            <img src="/icons/lines.svg" alt="linhas" />
+            <img src="/static/icons/lines.svg" alt="linhas" />
             <h2 className="font-bold text-blue-900">Ano 2023</h2>
-            <img src="/icons/lines.svg" alt="linhas" />
+            <img src="/static/icons/lines.svg" alt="linhas" />
           </div>
           <div className="my-28 flex flex-col items-center justify-center gap-2">
             <span>Ainda não há vencedores!!</span>
@@ -19,9 +19,9 @@ export function Winners() {
         </div>
         <div className="flex h-96 w-full max-w-sm flex-col items-center border p-3 shadow-md md:p-4">
           <div className="flex items-center gap-4">
-            <img src="/icons/lines.svg" alt="" />
+            <img src="/static/icons/lines.svg" alt="" />
             <h2 className="font-bold text-blue-900">Ano 2022</h2>
-            <img src="/icons/lines.svg" alt="" />
+            <img src="/static/icons/lines.svg" alt="" />
           </div>
           <div className="my-10 flex flex-col items-center justify-center gap-2">
             <div className="flex flex-col gap-6">

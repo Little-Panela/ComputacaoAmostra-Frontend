@@ -16,7 +16,7 @@ export function Header() {
         <TextInput.Root>
           <TextInput.Input id="projeto" placeholder="Procurar projeto" />
           <TextInput.Icon>
-            <img src="/icons/search.svg" alt="Procurar projeto" />
+            <img src="/static/icons/search.svg" alt="Procurar projeto" />
           </TextInput.Icon>
         </TextInput.Root>
       </div>

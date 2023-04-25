@@ -18,7 +18,7 @@ const config: DefaultSeoProps = {
     description,
     images: [
       {
-        url: `${baseURL}comp-amostra-banner.png`,
+        url: `${baseURL}static/img/comp-amostra-banner.png`,
         width: 1280,
         height: 720,
       },

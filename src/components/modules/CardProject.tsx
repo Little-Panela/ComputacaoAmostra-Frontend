@@ -10,7 +10,7 @@ export function CardProject({ name, description }: CardProjectProps) {
   return (
     <div className="flex flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
       <div className="flex gap-2">
-        <img src="/icons/github.svg" alt="Logo do github" />
+        <img src="/static/icons/github.svg" alt="Logo do github" />
         <Text asChild size="md" className="md:text-2xl">
           <strong>{name}</strong>
         </Text>

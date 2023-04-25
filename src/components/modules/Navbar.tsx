@@ -32,7 +32,7 @@ export function Navbar() {
                       className="block w-auto"
                       height={8}
                       width={8}
-                      src="/icons/logo.svg"
+                      src="/static/icons/logo.svg"
                       alt="Computação amostra"
                     />
                     <h1 className="w-10 text-xs sm:text-sm">
@@ -82,7 +82,7 @@ export function Navbar() {
                             className="rounded-full"
                             height={40}
                             width={40}
-                            src={user?.image ?? "/empty-avatar.jpg"}
+                            src={user?.image ?? "/static/img/empty-avatar.jpg"}
                             alt={`${user?.name ?? "user"}} avatar`}
                           />
                         </Menu.Button>
@@ -176,7 +176,7 @@ export function Navbar() {
                       className="rounded-full"
                       height={40}
                       width={40}
-                      src={user?.image ?? "/empty-avatar.jpg"}
+                      src={user?.image ?? "/static/img/empty-avatar.jpg"}
                       alt={`${user?.name ?? "user"}} avatar`}
                     />
                   </div>

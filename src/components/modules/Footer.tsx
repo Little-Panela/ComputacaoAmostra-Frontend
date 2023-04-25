@@ -8,7 +8,7 @@ export function Footer() {
           aria-label="Footer"
         >
           <div className="flex items-center gap-2">
-            <img src="/img/logo-comp-amostra.png" alt="logo computação amostra"  className="w-44"/>
+            <img src="/static/img/logo-comp-amostra.png" alt="logo computação amostra"  className="w-44"/>
           </div>
         </div>
         <div className="mt-10 flex justify-center items-center space-x-10">
@@ -17,21 +17,21 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/icons/facebook.svg" alt="facebook logo" />
+            <img src="/static/icons/facebook.svg" alt="facebook logo" />
           </a>
           <a
             href="https://www.instagram.com/cesupaonline/"
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/icons/instagram.svg" alt="instagram logo" />
+            <img src="/static/icons/instagram.svg" alt="instagram logo" />
           </a>
           <a
             href="https://www.youtube.com/c/CesupaOnline"
             target="_blank"
             rel="noreferrer"
           >
-            <img src="/icons/youtube.svg" alt="youtube logo" />
+            <img src="/static/icons/youtube.svg" alt="youtube logo" />
           </a>
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">

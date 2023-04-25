@@ -4,12 +4,12 @@
   "description": "A Estimular alunos do CESUPA ao desenvolvimento de novas tecnologias e soluções inovadoras, incentivando o desenvolvimento do pensar tecnológico, da criatividade e da economia do Estado do Pará. Promover o inter-relacionamento entre alunos e empresas de tecnologia do Estado, proporcionando panorama favorável a troca de experiências de mercado e soluções provindas do conhecimento acadêmico.",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/static/favicons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/static/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
