@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 import Script from "next/script";
 
 import { env } from "../env.mjs";

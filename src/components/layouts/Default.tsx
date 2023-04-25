@@ -1,24 +1,29 @@
-import Head from "next/head";
 import type { ReactNode } from "react";
-import { Footer } from "../modules/Footer";
+import { NextSeo } from "next-seo";
+
 import { Navbar } from "../modules/Navbar";
+import { Footer } from "../modules/Footer";
 
 interface DefaultProps {
   title?: string;
   description?: string;
+  path?: string;
   children: ReactNode;
 }
 
-export function Default({ title, description, children }: DefaultProps) {
+export function Default({ title, description, path, children }: DefaultProps) {
+  const url = `https://computacao-amostra-frontend.vercel.app${path ?? ""}`;
+
   return (
     <>
-      <Head>
-        <title>
-          {!title ? "Computação Amostra" : `Computação Amostra - ${title}`}
-        </title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          url,
+          title
+        }}
+      />
       <div className="flex flex-col">
         <Navbar />
         <main>{children}</main>
