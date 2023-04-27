@@ -31,7 +31,6 @@ const server = z.object({
  */
 const client = z.object({
   NEXT_PUBLIC_API_URL: z.string().url().min(1),
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.NODE_ENV === "production" ? z.string().min(1) : z.string().min(1).optional(),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 
@@ -49,7 +48,6 @@ const processEnv = {
   API_KEY: process.env.API_KEY,
   API_URL: process.env.API_URL,
   NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

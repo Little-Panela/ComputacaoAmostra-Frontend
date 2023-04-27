@@ -5,7 +5,7 @@ import { DefaultSeo } from "next-seo";
 import SEO from "../../next-seo.config";
 
 import { AppProvider } from "../contexts/AppProvider";
-import { GoogleAnalytics } from "../utils/google-analytics";
+import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/globals.css";
 
@@ -18,7 +18,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <AppProvider>
         <DefaultSeo {...SEO} />
         <Component {...pageProps} />
-        <GoogleAnalytics />
+        <Analytics />
       </AppProvider>
     </SessionProvider>
   );

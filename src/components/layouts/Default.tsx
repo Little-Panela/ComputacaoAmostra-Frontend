@@ -12,7 +12,7 @@ interface DefaultProps {
 }
 
 export function Default({ title, description, path, children }: DefaultProps) {
-  const url = `https://computacao-amostra-frontend.vercel.app${path ?? ""}`;
+  const url = `https://computacao-amostra.com${path ?? ""}`;
 
   return (
     <>
