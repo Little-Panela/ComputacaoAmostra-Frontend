@@ -4,7 +4,7 @@ import type { TProject } from "../@types/TProject";
 import { api } from "../lib/axios"
 
 type getProjectsType = {
-  filter: "ecomp" | "bcc";
+  filter: "ecomp" | "bcc" | "all";
 }
 
 export async function getProjects({ filter }: getProjectsType) {

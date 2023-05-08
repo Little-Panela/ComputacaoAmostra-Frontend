@@ -22,11 +22,8 @@ const api = axios.create({
 const cookieOptions = {
   path: "/",
 };
-import { cookies as c } from 'next/headers';
 
 export async function proxy(req: NextApiRequest, res: NextApiResponse) {
-  const cookieStore = c();
-  console.log(cookieStore)
   const { method, query } = req;
 
   if (!query.route) return res.status(404).json({ message: "Not Found!" });
