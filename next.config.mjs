@@ -54,7 +54,7 @@ const config = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "https://computacao-amostra.com, localhost:3000",
+              "*",
           },
         ],
       },
