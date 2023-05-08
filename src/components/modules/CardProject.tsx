@@ -2,27 +2,15 @@ import Link from "next/link";
 import type { TProject } from "../../@types/TProject";
 import { Text } from "../elements/Text";
 import { NormalizeTextToSlug } from "../helpers/normalize-text-to-slug";
-import type { Replace } from "../helpers/Replace";
 import { ModalProject } from "./ModalProject";
 
-type CardProjectProps = Replace<
-  TProject,
-  {
-    id?: string;
-    status?: boolean;
-    votes?: number;
-    totalVotes?: number;
-    uniqueVotes?: number;
-    course: "bcc" | "ecomp";
-  }
->;
+type CardProjectProps = TProject
 
 export function CardProject({
   name,
   description,
   team,
-  github,
-  youtube,
+  links,
   course,
 }: CardProjectProps) {
   const nameForSlug = NormalizeTextToSlug({ text: name });
@@ -32,9 +20,10 @@ export function CardProject({
       name={name}
       nameForSlug={nameForSlug}
       description={description}
-      githubLink={github}
+      githubLink={links.github}
       teamMembers={team}
-      videoId={youtube}
+      // TODO: DINÂMICO COM A ROTA
+      videoId={links.youtube.en}
       course={course}
       trigger={
         <Link

@@ -36,9 +36,9 @@ export function VotingGallery({
                 key={project.id}
                 name={project.name}
                 description={project.description}
-                youtube={project.youtube}
-                github={project.github}
+                links={project.links}
                 team={project.team}
+                // @ts-expect-error - TODO: FIX THIS
                 course={course}
               />
             ))}

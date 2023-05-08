@@ -11,9 +11,12 @@ export async function putGenerateSession({
   email,
   name,
 }: putGenerateSessionType) {
-  const { data } = await api.put(
-    `users/generate_session?email=${email}&name=${name}`
-  );
+  const { data } = await api.put(`users/generate_session`, {
+    params: {
+      email,
+      name,
+    },
+  });
 
   return data;
 }
