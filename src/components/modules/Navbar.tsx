@@ -23,6 +23,7 @@ export function Navbar() {
   const isVotingStarted =
     new Date().getTime() >
     new Date(env.NEXT_PUBLIC_VOTING_START_DATE).getTime();
+  const isVotingEnd = new Date() > new Date(env.NEXT_PUBLIC_VOTING_END_DATE);
 
   const randomCourse = Math.random() > 0.5 ? "bcc" : "ecomp";
   const linkToVoting = isVotingStarted
@@ -138,6 +139,8 @@ export function Navbar() {
                         </Menu.Items>
                       </Transition>
                     </Menu>
+                  ) : isVotingEnd || !isVotingStarted ? (
+                    <div />
                   ) : (
                     <div className="mx-6">
                       <NavButton onClick={() => signIn("google")}>
@@ -238,12 +241,14 @@ export function Navbar() {
                   </Disclosure.Button>
                 </div>
               </div>
+            ) : isVotingEnd || !isVotingStarted ? (
+              <div />
             ) : (
               <div className="border-t border-gray-700 pb-3 pt-4">
                 <div className="space-y-1 px-2">
                   <Disclosure.Button
                     as="button"
-                    onClick={() => signIn()}
+                    onClick={() => signIn("google")}
                     className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                   >
                     Login
