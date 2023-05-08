@@ -1,11 +1,9 @@
-import axios from 'axios'
+import axios from "axios";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL
+import { env } from "../env.mjs";
 
-if (!apiUrl) {
-  throw Error('Invalid base URL.')
-}
+const apiUrl = env.NEXT_PUBLIC_API_URL;
 
 export const api = axios.create({
   baseURL: apiUrl,
-})
+});

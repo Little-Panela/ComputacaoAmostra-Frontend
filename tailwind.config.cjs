@@ -5,33 +5,52 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: "Inter, sans-serif",
-      },
-
-      animation: {
-        'overlayShow': 'overlayShow 150ms ease-in-out',
-        'contentShow': 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        mono: "Roboto Mono, monospace",
       },
 
       keyframes: {
-        contentShow: {
-          to: {
-            opacity: 1,
-            transform: "transform: translate(-50%, -48%) scale(0.96)",
-          },
-          from: {
-            opacity: 1,
-            transform: "translate(-50%, -50%) scale(1)"
+        // Toast
+        "toast-hide": {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+        "toast-slide-in-right": {
+          "0%": { transform: `translateX(calc(100% + 1rem))` },
+          "100%": { transform: "translateX(0)" },
+        },
+        "toast-slide-in-bottom": {
+          "0%": { transform: `translateY(calc(100% + 1rem))` },
+          "100%": { transform: "translateY(0)" },
+        },
+        "toast-swipe-out-x": {
+          "0%": { transform: "translateX(var(--radix-toast-swipe-end-x))" },
+          "100%": {
+            transform: `translateX(calc(100% + 1rem))`,
           },
         },
-        overlayShow: {
-          to: { opacity: 0 },
-          from: { opacity: 1 },
-        }
+        "toast-swipe-out-y": {
+          "0%": { transform: "translateY(var(--radix-toast-swipe-end-y))" },
+          "100%": {
+            transform: `translateY(calc(100% + 1rem))`,
+          },
+        },
       },
+      animation: {
+        // Toast
+        "toast-hide": "toast-hide 100ms ease-in forwards",
+        "toast-slide-in-right":
+          "toast-slide-in-right 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "toast-slide-in-bottom":
+          "toast-slide-in-bottom 150ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "toast-swipe-out-x": "toast-swipe-out-x 100ms ease-out forwards",
+        "toast-swipe-out-y": "toast-swipe-out-y 100ms ease-out forwards",
+      },
+
       gridTemplateColumns: {
         "project-cards": "repeat(auto-fill, minmax(330px, 1fr))",
+        "voting-cards": "1fr 400px",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-radix")],
 };

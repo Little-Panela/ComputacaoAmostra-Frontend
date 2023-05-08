@@ -14,7 +14,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    await limiter.check(res, 10, "CACHE_TOKEN") // 10 requests per second
+    await limiter.check(res, 20, "CACHE_TOKEN") // 20 requests per second
     await proxy(req, res);
   } catch {
     res.status(429).json({ error: 'Rate limit exceeded' })

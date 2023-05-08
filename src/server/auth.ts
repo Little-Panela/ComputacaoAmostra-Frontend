@@ -21,15 +21,16 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    async signIn({ user }) {
+    signIn({ user }) {
       if (!user || !user.email || !user.name) return false;
 
-      try {
-        await putGenerateSession({ email: user.email, name: user.name });
-        return true;
-      } catch (error) {
-        return false;
-      }
+      // try {
+      //   await putGenerateSession({ email: user.email, name: user.name });
+      //   return true;
+      // } catch (error) {
+      //   return false;
+      // }
+      return true;
     },
   },
   providers: [

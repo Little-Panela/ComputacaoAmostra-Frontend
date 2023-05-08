@@ -1,4 +1,4 @@
-import type { ReactNode} from "react";
+import type { ReactNode } from "react";
 import { createContext, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
@@ -52,7 +52,6 @@ export function GenerateSessionProvider({
         name: session.user.name,
       });
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session, status]);
 

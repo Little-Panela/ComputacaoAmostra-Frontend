@@ -7,6 +7,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
+import { env } from "../../env.mjs";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -18,6 +20,16 @@ export function Navbar() {
 
   const isUserLoggedIn = session !== null;
   const user = session?.user;
+  const isVotingStarted =
+    new Date().getTime() >
+    new Date(env.NEXT_PUBLIC_VOTING_START_DATE).getTime();
+
+  const randomCourse = Math.random() > 0.5 ? "bcc" : "ecomp";
+  const linkToVoting = isVotingStarted
+    ? `/voting?course=${randomCourse}`
+    : "/voting/countdown";
+  const isHomePage = router.pathname === "/";
+  const isVotingPage = router.pathname.startsWith(`/voting`);
 
   return (
     <Disclosure as="nav" className="bg-gray-900">
@@ -48,7 +60,13 @@ export function Navbar() {
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                     <Link
                       href="/"
-                      className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                      className={clsx(
+                        "rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
+                        {
+                          "bg-gray-900 text-white hover:bg-gray-900":
+                            isHomePage,
+                        }
+                      )}
                     >
                       Início
                     </Link>
@@ -59,17 +77,23 @@ export function Navbar() {
                       Sobre
                     </a> */}
                     <Link
-                      href="/projects"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      href={linkToVoting}
+                      className={clsx(
+                        "rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
+                        {
+                          "bg-gray-900 text-white hover:bg-gray-900":
+                            isVotingPage,
+                        }
+                      )}
                     >
-                      Projetos
+                      Votação
                     </Link>
-                    <a
+                    {/* <a
                       href="#"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Vencedores
-                    </a>
+                    </a> */}
                   </div>
 
                   {/* Profile dropdown */}
@@ -105,6 +129,7 @@ export function Navbar() {
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
+                                onClick={() => signOut()}
                               >
                                 Sair
                               </a>
@@ -115,13 +140,17 @@ export function Navbar() {
                     </Menu>
                   ) : (
                     <div className="mx-6">
-                      <NavButton onClick={() => signIn()}>Login</NavButton>
+                      <NavButton onClick={() => signIn("google")}>
+                        Login
+                      </NavButton>
                     </div>
                   )}
                 </div>
               </div>
               <div className="-mr-2 flex gap-2 sm:hidden">
-                <NavButton onClick={() => router.push('/projects')}>PROJETOS</NavButton>
+                <NavButton onClick={() => router.push(linkToVoting)}>
+                  VOTAÇÃO
+                </NavButton>
 
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -142,7 +171,12 @@ export function Navbar() {
               <Disclosure.Button
                 as="a"
                 href="/"
-                className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                className={clsx(
+                  "block rounded-md px-3 py-2 text-base font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
+                  {
+                    "bg-gray-900 text-white hover:bg-gray-900": isHomePage,
+                  }
+                )}
               >
                 Início
               </Disclosure.Button>
@@ -155,18 +189,23 @@ export function Navbar() {
               </Disclosure.Button> */}
               <Disclosure.Button
                 as="a"
-                href="/projects"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                href={linkToVoting}
+                className={clsx(
+                  "block rounded-md px-3 py-2 text-base font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
+                  {
+                    "bg-gray-900 text-white hover:bg-gray-900": isVotingPage,
+                  }
+                )}
               >
-                Projetos
+                Votação
               </Disclosure.Button>
-              <Disclosure.Button
+              {/* <Disclosure.Button
                 as="a"
                 href="#"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Vencedores
-              </Disclosure.Button>
+              </Disclosure.Button> */}
             </div>
             {isUserLoggedIn ? (
               <div className="border-t border-gray-700 pb-3 pt-4">
@@ -227,7 +266,7 @@ function NavButton({ children, ...props }: NavButtonProps) {
   return (
     <button
       {...props}
-      className="rounded border border-green-400 py-1 px-3 text-green-400"
+      className="rounded border border-green-400 px-3 py-1 text-green-400"
     >
       {children}
     </button>

@@ -1,0 +1,16 @@
+{
+  "aaa": "bbb",
+  "home": {
+    "title": "Empreendedoras da Amazônia",
+    "subtitle": "Construindo Tecnologias Sustentáveis e Criativas para o movimento de Mulheres das ilhas de belém (Ilha de cotijuba).",
+    "description": "Universitários elaboram projetos sustentáveis para a Ilha das Onças e sua comunidade ribeirinha. Amazon Hacking surgiu da união dos cursos de Ciência da Computação e Engenharia da Computação do Cesupa, da parceria das empresas socialmente responsáveis e sustentáveis, como Paladar Amazônico, byAmazonian, Jambu Tecnologia e OnDrone, e também da Associação das Empresas Paraenses de Software e TIC - ParaTIC e da organização não governamental Instituto Jovem Exportador.",
+    "about": {
+      "title": "about"
+    },
+    "winners": "Vencedores",
+    "partners": "Parceiros",
+    "organizers": "Organizadores",
+    "support": "Apoio",
+    "realization": "Realização"
+  }
+}

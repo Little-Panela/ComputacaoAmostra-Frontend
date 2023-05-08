@@ -31,6 +31,10 @@ const server = z.object({
  */
 const client = z.object({
   NEXT_PUBLIC_API_URL: z.string().url().min(1),
+  NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY: z.string().min(1),
+  NEXT_PUBLIC_VOTING_START_DATE: z.string().min(1),
+  NEXT_PUBLIC_VOTING_END_DATE: z.string().min(1),
+  NEXT_PUBLIC_APP_URL: z.string().url().min(1),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 
@@ -48,6 +52,10 @@ const processEnv = {
   API_KEY: process.env.API_KEY,
   API_URL: process.env.API_URL,
   NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY: process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY,
+  NEXT_PUBLIC_VOTING_START_DATE: process.env.NEXT_PUBLIC_VOTING_START_DATE,
+  NEXT_PUBLIC_VOTING_END_DATE: process.env.NEXT_PUBLIC_VOTING_END_DATE,
+  NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

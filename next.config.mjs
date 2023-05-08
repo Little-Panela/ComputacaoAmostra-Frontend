@@ -38,8 +38,6 @@ const config = {
     domains: ["lh3.googleusercontent.com"],
   },
 
-  poweredByHeader: false,
-
   headers: async () => {
     return [
       {
@@ -56,7 +54,7 @@ const config = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "https://computacao-amostra-frontend.vercel.app, https://pi.omnicesupa.com",
+              "https://computacao-amostra.com",
           },
         ],
       },

@@ -1,29 +1,58 @@
-/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+import type { TProject } from "../../@types/TProject";
 import { Text } from "../elements/Text";
+import { NormalizeTextToSlug } from "../helpers/normalize-text-to-slug";
+import type { Replace } from "../helpers/Replace";
+import { ModalProject } from "./ModalProject";
 
-interface CardProjectProps {
-  name: string;
-  description: string;
-}
+type CardProjectProps = Replace<
+  TProject,
+  {
+    id?: string;
+    status?: boolean;
+    votes?: number;
+    totalVotes?: number;
+    uniqueVotes?: number;
+    course: "bcc" | "ecomp";
+  }
+>;
 
-export function CardProject({ name, description }: CardProjectProps) {
+export function CardProject({
+  name,
+  description,
+  team,
+  github,
+  youtube,
+  course,
+}: CardProjectProps) {
+  const nameForSlug = NormalizeTextToSlug({ text: name });
+
   return (
-    <div className="flex flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
-      <div className="flex gap-2">
-        <img src="/static/icons/github.svg" alt="Logo do github" />
-        <Text asChild size="md" className="md:text-2xl">
-          <strong>{name}</strong>
-        </Text>
-      </div>
-      <Text className="text-xs md:text-lg">{description}</Text>
-      <div className="flex flex-wrap gap-3 max-sm:flex-col">
-        <button className="flex-1 rounded-md border bg-green-600 py-1 px-3 text-white  transition-colors hover:bg-green-500">
-          Votar
-        </button>
-        <button className="flex-1 rounded-md border border-gray-600 py-1 px-3 text-gray-600 transition-colors hover:text-gray-400">
-          Ver detalhes
-        </button>
-      </div>
-    </div>
+    <ModalProject
+      name={name}
+      nameForSlug={nameForSlug}
+      description={description}
+      githubLink={github}
+      teamMembers={team}
+      videoId={youtube}
+      course={course}
+      trigger={
+        <Link
+          href={`/voting?course=${course}`}
+          as={`/project/${nameForSlug}`}
+          scroll={false}
+        >
+          <div className="group flex flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
+            <Text asChild size="md" className="md:text-2xl">
+              <strong>{name}</strong>
+            </Text>
+            <Text className="text-xs md:text-lg">{description}</Text>
+            <button className="flex-1 rounded-md border border-green-400 px-3 py-1 text-green-400 transition-colors group-hover:border-green-600 group-hover:text-green-600">
+              Ver detalhes
+            </button>
+          </div>
+        </Link>
+      }
+    />
   );
 }
