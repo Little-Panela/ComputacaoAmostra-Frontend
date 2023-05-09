@@ -44,6 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   // const formattedName = String(params!.name);
   // const project = await getProject({ name: formattedName });
