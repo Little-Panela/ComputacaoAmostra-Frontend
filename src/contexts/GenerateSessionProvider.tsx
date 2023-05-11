@@ -32,7 +32,7 @@ export function GenerateSessionProvider({
   const { mutateAsync, isLoading } = useMutation(
     async ({ email, name }: GenerateSessionParams) => {
       await putGenerateSession({ email, name });
-    }
+    },
   );
 
   const sessionToken = parseCookies()["session_token"];

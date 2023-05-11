@@ -1,3 +1,5 @@
 export { default } from "next-auth/middleware"
 
-export const config = { matcher: ["/api/votes"] }
+export const config = {
+  matcher: ["/api/users/vote"] 
+}

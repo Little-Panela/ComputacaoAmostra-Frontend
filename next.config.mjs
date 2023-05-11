@@ -13,7 +13,7 @@ const securityHeaders = [
   },
   {
     key: "X-Frame-Options",
-    value: "DENY",
+    value: "SAMEORIGIN",
   },
   {
     key: "Referrer-Policy",
@@ -23,6 +23,10 @@ const securityHeaders = [
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
   },
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  }
 ];
 
 /** @type {import("next").NextConfig} */
@@ -41,7 +45,7 @@ const config = {
   headers: async () => {
     return [
       {
-        source: "/:path*",
+        source: "/(.*)",
         headers: securityHeaders,
       },
       {
@@ -54,11 +58,12 @@ const config = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "*",
+              "https:computacao-amostra.com",
           },
         ],
       },
     ];
   },
 };
+
 export default config;
