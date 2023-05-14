@@ -6,6 +6,8 @@ import SEO from "../../next-seo.config";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { DehydratedState } from "@tanstack/react-query";
 import { Hydrate } from "@tanstack/react-query";
+import { appWithTranslation } from "next-i18next";
+import nextI18nConfig from "../../next-i18next.config.mjs";
 
 import { AppProvider } from "../contexts/AppProvider";
 import { Analytics } from "@vercel/analytics/react";
@@ -30,4 +32,6 @@ const MyApp: AppType<{
   );
 };
 
-export default MyApp;
+const I18nApp = appWithTranslation(MyApp, nextI18nConfig);
+
+export default I18nApp;

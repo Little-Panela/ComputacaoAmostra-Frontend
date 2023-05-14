@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+
 import { Heading } from "../../elements/Heading";
 import { Text } from "../../elements/Text";
 
@@ -25,16 +27,23 @@ function Card({ title, description }: CardProps) {
 }
 
 export function Cards() {
+  const { t } = useTranslation("common");
+
   return (
     <section className="mx-auto mt-10 mb-10 max-w-7xl px-2 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center justify-around gap-6 lg:flex-row">
-        {[...Array(3).keys()].map((_, index) => (
           <Card
-            key={index}
-            title="Curiosidade"
-            description="Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus."
+            title={t("home.titles.curiosity")}
+            description={t("home.curiosity.mmib")}
           />
-        ))}
+          <Card
+            title={t("home.titles.curiosity")}
+            description={t("home.curiosity.compamostra")}
+          />
+          <Card
+            title={t("home.titles.curiosity")}
+            description={t("home.curiosity.sthem")}
+          />
       </div>
     </section>
   );

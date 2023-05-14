@@ -1,6 +1,6 @@
 // @ts-check
-
 !process.env.SKIP_ENV_VALIDATION && (await import("./src/env.mjs"));
+import configi18n from "./next-i18next.config.mjs";
 
 const securityHeaders = [
   {
@@ -33,13 +33,10 @@ const securityHeaders = [
 const config = {
   reactStrictMode: true,
 
-  i18n: {
-    locales: ["en-US", "pt-BR"],
-    defaultLocale: "pt-BR",
-  },
+  i18n: configi18n.i18n,
 
   images: {
-    domains: ["lh3.googleusercontent.com"],
+    domains: ["lh3.googleusercontent.com", "cdn.computacao-amostra.com"],
   },
 
   headers: async () => {

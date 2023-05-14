@@ -1,7 +1,7 @@
 import type { TVote } from "./TVote";
 
 export type TProject = {
-  id?: string;
+  id: string;
   name: string;
   team: string[];
   description: string;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @next/next/no-img-element */
-import { createRef } from "react";
+import { createRef, useState } from "react";
 import type { ModalProps } from "../elements/Modal";
 import { Modal } from "../elements/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -15,6 +15,7 @@ import Image from "next/image";
 import { UsersIcon } from "@heroicons/react/24/outline";
 
 type ModalProjectProps = {
+  id: string;
   name: string;
   nameForSlug: string;
   videoId: string;
@@ -26,10 +27,15 @@ type ModalProjectProps = {
 
 import { env } from "../../env.mjs";
 import { signIn, useSession } from "next-auth/react";
-import { useToast } from "../../hooks/useToast";
+import { toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
+import type { postVoteType } from "../../services/post-vote";
+import { postVote } from "../../services/post-vote";
+import "react-toastify/dist/ReactToastify.css";
 
 export function ModalProject({
   trigger,
+  id,
   name,
   nameForSlug,
   teamMembers,
@@ -40,30 +46,100 @@ export function ModalProject({
   ...rest
 }: ModalProjectProps) {
   const { data: session } = useSession();
-  const { handleOpenToast } = useToast();
   const recaptchaRef = createRef<ReCAPTCHA>();
 
-  const isUserLoggedIn = session !== null;
+  const isVotingStarted =
+    new Date().getTime() >
+    new Date(env.NEXT_PUBLIC_VOTING_START_DATE).getTime();
   const isVotingEnd = new Date() > new Date(env.NEXT_PUBLIC_VOTING_END_DATE);
+  const isUserLoggedIn = session !== null;
 
   const shareUrl = `${env.NEXT_PUBLIC_APP_URL}/project/${nameForSlug}`;
   const shareMessage = encodeURIComponent(
-    `Vote em ${name}, como melhor projeto da Computação Amostra 2023.\n\n${shareUrl}`
+    `Vote em ${name} como o melhor projeto da Computação Amostra 2023!\n\n${shareUrl}`
   );
   const twitterShareMessage = encodeURIComponent(
-    `Vote em ${name}, como melhor projeto da Computação Amostra 2023.`
+    `Vote em ${name} como o melhor projeto da Computação Amostra 2023!`
+  );
+
+  const { mutateAsync: voteProject, isLoading: isLoadingVoting } = useMutation(
+    async ({ captcha, projectId }: postVoteType) => {
+      await postVote({ captcha, projectId });
+    }
   );
 
   const handleVote = () => {
+    if (!isVotingStarted || isVotingEnd || !isUserLoggedIn || isLoadingVoting) {
+      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+      return;
+    }
+
     recaptchaRef.current?.execute();
   };
 
-  const onReCAPTCHAChange = (captchaCode: string | null) => {
+  const onReCAPTCHAChange = async (captchaCode: string | null) => {
     if (!captchaCode) {
       recaptchaRef.current?.reset();
+      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
       return;
     }
-    handleOpenToast("Voto computado com sucesso!", `${name} recebeu seu voto!`);
+
+    try {
+      await voteProject({
+        projectId: `${id}`,
+        captcha: `${captchaCode}`,
+      });
+
+      toast.success("Voto computado com sucesso!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
     recaptchaRef.current?.reset();
   };
 
