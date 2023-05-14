@@ -12,7 +12,7 @@ export const config = {
 };
 
 export async function proxy(req: NextApiRequest, res: NextApiResponse) {
-  if (req.body.host && req.body.host !== env.NEXT_PUBLIC_APP_URL)
+  if (req.headers.host && req.headers.host !== env.NEXT_PUBLIC_APP_URL)
     return res.status(401).json({ message: "Not Authorized!" });
 
     await httpProxyMiddleware(req, res, {
