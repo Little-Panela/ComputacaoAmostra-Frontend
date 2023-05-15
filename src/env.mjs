@@ -35,6 +35,7 @@ const client = z.object({
   NEXT_PUBLIC_VOTING_START_DATE: z.string().min(1),
   NEXT_PUBLIC_VOTING_END_DATE: z.string().min(1),
   NEXT_PUBLIC_APP_URL: z.string().url().min(1),
+  NEXT_PUBLIC_CDN_URL: z.string().url().min(1),
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 
@@ -56,6 +57,7 @@ const processEnv = {
   NEXT_PUBLIC_VOTING_START_DATE: process.env.NEXT_PUBLIC_VOTING_START_DATE,
   NEXT_PUBLIC_VOTING_END_DATE: process.env.NEXT_PUBLIC_VOTING_END_DATE,
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  NEXT_PUBLIC_CDN_URL: process.env.NEXT_PUBLIC_CDN_URL,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

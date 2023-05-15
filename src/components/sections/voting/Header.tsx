@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { useTranslation } from "next-i18next";
+
 import { Heading } from "../../elements/Heading";
 import { TextInput } from "../../elements/TextInput";
 import { SwitchCourse } from "../../modules/SwitchCourse";
@@ -9,6 +11,7 @@ interface HeaderProps {
 }
 
 export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
+  const { t } = useTranslation("common");
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChangeText(event.target.value);
   };
@@ -16,7 +19,7 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
   return (
     <header className="mt-5 flex flex-col items-center gap-4 md:mt-14 md:gap-10">
       <Heading size="lg" className="md:text-4xl">
-        Projetos
+        {t("voting.header.projects")}
       </Heading>
 
       <SwitchCourse course={course} />
@@ -25,11 +28,17 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
         <TextInput.Root>
           <TextInput.Input
             id="projeto"
-            placeholder="Procurar projeto"
+            placeholder={t("voting.header.searchPlaceholder") ?? ""}
             onChange={handleInputChange}
           />
           <TextInput.Icon>
-            <img src="/static/icons/search.svg" alt="Procurar projeto" />
+            <img
+              src="/static/icons/search.svg"
+              alt={
+                t("voting.header.searchPlaceholder") ??
+                "Pesquisar por nome do projeto"
+              }
+            />
           </TextInput.Icon>
         </TextInput.Root>
       </div>

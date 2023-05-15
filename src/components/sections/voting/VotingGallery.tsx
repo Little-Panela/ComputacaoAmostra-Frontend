@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import type { TProject } from "../../../@types/TProject";
-import { Heading } from "../../elements/Heading";
-import { Text } from "../../elements/Text";
+import { useTranslation } from "next-i18next";
+
 import { CardProject } from "../../modules/CardProject";
 import { CardProjectSkeleton } from "../../modules/CardProjectSkeleton";
+
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Heading } from "../../elements/Heading";
+import { Text } from "../../elements/Text";
+
+import type { TProject } from "../../../@types/TProject";
 
 type VotingGalleryProps = {
   projects?: TProject[];
@@ -17,14 +21,16 @@ export function VotingGallery({
   course,
   isLoading,
 }: VotingGalleryProps) {
+  const { t } = useTranslation("common");
+
   return (
     <section className="mx-auto mt-6 flex flex-col items-center gap-6 overflow-hidden  md:mt-16 md:gap-16">
       <div className="mx-2 flex flex-col text-center md:items-center">
         <Heading size="sm" className="md:text-3xl">
-          Quem você quer que vença a computação amostra 2023?
+          {t("voting.gallery.heading")}
         </Heading>
         <Text className="text-xs text-gray-500 md:text-2xl">
-          Vote para definir o melhor projeto!!
+          {t("voting.gallery.subheading")}
         </Text>
       </div>
 
@@ -38,7 +44,7 @@ export function VotingGallery({
                 description={project.description}
                 links={project.links}
                 team={project.team}
-                // @ts-expect-error - TODO: FIX THIS
+                // @ts-expect-error - bcc and ecomp strings are valid
                 course={course}
               />
             ))}
@@ -47,7 +53,7 @@ export function VotingGallery({
           <div className="min-w-screen flex flex-col gap-4 items-center justify-center">
             <XMarkIcon className="w-16 h-16 text-gray-500" />
             <Text className="text-2xl text-gray-500">
-              Nenhum projeto encontrado
+              {t("voting.gallery.noProjects")}
             </Text>
           </div>
         )

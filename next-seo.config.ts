@@ -1,8 +1,8 @@
 import type { DefaultSeoProps } from 'next-seo';
 
 const title = "Computação Amostra"
-const description = "A Estimular alunos do CESUPA ao desenvolvimento de novas tecnologias e soluções inovadoras, incentivando o desenvolvimento do pensar tecnológico, da criatividade e da economia do Estado do Pará. Promover o inter-relacionamento entre alunos e empresas de tecnologia do Estado, proporcionando panorama favorável a troca de experiências de mercado e soluções provindas do conhecimento acadêmico."
-const baseURL = "https://computacao-amostra-frontend.vercel.app/"
+const description = "Amazon Hacking é uma iniciativa do CESUPA que une os cursos de Ciência da Computação e Engenharia da Computação, a fim de estimular os alunos a desenvolverem soluções tecnológicas,  inovadoras e criativas, implementando no Pará uma nova forma de pensar e fazer economia. Nesse ano, o tema do maior evento tecnológico do norte será: 'Soluções de tecnologia para o Movimento das Mulheres das Ilhas de Belém - MMIB'. Dessa forma, os universitários elaboraram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB, uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão."
+const baseURL = "https://computacao-amostra.com"
 
 const config: DefaultSeoProps = {
   defaultTitle: title,

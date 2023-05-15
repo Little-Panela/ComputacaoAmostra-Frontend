@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @next/next/no-img-element */
 import { createRef, useEffect } from "react";
@@ -10,10 +11,11 @@ import { UsersIcon } from "@heroicons/react/24/outline";
 import { signIn, useSession } from "next-auth/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useMutation } from "@tanstack/react-query";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18nConfig from "../../../next-i18next.config.mjs";
+import { useTranslation } from "next-i18next";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import type { TProject } from "../../@types/TProject";
 
 import { Default } from "../../components/layouts/Default";
 import { Text } from "../../components/elements/Text";
@@ -27,6 +29,7 @@ import { getProject } from "../../services/get-project";
 import { postVote } from "../../services/post-vote";
 import type { postVoteType } from "../../services/post-vote";
 
+import type { TProject } from "../../@types/TProject";
 import { env } from "../../env.mjs";
 
 interface ProjectPageProps {
@@ -36,6 +39,8 @@ interface ProjectPageProps {
 export default function ProjectPage({ project }: ProjectPageProps) {
   const { data: session } = useSession();
   const router = useRouter();
+  const locale = router.locale ?? "pt";
+  const { t } = useTranslation("common");
   const recaptchaRef = createRef<ReCAPTCHA>();
 
   const isVotingStarted =
@@ -61,7 +66,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
 
   const handleVote = () => {
     if (!isVotingStarted || isVotingEnd || !isUserLoggedIn || isLoadingVoting) {
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -83,7 +88,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
   const onReCAPTCHAChange = async (captchaCode: string | null) => {
     if (!captchaCode) {
       recaptchaRef.current?.reset();
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -105,7 +110,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         captcha: `${captchaCode}`,
       });
 
-      toast.success("Voto computado com sucesso!", {
+      toast.success(t("voting.modal.alertMessages.success"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -116,7 +121,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         theme: "light",
       });
     } catch (error) {
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -126,9 +131,9 @@ export default function ProjectPage({ project }: ProjectPageProps) {
         progress: undefined,
         theme: "light",
       });
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 2000);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
 
     recaptchaRef.current?.reset();
@@ -178,7 +183,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <Text className="text-gray-600" size="lg">
-                Compartilhe:
+                {t("voting.modal.share")}:
               </Text>
               <a
                 href={`https://wa.me/?text=${shareMessage}`}
@@ -231,19 +236,23 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                     : "cursor-pointer"
                 }
               >
-                {isLoadingVoting ? "Carregando..." : "Votar"}
+                {isLoadingVoting
+                  ? t("voting.modal.loading")
+                  : t("voting.modal.vote")}
               </Button>
               <ToastContainer />
             </div>
           ) : (
             <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
-              <div>Para votar, faça login</div>
-              <Button onClick={() => signIn("google")}>Entrar</Button>
+              <div>{t("voting.modal.signMensage")}</div>
+              <Button onClick={() => signIn("google")}>
+                {t("voting.modal.signIn")}
+              </Button>
             </div>
           )}
         </div>
-        {/* TODO: IDIOMAS DINÂMICOS */}
-        <Player videoId={project.links.youtube.en} />
+        {/* @ts-expect-error - locale exists */}
+        <Player videoId={project.links.youtube[locale]} />
       </div>
     </Default>
   );
@@ -257,8 +266,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params) {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  if (!params || !locale) {
     return {
       notFound: true,
     };
@@ -268,6 +277,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      ...(await serverSideTranslations(locale, ["common"], nextI18nConfig, [
+        "pt",
+        "en",
+      ])),
       project,
     },
     revalidate: 60 * 60 * 24, // 1 day

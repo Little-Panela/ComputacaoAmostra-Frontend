@@ -1,4 +1,10 @@
 {
+  "navbar": {
+    "home": "Home",
+    "voting": "Voting",
+    "logout": "Logout",
+    "contact": "Contact"
+  },
   "home": {
     "titles": {
       "about": "About",
@@ -18,5 +24,49 @@
     "realization": "Realization",
     "partnership": "Partnership",
     "sponsorship": "Sponsorship"
+  },
+  "voting": {
+    "title": "Voting",
+    "description": "Who do you want to win the Computing Sample 2023?",
+    "header": {
+      "projects": "Projects",
+      "searchPlaceholder": "Search for a project",
+      "courses": {
+        "cs": "Computer Science",
+        "ce": "Computer Engineering"
+      }
+    },
+    "gallery": {
+      "heading": "Who do you want to win the Computing Sample 2023?",
+      "subheading": "Vote to determine the best project!!",
+      "card": {
+        "details": "Details"
+      },
+      "noProjects": "No projects found"
+    },
+    "modal": {
+      "share": "Share",
+      "vote": "Vote",
+      "loading": "Loading...",
+      "signMensage": "Sign in to vote",
+      "signIn": "Sign in",
+      "alertMessages": {
+        "success": "Vote successfully registered!",
+        "error": "Error registering vote, try again later."
+      }
+    }
+  },
+  "countdown": {
+    "heading": "Start of voting",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "footer": {
+    "copyright": "© 2023 CESUPA. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "developed": "Made with ♥ by Panic"
   }
 }

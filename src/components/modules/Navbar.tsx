@@ -8,6 +8,8 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import { useTranslation } from "next-i18next";
+
 import { env } from "../../env.mjs";
 
 function classNames(...classes: string[]) {
@@ -17,6 +19,7 @@ function classNames(...classes: string[]) {
 export function Navbar() {
   const router = useRouter();
   const { data: session } = useSession();
+  const { t } = useTranslation("common");
 
   const isUserLoggedIn = session !== null;
   const user = session?.user;
@@ -69,7 +72,7 @@ export function Navbar() {
                         }
                       )}
                     >
-                      Início
+                      {t("navbar.home")}
                     </Link>
                     {/* <a
                       href="#"
@@ -87,7 +90,7 @@ export function Navbar() {
                         }
                       )}
                     >
-                      Votação
+                      {t("navbar.voting")}
                     </Link>
                     {/* <a
                       href="#"
@@ -132,7 +135,7 @@ export function Navbar() {
                                 )}
                                 onClick={() => signOut()}
                               >
-                                Sair
+                                {t("navbar.logout")}
                               </a>
                             )}
                           </Menu.Item>
@@ -152,7 +155,7 @@ export function Navbar() {
               </div>
               <div className="-mr-2 flex gap-2 sm:hidden">
                 <NavButton onClick={() => router.push(linkToVoting)}>
-                  VOTAÇÃO
+                  {t("navbar.voting").toUpperCase()}
                 </NavButton>
 
                 {/* Mobile menu button */}
@@ -181,7 +184,7 @@ export function Navbar() {
                   }
                 )}
               >
-                Início
+                {t("navbar.home")}
               </Disclosure.Button>
               {/* <Disclosure.Button
                 as="a"
@@ -200,7 +203,7 @@ export function Navbar() {
                   }
                 )}
               >
-                Votação
+                {t("navbar.voting")}
               </Disclosure.Button>
               {/* <Disclosure.Button
                 as="a"
@@ -237,7 +240,7 @@ export function Navbar() {
                     onClick={() => signOut()}
                     className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                   >
-                    Sair
+                    {t("navbar.logout")}
                   </Disclosure.Button>
                 </div>
               </div>
@@ -277,3 +280,4 @@ function NavButton({ children, ...props }: NavButtonProps) {
     </button>
   );
 }
+

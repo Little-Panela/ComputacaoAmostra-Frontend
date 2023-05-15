@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { type NextPage } from "next";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { useEffect, useMemo, useState } from "react";
 import type { TProject } from "../../@types/TProject";
 import { NormalizeTextToSearch } from "../../components/helpers/normalize-text-to-search";
@@ -10,8 +11,11 @@ import { VotingGallery } from "../../components/sections/voting/VotingGallery";
 import { getProjects } from "../../services/get-projects";
 
 import { env } from "../../env.mjs";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18nConfig from "../../../next-i18next.config.mjs";
 
 const Voting: NextPage = () => {
+  const { t } = useTranslation("common");
   const router = useRouter();
   const query = router.query as { course?: "bcc" | "ecomp" };
   const course = useMemo(() => query.course ?? "bcc", [query.course]);
@@ -57,8 +61,8 @@ const Voting: NextPage = () => {
 
   return (
     <Default
-      title="Votação"
-      description="Quem você quer que vença a computação amostra 2023?"
+      title={t("voting.title") ?? "Votação"}
+      description={t("voting.description") ?? "Quem você quer que vença a computação amostra"}
       path={`/voting?course=${course}`}
     >
       <Header course={course ?? "bcc"} onChangeText={handleSearch} />
@@ -72,3 +76,12 @@ const Voting: NextPage = () => {
 };
 
 export default Voting;
+
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"], nextI18nConfig, [
+      "pt",
+      "en",
+    ])),
+  },
+});

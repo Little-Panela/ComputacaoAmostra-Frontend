@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+
 import { Toast } from "../components/elements/Toast";
 
 type ToastContextDataProps = {

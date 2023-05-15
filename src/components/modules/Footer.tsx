@@ -1,7 +1,11 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { LanguageSelector } from "./LanguageSelector";
 
 /* eslint-disable @next/next/no-img-element */
 export function Footer() {
+  const { t } = useTranslation("common");
+
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
@@ -41,21 +45,24 @@ export function Footer() {
           </a>
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; 2023 CESUPA. Todos os direitos reservados.
+          {t("footer.copyright")}
         </p>
         <div className="mt-3 flex flex-wrap items-center justify-center space-x-7">
           <Link href="/legal/privacy-policy">
             <p className="text-xs leading-5 text-gray-500 transition-colors hover:text-gray-400">
-              Política de Privacidade
+              {t("footer.privacyPolicy")}
             </p>
           </Link>
           <Link href="/legal/terms">
-            <p className="text-xs leading-5 text-gray-500 transition-colors hover:text-gray-400">Termos de Serviço</p>
+            <p className="text-xs leading-5 text-gray-500 transition-colors hover:text-gray-400">
+              {t("footer.terms")}
+            </p>
           </Link>
         </div>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          Feito com ♥ por Panic
+          {t("footer.developed")}
         </p>
+        <LanguageSelector />
       </div>
     </footer>
   );

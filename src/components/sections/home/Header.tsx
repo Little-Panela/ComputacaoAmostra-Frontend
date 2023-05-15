@@ -5,7 +5,7 @@ import { Heading } from "../../elements/Heading";
 export function Header() {
   return (
     <header className="mx-auto bg-[url('/static/img/passeio-cotijuba.webp')] bg-cover bg-center bg-no-repeat py-32">
-      <div className="mx-auto flex max-w-7xl items-center justify-center py-6 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-6 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <Heading size="2xl" className="text-white md:text-6xl">
             <span>Amazon</span> Hacking
