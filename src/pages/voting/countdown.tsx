@@ -49,7 +49,7 @@ const Countdown: NextPage = () => {
       description={`Inicio das votações em ${time.days} dias, ${time.hours} horas, ${time.minutes} minutos e ${time.seconds} segundos`}
       path="/voting/countdown"
     >
-      <div className="min-w-screen flex min-h-[calc(100vh_-_4rem)] flex-col items-center justify-center bg-gray-900 px-5 py-5">
+      <div className="min-w-screen flex min-h-[calc(100vh_-_4rem)] flex-col items-center justify-center bg-gray-900 px-1 py-5">
         <div className="text-gray-900">
           <h1 className="mb-5 text-center text-3xl font-extralight text-white">
             {t("countdown.heading")}

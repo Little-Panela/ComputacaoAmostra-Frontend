@@ -34,7 +34,7 @@ export function Cards() {
 
   return (
     <section className="mx-auto mb-10 mt-10 max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div className="flex flex-col items-center justify-around gap-6 lg:flex-row">
+      <div className="flex flex-col items-center justify-around gap-6 lg:flex-row lg:items-start">
         <Card
           title={t("home.titles.curiosity")}
           description={t("home.curiosity.mmib")}

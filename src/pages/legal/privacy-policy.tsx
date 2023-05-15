@@ -1,4 +1,7 @@
 import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18nConfig from "../../../next-i18next.config.mjs";
+
 import { Heading } from "../../components/elements/Heading";
 import { Text } from "../../components/elements/Text";
 import { Default } from "../../components/layouts/Default";
@@ -128,3 +131,12 @@ const PrivacyPolicy: NextPage = () => {
 };
 
 export default PrivacyPolicy;
+
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"], nextI18nConfig, [
+      "pt",
+      "en",
+    ])),
+  },
+});
