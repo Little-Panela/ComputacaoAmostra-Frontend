@@ -6,16 +6,21 @@ import { useTranslation } from "next-i18next";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
+import { env } from "../../env.mjs";
+import { useRouter } from "next/router.js";
+
+const cdn = env.NEXT_PUBLIC_CDN_URL;
+const cdnPath = `${cdn}/flags/`;
+
 interface FlagIconProps {
   countryCode: string;
 }
 
 function FlagIcon({ countryCode = "" }: FlagIconProps) {
   const locale = countryCode === "en" ? "us" : "br";
-  const CDN = "https://cdn.computacao-amostra.com/flags/";
   return (
     <Image
-      src={`${CDN}${locale}.svg`}
+      src={`${cdnPath}${locale}.svg`}
       width={16}
       height={16}
       alt="flag"
@@ -32,6 +37,7 @@ interface Language {
 const LANGUAGE_SELECTOR_ID = "language-selector";
 
 export const LanguageSelector = () => {
+  const router = useRouter()
   const { i18n } = useTranslation();
   const languages = [
     {
@@ -50,7 +56,7 @@ export const LanguageSelector = () => {
   );
 
   const handleLanguageChange = async (language: Language) => {
-    await i18n.changeLanguage(language.key);
+    await router.push(router.asPath, router.asPath, { locale: language.key })
     
     setIsOpen(false);
   };
