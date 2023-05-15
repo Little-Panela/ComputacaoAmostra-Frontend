@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 import { Text } from "../elements/Text";
 
 interface OptionProps {
@@ -8,13 +10,21 @@ interface OptionProps {
 }
 
 export function SwitchCourse({ course }: { course: "bcc" | "ecomp" }) {
+  const { t } = useTranslation("common");
+
   return (
     <div className="flex flex-wrap justify-center gap-4">
       <Link href="?course=bcc">
-        <Option label="Ciência da Computação" active={course === "bcc"} />
+        <Option
+          label={t("voting.header.courses.cs")}
+          active={course === "bcc"}
+        />
       </Link>
       <Link href="?course=ecomp">
-        <Option label="Engenharia da Computação" active={course === "ecomp"} />
+        <Option
+          label={t("voting.header.courses.ce")}
+          active={course === "ecomp"}
+        />
       </Link>
     </div>
   );

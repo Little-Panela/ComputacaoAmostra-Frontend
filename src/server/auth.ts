@@ -5,9 +5,10 @@ import {
   type DefaultSession,
 } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { env } from "../env.mjs";
 
 import { putGenerateSession } from "../services/put-generate-session";
+
+import { env } from "../env.mjs";
 
 declare module "next-auth" {
   interface Session extends DefaultSession {

@@ -12,22 +12,18 @@ export const config = {
 };
 
 export async function proxy(req: NextApiRequest, res: NextApiResponse) {
-  if (req.headers.host && req.headers.host !== env.NEXT_PUBLIC_APP_URL)
-    return res.status(401).json({ message: "Not Authorized!" });
-
-    await httpProxyMiddleware(req, res, {
-      // You can use the `http-proxy` option
-      target: env.API_URL,
-      // @ts-expect-error - pathRewrite is not a string
-      headers: {
-        ...req.headers,
-        api: env.API_KEY,
+  await httpProxyMiddleware(req, res, {
+    target: env.API_URL,
+    // @ts-expect-error - pathRewrite is not a string
+    headers: {
+      ...req.headers,
+      api: env.API_KEY,
+    },
+    pathRewrite: [
+      {
+        patternStr: "^/api",
+        replaceStr: "",
       },
-      pathRewrite: [
-        {
-          patternStr: "^/api",
-          replaceStr: "",
-        },
-      ],
-    });
+    ],
+  });
 }

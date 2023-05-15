@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Link from "next/link";
 import { ToastContainer } from "react-toastify";
-import type { TProject } from "../../@types/TProject";
-import { Text } from "../elements/Text";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+
 import { NormalizeTextToSlug } from "../helpers/normalize-text-to-slug";
+
 import { ModalProject } from "./ModalProject";
+import { Text } from "../elements/Text";
+
+import type { TProject } from "../../@types/TProject";
 
 type CardProjectProps = TProject;
 
@@ -15,7 +21,17 @@ export function CardProject({
   links,
   course,
 }: CardProjectProps) {
+  const router = useRouter();
+  const locale = router.locale ?? "pt";
+  const { t } = useTranslation("common");
   const nameForSlug = NormalizeTextToSlug({ text: name });
+
+  function truncateText(text: string) {
+    if (text.length > 96) {
+      return text.substring(0, 96) + "...";
+    }
+    return text;
+  }
 
   return (
     <>
@@ -26,8 +42,8 @@ export function CardProject({
         description={description}
         githubLink={links.github}
         teamMembers={team}
-        // TODO: DINÂMICO COM A ROTA
-        videoId={links.youtube.en}
+        // @ts-expect-error - locale exists
+        videoId={links.youtube[locale]}
         course={course}
         trigger={
           <Link
@@ -39,9 +55,11 @@ export function CardProject({
               <Text asChild size="md" className="md:text-2xl">
                 <strong>{name}</strong>
               </Text>
-              <Text className="text-xs md:text-lg">{description}</Text>
+              <Text className="text-xs md:text-lg">
+                {truncateText(description)}
+              </Text>
               <button className="flex-1 rounded-md border border-green-400 px-3 py-1 text-green-400 transition-colors group-hover:border-green-600 group-hover:text-green-600">
-                Ver detalhes
+                {t("voting.gallery.card.details")}
               </button>
             </div>
           </Link>

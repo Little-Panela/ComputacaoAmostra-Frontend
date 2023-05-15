@@ -1,4 +1,10 @@
 {
+  "navbar": {
+    "home": "Início",
+    "voting": "Votação",
+    "logout": "Sair",
+    "contact": "Contato"
+  },
   "home": {
     "titles": {
       "about": "Sobre",
@@ -18,5 +24,49 @@
     "realization": "Realização",
     "partnership": "Parceria",
     "sponsorship": "Patrocínio"
+  },
+  "voting": {
+    "title": "Votação",
+    "description": "Quem você quer que vença a computação amostra 2023?",
+    "header": {
+      "projects": "Projetos",
+      "searchPlaceholder": "Pesquisar por nome do projeto",
+      "courses": {
+        "cs": "Ciência da Computação",
+        "ce": "Engenharia da Computação"
+      }
+    },
+    "gallery": {
+      "heading": "Quem você quer que vença a computação amostra 2023?",
+      "subheading": "Vote para definir o melhor projeto!!",
+      "card": {
+        "details": "Detalhes"
+      },
+      "noProjects": "Nenhum projeto encontrado"
+    },
+    "modal": {
+      "share": "Compartilhe",
+      "vote": "Votar",
+      "loading": "Carregando...",
+      "signMensage": "Você precisa estar logado para votar",
+      "signIn": "Entrar",
+      "alertMessages": {
+        "success": "Voto realizado com sucesso!",
+        "error": "Erro ao realizar voto, tente novamente mais tarde."
+      }
+    }
+  },
+  "countdown": {
+    "heading": "Inicio das votações",
+    "days": "Dias",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos"
+  },
+  "footer": {
+    "copyright": "© 2023 CESUPA. Todos os direitos reservados.",
+    "privacyPolicy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "developed": "Feito com ♥ por Panic"
   }
 }

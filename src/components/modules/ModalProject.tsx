@@ -1,18 +1,29 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @next/next/no-img-element */
-import { createRef, useState } from "react";
+import { createRef } from "react";
 import type { ModalProps } from "../elements/Modal";
-import { Modal } from "../elements/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
 import dynamic from "next/dynamic";
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import Image from "next/image";
+import { signIn, useSession } from "next-auth/react";
+import { toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
+import "react-toastify/dist/ReactToastify.css";
+
+import { Modal } from "../elements/Modal";
+import { Text } from "../elements/Text";
+import { Button } from "../elements/Button";
+import { UsersIcon } from "@heroicons/react/24/outline";
 const Player = dynamic(() => import("../elements/Player"), {
   ssr: false,
 });
-import { Text } from "../elements/Text";
-import Link from "next/link";
-import { Button } from "../elements/Button";
-import Image from "next/image";
-import { UsersIcon } from "@heroicons/react/24/outline";
+
+import { postVote } from "../../services/post-vote";
+
+import type { postVoteType } from "../../services/post-vote";
+import { env } from "../../env.mjs";
 
 type ModalProjectProps = {
   id: string;
@@ -24,14 +35,6 @@ type ModalProjectProps = {
   description: string;
   course: "bcc" | "ecomp";
 } & Omit<ModalProps, "children">;
-
-import { env } from "../../env.mjs";
-import { signIn, useSession } from "next-auth/react";
-import { toast } from "react-toastify";
-import { useMutation } from "@tanstack/react-query";
-import type { postVoteType } from "../../services/post-vote";
-import { postVote } from "../../services/post-vote";
-import "react-toastify/dist/ReactToastify.css";
 
 export function ModalProject({
   trigger,
@@ -46,6 +49,7 @@ export function ModalProject({
   ...rest
 }: ModalProjectProps) {
   const { data: session } = useSession();
+  const { t } = useTranslation("common");
   const recaptchaRef = createRef<ReCAPTCHA>();
 
   const isVotingStarted =
@@ -70,7 +74,7 @@ export function ModalProject({
 
   const handleVote = () => {
     if (!isVotingStarted || isVotingEnd || !isUserLoggedIn || isLoadingVoting) {
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -92,7 +96,7 @@ export function ModalProject({
   const onReCAPTCHAChange = async (captchaCode: string | null) => {
     if (!captchaCode) {
       recaptchaRef.current?.reset();
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -114,7 +118,7 @@ export function ModalProject({
         captcha: `${captchaCode}`,
       });
 
-      toast.success("Voto computado com sucesso!", {
+      toast.success(t("voting.modal.alertMessages.success"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -125,7 +129,7 @@ export function ModalProject({
         theme: "light",
       });
     } catch (error) {
-      toast.error("Ocorreu algum error, tente novamente mais tarde.", {
+      toast.error(t("voting.modal.alertMessages.error"), {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -170,7 +174,7 @@ export function ModalProject({
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <Text className="text-gray-600" size="lg">
-                Compartilhe:
+                {t("voting.modal.share")}:
               </Text>
               <a
                 href={`https://wa.me/?text=${shareMessage}`}
@@ -214,12 +218,24 @@ export function ModalProject({
                 onChange={onReCAPTCHAChange}
                 badge="inline"
               />
-              <Button onClick={handleVote}>Votar</Button>
+              <Button onClick={handleVote}>{t("voting.modal.vote")}</Button>
             </div>
           ) : (
             <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
-              <div>Para votar, faça login</div>
-              <Button onClick={() => signIn("google")}>Entrar</Button>
+              <div>{t("voting.modal.signMensage")}</div>
+              <Button
+                onClick={() => signIn("google")}
+                disabled={isLoadingVoting}
+                className={
+                  isLoadingVoting
+                    ? "cursor-wait items-center justify-center bg-green-300 hover:bg-green-300"
+                    : "cursor-pointer"
+                }
+              >
+                {isLoadingVoting
+                  ? t("voting.modal.loading")
+                  : t("voting.modal.vote")}
+              </Button>
             </div>
           )}
         </div>
