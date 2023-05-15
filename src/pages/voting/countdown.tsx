@@ -45,14 +45,14 @@ const Countdown: NextPage = () => {
 
   return (
     <Default
-      title="Votação Countdown"
+      title={`${t("navbar.voting")} Countdown`}
       description={`Inicio das votações em ${time.days} dias, ${time.hours} horas, ${time.minutes} minutos e ${time.seconds} segundos`}
       path="/voting/countdown"
     >
       <div className="min-w-screen flex min-h-[calc(100vh_-_4rem)] flex-col items-center justify-center bg-gray-900 px-5 py-5">
         <div className="text-gray-900">
           <h1 className="mb-5 text-center text-3xl font-extralight text-white">
-            {t("voting.countdown.heading")}
+            {t("countdown.heading")}
           </h1>
           <div className="flex w-full flex-wrap items-center justify-center text-center text-6xl max-sm:gap-2">
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
@@ -60,7 +60,7 @@ const Countdown: NextPage = () => {
                 {time.days}
               </span>
               <span className="font-mono text-sm uppercase leading-none">
-                {t("voting.countdown.days")}
+                {t("countdown.days")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
@@ -68,7 +68,7 @@ const Countdown: NextPage = () => {
                 {time.hours}
               </span>
               <span className="font-mono text-sm uppercase leading-none">
-                {t("voting.countdown.hours")}
+                {t("countdown.hours")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
@@ -76,7 +76,7 @@ const Countdown: NextPage = () => {
                 {time.minutes}
               </span>
               <span className="font-mono text-sm uppercase leading-none">
-                {t("voting.countdown.minutes")}
+                {t("countdown.minutes")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
@@ -84,7 +84,7 @@ const Countdown: NextPage = () => {
                 {time.seconds}
               </span>
               <span className="font-mono text-sm uppercase leading-none">
-                {t("voting.countdown.seconds")}
+                {t("countdown.seconds")}
               </span>
             </div>
           </div>
