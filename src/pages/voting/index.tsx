@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useEffect, useMemo, useState } from "react";
 import type { TProject } from "../../@types/TProject";
-import { NormalizeTextToSearch } from "../../components/helpers/normalize-text-to-search";
+import { NormalizeTextToSearch } from "../../helpers/normalize-text-to-search";
 import { Default } from "../../components/layouts/Default";
 import { Header } from "../../components/sections/voting/Header";
 import { VotingGallery } from "../../components/sections/voting/VotingGallery";
