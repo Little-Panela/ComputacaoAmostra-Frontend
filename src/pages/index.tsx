@@ -8,12 +8,14 @@ import { Hero } from "../components/sections/home/Hero";
 import { Cards } from "../components/sections/home/Cards";
 import { About } from "../components/sections/home/About";
 // import { Winners } from "../components/sections/home/Winners";
+import { Program } from "../components/sections/home/Program";
 import { Logos } from "../components/sections/home/Logos";
 
 const Home: NextPage = () => {
   return (
     <Default>
       <Header />
+      <Program />
       <Hero />
       <Cards />
       <About />

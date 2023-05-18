@@ -7,7 +7,12 @@ module.exports = {
         sans: "Inter, sans-serif",
         mono: "Roboto Mono, monospace",
       },
-
+      colors: {
+        "pallete": {
+          "primary": "#05E1FE",
+          "secondary": "#01E5FB",
+        }
+      },
       keyframes: {
         // Toast
         "toast-hide": {

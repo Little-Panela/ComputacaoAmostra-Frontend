@@ -23,7 +23,18 @@
     "about": "Além de fomentar soluções tecnológicas e empreendedoras, o evento promove o inter-relacionamento entre os alunos e empresas de tecnologia do mercado, favorecendo o cenário de trocas de experiências de mercado, soluções acadêmicas e o fortalecimento do networking.  O evento ocorrerá de 29 a 31 de abril, 1 e 2 de junho de 2023, manhã e tarde, dando destaque para a feira de exposição das soluções desenvolvidas pelos alunos nos dias 1 e 2 de junho. A edição é uma excelente oportunidade para os participantes satisfazerem sua curiosidade e explorarem diversas áreas da computação. É um espaço para troca de conhecimento, networking e inspiração.  Através de workshops práticos e apresentações de especialistas, os participantes têm a chance de mergulhar nesse mundo e descobrir como podem contribuir para a transformação digital.",
     "realization": "Realização",
     "partnership": "Parceria",
-    "sponsorship": "Patrocínio"
+    "sponsorship": "Patrocínio",
+    "program": {
+      "title": "O Programa",
+      "description1": "O ",
+      "description2": "Amazon Hacking ",
+      "description3": " é um programa de formação para alunos dos cursos de Ciência da Computação e Engenharia da Computação do CESUPA, que visa conectar empresas comprometidas com a sustentabilidade amazônica; a comunidade local e todo o seu conhecimento tradicional; e o conhecimento científico e tecnológico para o desenvolvimento bioeconômico da região.",
+      "cards": {
+        "workshop": "Workshops",
+        "lecture": "Palestras",
+        "fair": "Feira de Projetos"
+      }
+    }
   },
   "voting": {
     "title": "Votação",

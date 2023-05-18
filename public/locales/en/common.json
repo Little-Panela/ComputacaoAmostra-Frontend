@@ -23,7 +23,18 @@
     "about": "In addition to promoting technological and entrepreneurial solutions, the event fosters interaction between students and technology companies in the market, favoring a scenario of exchanging market experiences, academic solutions, and strengthening networking. The event will take place from April 29 to June 2, 2023, in the morning and afternoon, with emphasis on the exhibition fair of solutions developed by students on June 1 and 2. This edition is an excellent opportunity for participants to satisfy their curiosity and explore various areas of computing. It is a space for knowledge exchange, networking, and inspiration. Through practical workshops and expert presentations, participants have the chance to dive into this world and discover how they can contribute to digital transformation.",
     "realization": "Realization",
     "partnership": "Partnership",
-    "sponsorship": "Sponsorship"
+    "sponsorship": "Sponsorship",
+    "program": {
+      "title": "The Program",
+      "description1": "The ",
+      "description2": "Amazon Hacking ",
+      "description3": "is an educational program for students of Computer Science and Computer Engineering courses at CESUPA. It aims to connect companies committed to Amazonian sustainability, the local community with its traditional knowledge, and scientific and technological knowledge for the bioeconomic development of the region.",
+      "cards": {
+        "workshop": "Workshops",
+        "lecture": "Lectures",
+        "fair": "Projects Fair"
+      }
+    }
   },
   "voting": {
     "title": "Voting",
