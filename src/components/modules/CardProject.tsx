@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
-import { NormalizeTextToSlug } from "../helpers/normalize-text-to-slug";
+import { NormalizeTextToSlug } from "../../helpers/normalize-text-to-slug";
 
 import { ModalProject } from "./ModalProject";
 import { Text } from "../elements/Text";

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Program />
       <Hero />
       <Cards />
-      <About />
+      <About /> 
       {/* <Winners /> */}
       <Logos />
     </Default>

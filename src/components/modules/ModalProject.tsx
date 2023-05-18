@@ -225,16 +225,8 @@ export function ModalProject({
               <div>{t("voting.modal.signMensage")}</div>
               <Button
                 onClick={() => signIn("google")}
-                disabled={isLoadingVoting}
-                className={
-                  isLoadingVoting
-                    ? "cursor-wait items-center justify-center bg-green-300 hover:bg-green-300"
-                    : "cursor-pointer"
-                }
               >
-                {isLoadingVoting
-                  ? t("voting.modal.loading")
-                  : t("voting.modal.vote")}
+                {t("voting.modal.signIn")}
               </Button>
             </div>
           )}
