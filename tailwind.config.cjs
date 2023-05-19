@@ -11,6 +11,7 @@ module.exports = {
         "pallete": {
           "primary": "#05E1FE",
           "secondary": "#01E5FB",
+          "primary__dark": "#00A2B8",
         }
       },
       keyframes: {
@@ -39,6 +40,10 @@ module.exports = {
             transform: `translateY(calc(100% + 1rem))`,
           },
         },
+        "card-show": {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        }
       },
       animation: {
         // Toast
@@ -49,6 +54,7 @@ module.exports = {
           "toast-slide-in-bottom 150ms cubic-bezier(0.16, 1, 0.3, 1)",
         "toast-swipe-out-x": "toast-swipe-out-x 100ms ease-out forwards",
         "toast-swipe-out-y": "toast-swipe-out-y 100ms ease-out forwards",
+        "card-show": "card-show .7s linear forwards",
       },
 
       gridTemplateColumns: {
