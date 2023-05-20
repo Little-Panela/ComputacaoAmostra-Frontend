@@ -274,7 +274,7 @@ function NavButton({ children, ...props }: NavButtonProps) {
   return (
     <button
       {...props}
-      className="rounded border border-green-400 px-3 py-1 text-green-400"
+      className="rounded border border-green-400 px-3 py-1 text-green-400 hover:bg-green-800 hover:text-gray-100"
     >
       {children}
     </button>

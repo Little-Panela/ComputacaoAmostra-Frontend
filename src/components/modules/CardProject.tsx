@@ -25,9 +25,9 @@ const LogoCard = ({ teamName }: NormalCardProps) => {
 
   return (
     <div className="flex justify-center items-center bg-pallete-primary-dark w-24 h-24 sm:w-40 sm:h-40 rounded-full group-hover:w-16 group-hover:h-16 group-hover:sm:w-28 group-hover:sm:h-28">
-      <p className='drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
+      <Text className='drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
         {getFirstLetter(teamName)}
-      </p>
+      </Text>
     </div>
   )
 }
@@ -64,9 +64,9 @@ export function CardProject({
           <Heading className='break-all text-white text-xl sm:text-2xl'>
             {name}
           </Heading>
-          <p className='text-xs sm:text-sm font-bold flex-1 overflow-y-hidden text-white'>
+          <Text className='text-xs sm:text-sm font-bold flex-1 overflow-y-hidden text-white'>
             {truncate(description, 120)}
-          </p>
+          </Text>
           <ModalProject
             id={id}
             name={name}
@@ -78,12 +78,13 @@ export function CardProject({
             videoId={links.youtube[locale]}
             course={course}
             trigger={
+              // TODO: Verificar
               <Button className='text-white bg-transparent block w-full border-[1px] py-3 rounded-2xl border-pallete-primary text-sm font-bold'>
                 <Link
                   href={`/voting?course=${course}`}
                   as={`/project/${nameForSlug}`}
                   scroll={false}
-                  className="cursor-default"
+                  className="cursor-pointer"
                 >
                   {t("voting.gallery.card.details")}
                 </Link>

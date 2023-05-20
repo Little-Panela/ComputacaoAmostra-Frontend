@@ -6,12 +6,14 @@ module.exports = {
       fontFamily: {
         sans: "Inter, sans-serif",
         mono: "Roboto Mono, monospace",
+        montserrat: "var(--font-montserrat)"
       },
       colors: {
         "pallete": {
           "primary": "#01E5FB",
           "primary-light": "#05E1FE",
           "primary-dark": "#00A2B8",
+          "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
           "secondary": "#0F861C",
         }
