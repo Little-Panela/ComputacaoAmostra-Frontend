@@ -18,6 +18,7 @@ export type TProject = {
     banner?: string;
   }
   course: CourseEnum;
+  logoUrl?: string
 };
 
 export enum CourseEnum {
