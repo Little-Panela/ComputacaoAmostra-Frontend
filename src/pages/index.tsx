@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import nextI18nConfig from "../../next-i18next.config.mjs";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import { Default }  from "../components/layouts/Default";
+import { Default } from "../components/layouts/Default";
 import { Header } from "../components/sections/home/Header";
 import { Hero } from "../components/sections/home/Hero";
 import { Cards } from "../components/sections/home/Cards";
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Program />
       <Hero />
       <Cards />
-      <About /> 
+      <About />
       {/* <Winners /> */}
       <Logos />
     </Default>

@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import { Heading } from "../../elements/Heading";
 import { TextInput } from "../../elements/TextInput";
 import { SwitchCourse } from "../../modules/SwitchCourse";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface HeaderProps {
   course: "bcc" | "ecomp";
@@ -32,13 +33,7 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
             onChange={handleInputChange}
           />
           <TextInput.Icon>
-            <img
-              src="/static/icons/search.svg"
-              alt={
-                t("voting.header.searchPlaceholder") ??
-                "Pesquisar por nome do projeto"
-              }
-            />
+            <MagnifyingGlassIcon/>
           </TextInput.Icon>
         </TextInput.Root>
       </div>
