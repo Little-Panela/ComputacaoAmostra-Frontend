@@ -11,6 +11,7 @@ module.exports = {
         "pallete": {
           "primary": "#05E1FE",
           "secondary": "#01E5FB",
+          "background": "#000B1C",
         }
       },
       keyframes: {
@@ -54,6 +55,7 @@ module.exports = {
       gridTemplateColumns: {
         "project-cards": "repeat(auto-fill, minmax(330px, 1fr))",
         "voting-cards": "1fr 400px",
+        "program": "1fr minmax(0, 500px)",
       },
     },
   },

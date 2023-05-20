@@ -5,29 +5,28 @@ import { CardProgram } from "../../modules/CardProgram";
 import { MdOutlineClass } from 'react-icons/md'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 import { VscRocket } from 'react-icons/vsc'
-import Image from "next/image";
 
 export function Program() {
     const { t } = useTranslation("common");
 
     return (
-        <div className="grid grid-cols-2 grid-rows-2 justify-between items-center w-full pl-28 gap-y-10">
-            <div className="flex flex-col gap-14">
-                <Heading className="text-white border-b-4 border-pallete-secondary w-fit pb-3 box-border" size="2xl">
+        <div className="flex flex-col lg:grid lg:grid-cols-program lg:grid-rows-2 items-center px-8 lg:px-12 xl:px-36 xl:relative md:px-24 py-16 gap-14 lg:gap-0 xl:gap-y-8 lg:gap-x-12 xl:gap-x-24">
+            <div className="flex flex-col gap-11 items-center lg:items-start">  
+                <Heading className="border-b-4 border-pallete-secondary pb-4 w-fit" size="2xl">
                     {t("home.program.title")}
                 </Heading>
-                <Text size="md" className="text-white">
+                <p className="text-base text-center lg:text-left">
                     {t("home.program.description1")}
-                    <span className="text-pallete-primary">
+                    <b className="text-pallete-primary">
                         {t("home.program.description2")}
-                    </span>
+                    </b>
                     {t("home.program.description3")}
-                </Text>
+                </p>
             </div>
-            <div className="row-start-1 row-end-3 col-start-2 col-end-3 flex justify-end">
-                <Image src="/static/img/program-tropical-island.svg" height={400} width={500} alt="Tropical Island" />
+            <div className="flex justify-center w-full lg:row-span-2">
+                <img src="/static/img/program-tropical-island.svg" className="w-auto h-80 xl:w-[500px]" alt="Tropical Island" />
             </div>
-            <div className="flex gap-10">
+            <div className="flex flex-col sm:flex-row gap-10 mb-8">
                 <CardProgram title={t("home.program.cards.workshop")} icon={MdOutlineClass} />
                 <CardProgram title={t("home.program.cards.lecture")} icon={FaChalkboardTeacher} />
                 <CardProgram title={t("home.program.cards.fair")} icon={VscRocket} />
