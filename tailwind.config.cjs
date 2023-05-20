@@ -9,10 +9,11 @@ module.exports = {
       },
       colors: {
         "pallete": {
-          "primary": "#05E1FE",
-          "secondary": "#01E5FB",
-          "primary__dark": "#00A2B8",
-          "background": "#000B1C",
+          "primary": "#01E5FB",
+          "primary-light": "#05E1FE",
+          "primary-dark": "#00A2B8",
+          "background-blue": "#000B1C",
+          "secondary": "#0F861C",
         }
       },
       keyframes: {

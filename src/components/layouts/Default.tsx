@@ -41,7 +41,7 @@ export function Default({
           }),
         }}
       />
-      <div className="flex flex-col bg-pallete-background">
+      <div className="flex flex-col bg-pallete-background-blue">
         <Navbar />
         <main>{children}</main>
         <Footer />

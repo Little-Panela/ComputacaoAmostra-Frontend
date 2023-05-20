@@ -24,8 +24,8 @@ const LogoCard = ({ teamName }: NormalCardProps) => {
   const getFirstLetter = (word: string) => word[0]
 
   return (
-    <div className="flex justify-center items-center bg-pallete-primary w-40 h-40 rounded-full group-hover:w-28 group-hover:h-28">
-      <p className='drop-shadow-lg shadow-black text-8xl group-hover:text-6xl font-bold text-white'>
+    <div className="flex justify-center items-center bg-pallete-primary-dark w-24 h-24 sm:w-40 sm:h-40 rounded-full group-hover:w-16 group-hover:h-16 group-hover:sm:w-28 group-hover:sm:h-28">
+      <p className='drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
         {getFirstLetter(teamName)}
       </p>
     </div>
@@ -52,19 +52,19 @@ export function CardProject({
 
   return (
     <>
-      <div className='py-20 hover:py-8 px-8 bg-black rounded-lg border-pallete-secondary border-4 flex flex-col items-center relative group w-64 h-[430px] gap-10 hover:gap-6'>
+      <div className='group w-40 h-72 sm:w-64 sm:h-[430px] relative flex flex-col items-center py-10 sm:py-20 px-4 sm:px-8 bg-black rounded-lg border-pallete-primary border-4 gap-10 hover:gap-6 hover:py-4'>
         <div className='flex gap-10 group-hover:hidden animate-card-show flex-col items-center opacity-100 h-full w-full group-hover:opacity-0'>
-          {logoUrl ? <Image alt={name} src={logoUrl} className='w-44 h-44' /> : <LogoCard teamName={name} />}
-          <Heading size="lg" className='break-all text-white'>
+          {logoUrl ? <Image alt={name} src={logoUrl} className='w-24 h-24 sm:w-40 sm:h-40' /> : <LogoCard teamName={name} />}
+          <Heading className='break-all text-white text-xl sm:text-2xl'>
             {name}
           </Heading>
         </div>
-        <div className='hidden group-hover:flex flex-col gap-6 items-center animate-card-show h-full w-full'>
-          {logoUrl ? <Image alt={name} src={logoUrl} className='w-28 h-28' /> : <LogoCard teamName={name} />}
-          <Heading size="lg" className='break-all text-white'>
+        <div className='hidden group-hover:flex flex-col gap-3 sm:gap-6 items-center animate-card-show h-full w-full'>
+          {logoUrl ? <Image alt={name} src={logoUrl} className='w-16 h-16 sm:w-28 sm:h-28' /> : <LogoCard teamName={name} />}
+          <Heading className='break-all text-white text-xl sm:text-2xl'>
             {name}
           </Heading>
-          <p className='text-sm font-bold flex-1 overflow-y-hidden text-white'>
+          <p className='text-xs sm:text-sm font-bold flex-1 overflow-y-hidden text-white'>
             {truncate(description, 120)}
           </p>
           <ModalProject
