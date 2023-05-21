@@ -38,7 +38,7 @@ export function Cards () {
   return (
     <section className="mx-auto mb-10 mt-10 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-16">
       <Heading className="flex border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
-        Curiosidades
+        {t("home.titles.curiosity")}
       </Heading>
       <div className="flex flex-col items-center justify-around gap-6 lg:flex-row lg:items-start">
         <Card

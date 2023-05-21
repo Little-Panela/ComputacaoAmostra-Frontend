@@ -8,10 +8,10 @@
   "home": {
     "titles": {
       "mmib": "MMIB",
-        "comp": "Somos destaque!",
-  
+      "comp": "Somos destaque!",
       "university": "CESUPA & STHEM",
-      "about": "Sobre"
+      "about": "Sobre",
+      "curiosity": "Curiosidades"
     },
     "header": {
       "date1": "27 de ",
