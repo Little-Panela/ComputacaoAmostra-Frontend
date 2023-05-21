@@ -13,19 +13,26 @@
       "about": "About"
     },
     "header": {
-      "title": "Entrepreneurs of the Amazon",
-      "description": "Building Sustainable and Creative Technologies for the Women's Movement of the Islands of Belém (MMIB)",
-      "about": "Amazon Hacking is an initiative of CESUPA that brings together Computer Science and Computer Engineering courses in order to stimulate students to develop innovative, creative, and technological solutions, implementing a new way of thinking and doing business in Pará. This year, the theme of the biggest technology event in the North will be 'Technology Solutions for the Women's Movement of the Islands of Belém - MMIB.' In this way, the university students have developed sustainable projects for Cotijuba Island and its community, partnering with MMIB, a non-profit organization that seeks to establish autonomy and civic knowledge."
-    }, 
+      "date1": "May ",
+      "date2": "27th to ",
+      "date3": "June ",
+      "date4": "3rd ",
+      "description": "Entrepreneurs of the Amazon: Building Sustainable and Creative Technologies for the Women's Movement in the Islands of Belém do Pará - Brazil",
+      "button": "Learn More"
+    },
     "curiosity": {
       "mmib": "MMIB promotes ecotourism on Cotijuba Island and carries out projects that serve the entire community, from the young to the elderly, in addition to fostering teamwork, female empowerment, and bio-entrepreneurship.",
       "compamostra": "Computação Amostra, the largest technology event of Cesupa Institution, is recognized by ABSTARTUPS and GOOGLE for STARTUPS as a prominent event in the entrepreneurial culture of the North.",
       "sthem": "Cesupa aims to implement an entrepreneurial and innovative culture in the daily lives of university students. The STHEM Consortium is a major partner of CESUPA in training teachers in active methodologies, and since the partnership, there has been a strengthening of game-based learning, with the creation of Hackathons and innovation marathons, as well as Project-Based Learning (PBL)."
     },
-    "about": "In addition to promoting technological and entrepreneurial solutions, the event fosters interaction between students and technology companies in the market, favoring a scenario of exchanging market experiences, academic solutions, and strengthening networking. The event will take place from April 29 to June 2, 2023, in the morning and afternoon, with emphasis on the exhibition fair of solutions developed by students on June 1 and 2. This edition is an excellent opportunity for participants to satisfy their curiosity and explore various areas of computing. It is a space for knowledge exchange, networking, and inspiration. Through practical workshops and expert presentations, participants have the chance to dive into this world and discover how they can contribute to digital transformation.",
-    "realization": "Realization",
-    "partnership": "Partnership",
-    "sponsorship": "Sponsorship",
+    "about": {
+      "about1": "Our ",
+      "about2": "Objectives",
+      "objective1": "Promote technological and entrepreneurial solutions in the Amazon.",
+      "objective2": "Strengthening the innovation ecosystem and networking.",
+      "objective3": "Interrelationship between students and technology companies in the market.",
+      "objective4": "Creating immersive experiences in islands and communities for students."
+    },
     "program": {
       "title": "The Program",
       "description1": "The ",
@@ -34,7 +41,7 @@
       "cards": {
         "workshop": "Workshops",
         "lecture": "Lectures",
-        "fair": "Projects Fair"
+        "fair": "Project Exhibition"
       }
     }
   },

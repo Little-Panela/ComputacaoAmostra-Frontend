@@ -15,21 +15,21 @@ export function Program() {
                 <Heading className="border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
                     {t("home.program.title")}
                 </Heading>
-                <p className="text-base text-center lg:text-left">
+                <Text className="text-base text-center lg:text-left">
                     {t("home.program.description1")}
                     <b className="text-pallete-primary">
                         {t("home.program.description2")}
                     </b>
                     {t("home.program.description3")}
-                </p>
+                </Text>
             </div>
             <div className="flex justify-center w-full lg:row-span-2">
                 <img src="/static/img/program-tropical-island.svg" className="w-auto h-80 xl:w-[500px]" alt="Tropical Island" />
             </div>
             <div className="flex flex-col sm:flex-row gap-10 mb-8">
-                <CardProgram title={t("home.program.cards.workshop")} icon={MdOutlineClass} />
-                <CardProgram title={t("home.program.cards.lecture")} icon={FaChalkboardTeacher} />
-                <CardProgram title={t("home.program.cards.fair")} icon={VscRocket} />
+                <CardProgram title={String(t("home.program.cards.workshop"))} icon={MdOutlineClass} />
+                <CardProgram title={String(t("home.program.cards.lecture"))} icon={FaChalkboardTeacher} />
+                <CardProgram title={String(t("home.program.cards.fair"))} icon={VscRocket} />
             </div>
         </div>
     )

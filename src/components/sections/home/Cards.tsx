@@ -19,7 +19,7 @@ function Card ({ title, children, exclamation }: CardProps) {
   return (
     <div className="bg-gradient-to-tl from-transparent to-pallete-gradient-top h-[472px] text-xs flex max-w-xs flex-col gap-2 rounded-md border-pallete-primary-light border-2 p-4 shadow-md">
       <div className="flex flex-col items-center gap-4">
-        <span className="h-[76px] w-[76px] rounded-full borde-2 pt-5 border-white flex justify-center items-center">
+        <span className="h-[76px] w-[76px] rounded-full border-2 pt-5 border-white flex justify-center items-center">
           <CardProgram icon={FaUniversity} />
         </span>
         <div className="flex flex-row">
