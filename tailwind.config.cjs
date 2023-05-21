@@ -6,19 +6,20 @@ module.exports = {
       fontFamily: {
         sans: "Inter, sans-serif",
         mono: "Roboto Mono, monospace",
-        montserrat: "var(--font-montserrat)"
+        montserrat: "var(--font-montserrat)",
       },
       colors: {
-        "pallete": {
+        pallete: {
           "primary": "#01E5FB",
           "primary-light": "#05E1FE",
           "primary-dark": "#00A2B8",
           "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
+          "gradient-top": "#05ffff20",
           "secondary": "#0F861C",
           "menu-item-start": "#00384F",
           "menu-item-end": "#000B1C",
-          "menu-item-selected-end": "#01384E"
+          "menu-item-selected-end": "#01384E",
         },
       },
       keyframes: {
@@ -50,7 +51,7 @@ module.exports = {
         "card-show": {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
-        }
+        },
       },
       animation: {
         // Toast
@@ -67,15 +68,17 @@ module.exports = {
         "project-cards": "repeat(auto-fill, minmax(0, 160px))",
         "project-cards-md": "repeat(auto-fit, minmax(256px, 1fr))",
         "voting-cards": "1fr 400px",
-        "program": "1fr minmax(0, 500px)",
+        program: "1fr minmax(0, 500px)",
       },
       backgroundImage: {
-        "about-linear": "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
-        "about-linear-md": "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
+        "about-linear":
+          "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
+        "about-linear-md":
+          "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
         "main-linear": "linear-gradient(180deg, rgba(0,11,28,0.8) 0%, rgba(0,11,28,0.5) 12%, rgba(0,11,28,0) 29%, rgba(0,11,28,0) 62%, rgba(0,11,28,0.8) 90%, rgba(0,11,28,1) 100%), url('/static/img/main-background.png')",
-        'dots-1': "url('/static/img/dots_technology_green_top.png')",
-        'dots-2': "url('/static/img/dots_technology_green_bottom.png')"
-      }
+        "dots-1": "url('/static/img/dots_technology_green_top.png')",
+        "dots-2": "url('/static/img/dots_technology_green_bottom.png')",
+      },
     },
   },
   plugins: [require("tailwindcss-radix")],
