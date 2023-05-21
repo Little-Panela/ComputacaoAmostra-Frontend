@@ -67,9 +67,7 @@ export function Navbar() {
   const isVotingPage = router.pathname.startsWith(`/voting`);
 
   const isUserLoggedIn = session !== null;
-  // const isUserLoggedIn = true;
   const user = session?.user;
-  // const user = { name: "Usuário", image: "/static/img/empty-avatar.jpg", email: "marcopierozan20@gmail.com" };
   const isVotingStarted =
     new Date().getTime() >
     new Date(env.NEXT_PUBLIC_VOTING_START_DATE).getTime();
