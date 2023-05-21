@@ -11,10 +11,13 @@
       "curiosity": "Curiosity"
     },
     "header": {
-      "title": "Entrepreneurs of the Amazon",
-      "description": "Building Sustainable and Creative Technologies for the Women's Movement of the Islands of Belém (MMIB)",
-      "about": "Amazon Hacking is an initiative of CESUPA that brings together Computer Science and Computer Engineering courses in order to stimulate students to develop innovative, creative, and technological solutions, implementing a new way of thinking and doing business in Pará. This year, the theme of the biggest technology event in the North will be 'Technology Solutions for the Women's Movement of the Islands of Belém - MMIB.' In this way, the university students have developed sustainable projects for Cotijuba Island and its community, partnering with MMIB, a non-profit organization that seeks to establish autonomy and civic knowledge."
-    }, 
+      "date1": "May ",
+      "date2": "27th to ",
+      "date3": "June ",
+      "date4": "3rd ",
+      "description": "Entrepreneurs of the Amazon: Building Sustainable and Creative Technologies for the Women's Movement in the Islands of Belém do Pará - Brazil",
+      "button": "Learn More"
+    },
     "curiosity": {
       "mmib": "MMIB promotes ecotourism on Cotijuba Island and carries out projects that serve the entire community, from the young to the elderly, in addition to fostering teamwork, female empowerment, and bio-entrepreneurship.",
       "compamostra": "Computação Amostra, the largest technology event of Cesupa Institution, is recognized by ABSTARTUPS and GOOGLE for STARTUPS as a prominent event in the entrepreneurial culture of the North.",

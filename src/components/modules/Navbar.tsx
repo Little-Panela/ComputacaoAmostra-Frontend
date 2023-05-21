@@ -97,7 +97,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="z-[10]">
+    <nav className="z-[10] w-full absolute">
       <div className="flex h-40 items-center justify-between bg-transparent p-7">
         <Link href="/">
           <div className="flex flex-shrink-0 items-center gap-2 text-white">

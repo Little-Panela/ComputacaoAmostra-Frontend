@@ -72,6 +72,7 @@ module.exports = {
       backgroundImage: {
         "about-linear": "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
         "about-linear-md": "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
+        "main-linear": "linear-gradient(180deg, rgba(0,11,28,0.8) 0%, rgba(0,11,28,0.5) 12%, rgba(0,11,28,0) 29%, rgba(0,11,28,0) 62%, rgba(0,11,28,0.8) 90%, rgba(0,11,28,1) 100%), url('/static/img/main-background.png')",
         'dots-1': "url('/static/img/dots_technology_green_top.png')",
         'dots-2': "url('/static/img/dots_technology_green_bottom.png')"
       }

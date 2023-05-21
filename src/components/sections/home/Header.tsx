@@ -1,32 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Heading } from "../../elements/Heading";
+import { Text } from "../../elements/Text";
+import { Button } from "../../elements/Button";
+import { UseTranslation, useTranslation } from "next-i18next";
 
 export function Header() {
+  const { t } = useTranslation("common")
+
   return (
-    <header className="mx-auto bg-[url('/static/img/passeio-cotijuba.webp')] bg-cover bg-center bg-no-repeat py-32">
-      <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center">
-          <Heading size="2xl" className="text-white md:text-6xl">
-            <span>Amazon</span> Hacking
-          </Heading>
-          <div className="flex items-center justify-center gap-6">
-            <img
-              src="/static/icons/wavy-bars.svg"
-              alt="barras"
-              className="w-20 md:w-32"
-            />
-            <Heading size="2xl" className="text-white md:text-4xl">
-              2023
-            </Heading>
-            <img
-              src="/static/icons/wavy-bars.svg"
-              alt="barras"
-              className="w-20 md:w-32"
-            />
-          </div>
-        </div>
+    <header className="bg-main-linear flex flex-col px-12 justify-center items-center bg-cover bg-center bg-no-repeat h-screen py-40">
+      <div className="flex flex-col gap-4 items-center mb-16">
+        <img src="/static/img/logo-amazon.png" alt="Logo Amazon Hacking" />
+        <Heading className="text-center text-lg md:text-2xl">
+          {t("home.header.date1").toUpperCase()}
+          <b className="text-pallete-primary">
+            {t("home.header.date2").toUpperCase()}
+          </b>
+          {t("home.header.date3").toUpperCase()}
+          <b className="text-pallete-primary">
+            {t("home.header.date4").toUpperCase()}
+          </b>
+        </Heading>
       </div>
+      <Text className="mb-16 text-sm text-gray-300 text-center md:w-3/4 md:text-lg xl:w-3/5">
+        {`"${t("home.header.description")}"`}
+      </Text>
+      <Button>
+        {t("home.header.button")}
+      </Button>
     </header>
   );
 }

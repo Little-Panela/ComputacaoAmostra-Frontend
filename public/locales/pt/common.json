@@ -11,9 +11,12 @@
       "curiosity": "Curiosidade"
     },
     "header": {
-      "title": "Empreendedoras da Amazônia",
-      "description": "Construindo Tecnologias Sustentáveis e Criativas para o Movimento de Mulheres das Ilhas de Belém (MMIB)",
-      "about": "Amazon Hacking é uma iniciativa do CESUPA que une os cursos de Ciência da Computação e Engenharia da Computação, a fim de estimular os alunos a desenvolverem soluções tecnológicas,  inovadoras e criativas, implementando no Pará uma nova forma de pensar e fazer economia. Nesse ano, o tema do maior evento tecnológico do norte será: 'Soluções de tecnologia para o Movimento das Mulheres das Ilhas de Belém - MMIB'. Dessa forma, os universitários elaboraram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB, uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão."
+      "date1": "27 de ",
+      "date2": "Maio ",
+      "date3": "à 03 de ",
+      "date4": "Junho",
+      "description": "Empreendedoras da Amazônia: Construindo Tecnologias Sustentáveis e Criativas para o Movimento de Mulheres das Ilhas de Belém.",
+      "button": "Saiba Mais"  
     }, 
     "curiosity": {
       "mmib": "O MMIB estimula o ecoturismo na Ilha de Cotijuba e realiza projetos que atendem toda a comunidade, desde os jovens até os mais velhos, além de fomentar o trabalho em conjunto e empoderamento feminino e o bioempreendedorismo.",
