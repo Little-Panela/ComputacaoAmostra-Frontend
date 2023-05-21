@@ -71,7 +71,7 @@ export function Modal({
                 "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
                 "flex flex-col gap-9 max-sm:gap-2",
                 "bg-white text-gray-950 shadow-lg shadow-black/25 ",
-                "focus:outline-none"
+                "focus:outline-none",
               )}
             >
               {title && (

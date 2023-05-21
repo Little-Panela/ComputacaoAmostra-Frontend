@@ -12,7 +12,7 @@ export function Program() {
     return (
         <div className="flex flex-col lg:grid lg:grid-cols-program lg:grid-rows-2 items-center px-8 lg:px-12 xl:px-36 xl:relative md:px-24 py-16 gap-14 lg:gap-0 xl:gap-y-8 lg:gap-x-12 xl:gap-x-24">
             <div className="flex flex-col gap-11 items-center lg:items-start">  
-                <Heading className="border-b-4 border-pallete-secondary pb-4 w-fit" size="2xl">
+                <Heading className="border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
                     {t("home.program.title")}
                 </Heading>
                 <p className="text-base text-center lg:text-left">

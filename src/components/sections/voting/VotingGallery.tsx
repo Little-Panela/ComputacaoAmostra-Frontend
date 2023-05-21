@@ -33,7 +33,6 @@ export function VotingGallery({
           {t("voting.gallery.subheading")}
         </Text>
       </div>
-
       {!isLoading ? (
         projects && projects.length > 0 ? (
           <div className="grid w-full grid-cols-project-cards gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">

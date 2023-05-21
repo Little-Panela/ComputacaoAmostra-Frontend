@@ -126,7 +126,7 @@ export function ModalProject({
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "light"
       });
     } catch (error) {
       toast.error(t("voting.modal.alertMessages.error"), {
