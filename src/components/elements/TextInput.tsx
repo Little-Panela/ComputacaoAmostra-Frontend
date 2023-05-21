@@ -31,12 +31,15 @@ TextInputIcon.displayName = 'TextInput.Icon'
 
 export type TextInputInputProps = InputHTMLAttributes<HTMLInputElement>
 
-function TextInputInput(props: TextInputInputProps) {
+function TextInputInput({placeholder, ...props}: TextInputInputProps) {
   return (
-    <input
-      className="bg-transparent flex-1 items-center text-white font-montserrat text-sm placeholder:text-zinc-500 outline-none"
-      {...props}
-    />
+    <div className='flex relative w-full group'>
+      <label className='z-[1] bottom-0 text-zinc-500 text-sm absolute font-montserrat group-focus-within:bottom-6 group-focus-within:block group-focus-within:text-pallete-primary transition-all duration-700'>{placeholder}</label>
+      <input
+        className="z-[10] bg-transparent flex-1 items-center text-white font-montserrat text-sm outline-none"
+        {...props}
+      />
+    </div>
   )
 }
 

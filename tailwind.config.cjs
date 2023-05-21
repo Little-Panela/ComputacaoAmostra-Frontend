@@ -16,7 +16,10 @@ module.exports = {
           "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
           "secondary": "#0F861C",
-        }
+          "menu-item-start": "#00384F",
+          "menu-item-end": "#000B1C",
+          "menu-item-selected-end": "#01384E"
+        },
       },
       keyframes: {
         // Toast
@@ -68,7 +71,9 @@ module.exports = {
       },
       backgroundImage: {
         "about-linear": "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
-        "about-linear-md": "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')"
+        "about-linear-md": "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
+        'dots-1': "url('/static/img/dots_technology_green_top.png')",
+        'dots-2': "url('/static/img/dots_technology_green_bottom.png')"
       }
     },
   },
