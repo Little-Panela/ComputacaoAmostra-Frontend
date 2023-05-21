@@ -9,7 +9,7 @@ export interface HeadingProps {
   className?: string;
 }
 
-export function Heading({
+export function Heading ({
   size = "md",
   children,
   asChild,
