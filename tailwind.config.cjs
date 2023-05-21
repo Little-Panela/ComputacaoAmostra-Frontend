@@ -15,7 +15,7 @@ module.exports = {
           "primary-dark": "#00A2B8",
           "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
-          "gradient-top": "#05ffff20",
+          "gradient-top": "#05ffff10",
           secondary: "#0F861C",
           "menu-item-start": "#00384F",
           "menu-item-end": "#000B1C",
