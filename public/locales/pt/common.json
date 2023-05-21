@@ -8,24 +8,53 @@
   "home": {
     "titles": {
       "mmib": "MMIB",
-      "compamostra": "Computação Amostra",
-      "university": "CESUPA",
-      "about": "Sobre"
+      "comp": "Somos destaque!",
+      "university": "CESUPA & STHEM",
+      "about": "Sobre",
+      "curiosity": "Curiosidades"
     },
     "header": {
-      "title": "Empreendedoras da Amazônia",
-      "description": "Construindo Tecnologias Sustentáveis e Criativas para o Movimento de Mulheres das Ilhas de Belém (MMIB)",
-      "about": "Amazon Hacking é uma iniciativa do CESUPA que une os cursos de Ciência da Computação e Engenharia da Computação, a fim de estimular os alunos a desenvolverem soluções tecnológicas,  inovadoras e criativas, implementando no Pará uma nova forma de pensar e fazer economia. Nesse ano, o tema do maior evento tecnológico do norte será: 'Soluções de tecnologia para o Movimento das Mulheres das Ilhas de Belém - MMIB'. Dessa forma, os universitários elaboraram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB, uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão."
-    }, 
-    "curiosity": {
-      "mmib": "O MMIB estimula o ecoturismo na Ilha de Cotijuba e realiza projetos que atendem toda a comunidade, desde os jovens até os mais velhos, além de fomentar o trabalho em conjunto e empoderamento feminino e o bioempreendedorismo.",
-      "compamostra": "A Computação Amostra, o maior evento de tecnologia da Instituição Cesupa, é reconhecido pela ABSTARTUPS e GOOGLE for STARTUPS como sendo um evento de destaque da cultura empreendedora do Norte.",
-      "sthem": "O Cesupa busca implementar a cultura empreendedora e inovadora no cotiadiano do universitário. O Consórcio STHEM é um grande parceiro do CESUPA na formação de professores em metodologias ativas, desde a parceria houve o fortalecimento do aprendizado baseado em jogos, com a criação dos Hackatons e as maratonas de inovação e o Project Based Learning (PBL)"
+      "date1": "27 de ",
+      "date2": "Maio ",
+      "date3": "à 03 de ",
+      "date4": "Junho",
+      "description": "Empreendedoras da Amazônia: Construindo Tecnologias Sustentáveis e Criativas para o Movimento de Mulheres das Ilhas de Belém.",
+      "button": "Saiba Mais"
     },
-    "about": "Além de fomentar soluções tecnológicas e empreendedoras, o evento promove o inter-relacionamento entre os alunos e empresas de tecnologia do mercado, favorecendo o cenário de trocas de experiências de mercado, soluções acadêmicas e o fortalecimento do networking.  O evento ocorrerá de 29 a 31 de abril, 1 e 2 de junho de 2023, manhã e tarde, dando destaque para a feira de exposição das soluções desenvolvidas pelos alunos nos dias 1 e 2 de junho. A edição é uma excelente oportunidade para os participantes satisfazerem sua curiosidade e explorarem diversas áreas da computação. É um espaço para troca de conhecimento, networking e inspiração.  Através de workshops práticos e apresentações de especialistas, os participantes têm a chance de mergulhar nesse mundo e descobrir como podem contribuir para a transformação digital.",
-    "realization": "Realização",
-    "partnership": "Parceria",
-    "sponsorship": "Patrocínio",
+    "curiosity": {
+      "mmibDescription": {
+        "description1": "O ",
+        "mmibBolder": "MMIB ",
+        "mmib": "estimula o ecoturismo na Ilha de Cotijuba e realiza projetos que atendem toda a comunidade, desde os jovens até os mais velhos, além de fomentar o trabalho em conjunto e empoderamento feminino e o bioempreendedorismo."
+      },
+      "compamostraDescription": {
+        "description1": "A ",
+        "compamostraBolder": "Computação Amostra, ",
+        "description2": "o maior evento de tecnologia do ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "é reconhecido pela ",
+        "ABSBolder": "ABSTARTUPS ",
+        "description4": "e ",
+        "googleBolder": "GOOGLE for STARTUPS ",
+        "description5": "como sendo um evento de destaque da cultura empreendedora do Norte."
+
+      },
+      "cesupaSthem": {
+        "description1": "O ",
+        "sthemBolder": "Consórcio STHEM ",
+        "description2": "é um grande parceiro do ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "na formação de professores em metodologias ativas, gerando fortalecimento do aprendizado baseado em jogos, com a criação dos Hackatons e as maratonas de inovação e o Project Based Learning (PBL)"
+      }
+    },
+    "about": {
+      "about1": "O que ",
+      "about2": "Buscamos?",
+      "objective1": "Fomentar soluções tecnólogicas e empreendedoras na região amazônica.",
+      "objective2": "Fortalecer o ecossistema de inovação e networking.",
+      "objective3": "Inter-relacionamento entre alunos e empresas de tecnologia do mercado.",
+      "objective4": "Criar experiências imersivas em ilhas e comunidades para os alunos."
+    },
     "program": {
       "title": "O Programa",
       "description1": "O ",

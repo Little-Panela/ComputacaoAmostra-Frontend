@@ -19,7 +19,7 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
   };
 
   return (
-    <header className="mt-5 flex flex-col items-center gap-20 md:mt-14 md:gap-10">
+    <header className="mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
       <div className="flex flex-col items-center w-10/12 xl:w-3/5 gap-10">
         <Heading className="text-2xl md:text-4xl w-10/12 text-center">
           {t("voting.header.projects")}
