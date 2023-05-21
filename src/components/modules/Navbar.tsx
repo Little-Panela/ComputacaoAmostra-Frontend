@@ -19,7 +19,7 @@ interface NavbarProps {
   children: ReactNode;
 }
 
-function NavBarItem(props: NavbarProps) {
+function NavBarItem (props: NavbarProps) {
   return (
     <button className="w-full" onClick={props.onClick}>
       <div
@@ -41,7 +41,7 @@ function NavBarItem(props: NavbarProps) {
   );
 }
 
-function AvatarButton(props: {
+function AvatarButton (props: {
   user?: { name?: string | null; image?: string | null };
 }) {
   return (
@@ -57,7 +57,7 @@ function AvatarButton(props: {
   );
 }
 
-export function Navbar() {
+export function Navbar () {
   const router = useRouter();
   const { data: session } = useSession();
   const { t } = useTranslation("common");
@@ -77,7 +77,7 @@ export function Navbar() {
   const linkToVoting = isVotingStarted
     ? `/voting?course=${randomCourse}`
     : "/voting/countdown";
-  function toggleMenu() {
+  function toggleMenu () {
     setIsMenuOpen((prev) => !prev);
   }
 
@@ -255,7 +255,7 @@ export function Navbar() {
                         </Popover.Content>
                       </Popover.Portal>
                     </Popover.Root>
-                    
+
                   </div>
                   {/* <div className="ml-3">
                     <div className="text-base font-medium text-white">

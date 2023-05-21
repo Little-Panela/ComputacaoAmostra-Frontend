@@ -7,8 +7,10 @@
   },
   "home": {
     "titles": {
-      "about": "Sobre",
-      "curiosity": "Curiosidade"
+      "mmib": "MMIB",
+      "compamostra": "Computação Amostra",
+      "university": "CESUPA",
+      "about": "Sobre"
     },
     "header": {
       "title": "Empreendedoras da Amazônia",

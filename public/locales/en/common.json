@@ -7,8 +7,10 @@
   },
   "home": {
     "titles": {
-      "about": "About",
-      "curiosity": "Curiosity"
+      "mmib": "MMIB",
+      "compamostra": "Computação Amostra",
+      "university": "CESUPA",
+      "about": "About"
     },
     "header": {
       "title": "Entrepreneurs of the Amazon",
