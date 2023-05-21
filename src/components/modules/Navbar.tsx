@@ -237,18 +237,18 @@ export function Navbar () {
                       </Popover.Trigger>
                       <Popover.Anchor />
                       <Popover.Portal>
-                        <Popover.Content sideOffset={5} alignOffset={10} align="end" sticky="always" hideWhenDetached >
+                        <Popover.Content sideOffset={15} align="end" sticky="always" hideWhenDetached >
                           <Popover.Arrow className="fill-pallete-primary-xdark" />
-                          <div className="flex flex-col items-end bg-pallete-background-blue border-2 border-pallete-primary-xdark p-2 shadow-md shadow-pallete-primary/20">
-                            <div className="flex flex-col justify-start">
-                              <div className="text-base font-medium text-white">
+                          <div className="flex px-[30px] py-[20px] gap-8 shadow-userPopover justify-between items-center bg-pallete-background-blue rounded-2xl border-2 border-pallete-primary-xdark">
+                            <div className="flex flex-col gap-2 justify-center">
+                              <div className="font-montserrat text-sm font-semibold text-white">
                                 {user?.name ?? "Usuário"}
                               </div>
-                              <div className="text-xs font-medium text-gray-500">
+                              <div className="text-xs font-montserrat font-normal text-gray-500">
                                 {user?.email ?? ""}
                               </div>
                             </div>
-                            <Button className="mt-4" onClick={() => signOut()}>
+                            <Button onClick={() => signOut()}>
                               {t("navbar.logout")}
                             </Button>
                           </div>

@@ -83,6 +83,9 @@ module.exports = {
         "dots-1": "url('/static/img/dots_technology_green_top.png')",
         "dots-2": "url('/static/img/dots_technology_green_bottom.png')",
       },
+      boxShadow: {
+        "userPopover": "0px 1px 10px rgba(5, 255, 254, 0.5)"
+      }
     },
   },
   plugins: [require("tailwindcss-radix")],
