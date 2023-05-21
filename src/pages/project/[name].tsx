@@ -14,7 +14,7 @@ import { useMutation } from "@tanstack/react-query";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import nextI18nConfig from "../../../next-i18next.config.mjs";
 import { useTranslation } from "next-i18next";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { Default } from "../../components/layouts/Default";
@@ -31,6 +31,7 @@ import type { postVoteType } from "../../services/post-vote";
 
 import type { TProject } from "../../@types/TProject";
 import { env } from "../../env.mjs";
+import ToastComponent from "../../components/elements/ToastComponent";
 
 interface ProjectPageProps {
   project: TProject;
@@ -240,7 +241,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                   ? t("voting.modal.loading")
                   : t("voting.modal.vote")}
               </Button>
-              <ToastContainer />
+              <ToastComponent />
             </div>
           ) : (
             <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
