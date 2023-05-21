@@ -16,7 +16,10 @@ module.exports = {
           "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
           "secondary": "#0F861C",
-        }
+          "menu-item-start": "#00384F",
+          "menu-item-end": "#000B1C",
+          "menu-item-selected-end": "#01384E"
+        },
       },
       keyframes: {
         // Toast
@@ -66,6 +69,11 @@ module.exports = {
         "voting-cards": "1fr 400px",
         "program": "1fr minmax(0, 500px)",
       },
+
+      backgroundImage: {
+        'dots-1': "url('/static/img/dots_technology_green_top.png')",
+        'dots-2': "url('/static/img/dots_technology_green_bottom.png')"
+      }
     },
   },
   plugins: [require("tailwindcss-radix")],

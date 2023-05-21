@@ -21,7 +21,7 @@ export function Button({
     <Comp
       className={clsx(
         {
-          "box-border w-fit flex gap-2 rounded-full border-2 border-pallete-primary px-7 py-3 font-montserrat text-sm font-bold text-white \
+          "box-border w-fit h-fit flex text-center justify-center items-center gap-2 rounded-full border-2 border-pallete-primary px-7 py-3 font-montserrat text-sm font-bold text-white \
 					transition-colors hover:border-pallete-primary-dark \
 					hover:bg-pallete-primary-dark active:border-pallete-primary-xdark \
 					active:bg-pallete-primary-xdark \

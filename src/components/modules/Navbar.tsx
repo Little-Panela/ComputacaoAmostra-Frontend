@@ -1,28 +1,75 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import type { HTMLAttributes, ReactNode } from "react";
-import { Fragment } from "react";
+import type { ReactNode } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import { useTranslation } from "next-i18next";
-
 import { env } from "../../env.mjs";
+import { Button } from "../elements/Button";
+import * as Popover from "@radix-ui/react-popover";
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+interface NavbarProps {
+  selected: boolean;
+  onClick: () => void;
+  children: ReactNode;
+}
+
+function NavBarItem(props: NavbarProps) {
+  return (
+    <button className="w-full" onClick={props.onClick}>
+      <div
+        className={clsx(
+          "flex w-full justify-start bg-gradient-to-r px-8 py-4",
+          {
+            "rounded-lg  from-pallete-menu-item-start to-pallete-menu-item-end             sm:items-center sm:justify-center sm:gap-0 sm:rounded-none sm:bg-none sm:px-0 sm:py-0":
+              !props.selected,
+          },
+          {
+            "rounded-none border-l-4 border-pallete-primary from-black from-[50.15%] to-pallete-menu-item-selected-end to-[127%]             sm:items-center sm:justify-center sm:gap-0 sm:rounded-none sm:border-b-2 sm:border-l-0 sm:bg-none sm:px-3 sm:py-5":
+              props.selected,
+          }
+        )}
+      >
+        {props.children}
+      </div>
+    </button>
+  );
+}
+
+function AvatarButton(props: {
+  user?: { name?: string | null; image?: string | null };
+}) {
+  return (
+    <div className="flex-shrink-0">
+      <Image
+        className="rounded-full"
+        height={40}
+        width={40}
+        src={props.user?.image ?? "/static/img/empty-avatar.jpg"}
+        alt={`${props.user?.name ?? "user"}} avatar`}
+      />
+    </div>
+  );
 }
 
 export function Navbar() {
   const router = useRouter();
   const { data: session } = useSession();
   const { t } = useTranslation("common");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isHomePage = router.pathname === "/";
+  const isVotingPage = router.pathname.startsWith(`/voting`);
 
   const isUserLoggedIn = session !== null;
+  // const isUserLoggedIn = true;
   const user = session?.user;
+  // const user = { name: "Usuário", image: "/static/img/empty-avatar.jpg", email: "marcopierozan20@gmail.com" };
   const isVotingStarted =
     new Date().getTime() >
     new Date(env.NEXT_PUBLIC_VOTING_START_DATE).getTime();
@@ -32,190 +79,96 @@ export function Navbar() {
   const linkToVoting = isVotingStarted
     ? `/voting?course=${randomCourse}`
     : "/voting/countdown";
-  const isHomePage = router.pathname === "/";
-  const isVotingPage = router.pathname.startsWith(`/voting`);
+  function toggleMenu() {
+    setIsMenuOpen((prev) => !prev);
+  }
+
+  const menuItens = [
+    {
+      name: t("navbar.home"),
+      href: "/",
+      selected: isHomePage,
+    },
+    {
+      name: t("navbar.voting"),
+      href: "/voting",
+      selected: isVotingPage,
+    },
+  ];
 
   return (
-    <Disclosure as="nav" className="bg-gray-900">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
-              <div className="flex items-center">
-                <Link href="/">
-                  <div className="flex flex-shrink-0 items-center gap-2 text-white">
-                    <Image
-                      className="block w-auto"
-                      height={8}
-                      width={8}
-                      src="/static/icons/logo.svg"
-                      alt="Computação amostra"
-                    />
-                    <h1 className="w-10 text-xs sm:text-sm">
-                      Computação Amostra
-                    </h1>
-                  </div>
-                </Link>
-                <div className="hidden sm:ml-6 sm:block"></div>
-              </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex items-center">
-                  <div className="flex space-x-4">
-                    {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <Link
-                      href="/"
-                      className={clsx(
-                        "rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
-                        {
-                          "bg-gray-900 text-white hover:bg-gray-900":
-                            isHomePage,
-                        }
-                      )}
-                    >
-                      {t("navbar.home")}
-                    </Link>
-                    {/* <a
-                      href="#"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Sobre
-                    </a> */}
-                    <Link
-                      href={linkToVoting}
-                      className={clsx(
-                        "rounded-md px-3 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
-                        {
-                          "bg-gray-900 text-white hover:bg-gray-900":
-                            isVotingPage,
-                        }
-                      )}
-                    >
-                      {t("navbar.voting")}
-                    </Link>
-                    {/* <a
-                      href="#"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
-                      Vencedores
-                    </a> */}
-                  </div>
-
-                  {/* Profile dropdown */}
-                  {isUserLoggedIn ? (
-                    <Menu as="div" className="relative ml-3">
-                      <div>
-                        <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                          <span className="sr-only">Open user menu</span>
-                          <Image
-                            className="rounded-full"
-                            height={40}
-                            width={40}
-                            src={user?.image ?? "/static/img/empty-avatar.jpg"}
-                            alt={`${user?.name ?? "user"}} avatar`}
-                          />
-                        </Menu.Button>
-                      </div>
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                                onClick={() => signOut()}
-                              >
-                                {t("navbar.logout")}
-                              </a>
-                            )}
-                          </Menu.Item>
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
-                  ) : isVotingEnd || !isVotingStarted ? (
-                    <div />
-                  ) : (
-                    <div className="mx-6">
-                      <NavButton onClick={() => signIn("google")}>
-                        Login
-                      </NavButton>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="-mr-2 flex gap-2 sm:hidden">
-                <NavButton onClick={() => router.push(linkToVoting)}>
-                  {t("navbar.voting").toUpperCase()}
-                </NavButton>
-
-                {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-            </div>
+    <nav className="z-[10]">
+      <div className="flex h-40 items-center justify-between bg-transparent p-7">
+        <Link href="/">
+          <div className="flex flex-shrink-0 items-center gap-2 text-white">
+            <Image
+              className="block w-auto"
+              height={8}
+              width={8}
+              src="/static/icons/logo.svg"
+              alt="Computação amostra"
+            />
+            <h1 className="w-fit text-xs sm:text-sm">Computação Amostra</h1>
           </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <Disclosure.Button
-                as="a"
-                href="/"
-                className={clsx(
-                  "block rounded-md px-3 py-2 text-base font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
-                  {
-                    "bg-gray-900 text-white hover:bg-gray-900": isHomePage,
-                  }
-                )}
-              >
-                {t("navbar.home")}
-              </Disclosure.Button>
-              {/* <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Sobre
-              </Disclosure.Button> */}
-              <Disclosure.Button
-                as="a"
-                href={linkToVoting}
-                className={clsx(
-                  "block rounded-md px-3 py-2 text-base font-medium text-gray-300 transition-colors hover:bg-gray-700 hover:text-white",
-                  {
-                    "bg-gray-900 text-white hover:bg-gray-900": isVotingPage,
-                  }
-                )}
-              >
-                {t("navbar.voting")}
-              </Disclosure.Button>
-              {/* <Disclosure.Button
-                as="a"
-                href="#"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Vencedores
-              </Disclosure.Button> */}
+        </Link>
+        {/* Mobile */}
+        <div className="flex sm:hidden">
+          {isUserLoggedIn ? (
+            <div className="pb-3 pt-4">
+              <div className="relative flex items-center justify-center px-5 text-center">
+                <AvatarButton user={{ name: user?.name, image: user?.image }} />
+              </div>
             </div>
+          ) : (
+            <div />
+          )}
+          <button onClick={toggleMenu}>
+            <Bars3Icon width={32} height={32} />
+          </button>
+        </div>
+        {/* Overlay */}
+        <div
+          className={clsx(
+            "fixed top-0 block h-[100dvh] w-[100vw] overflow-hidden bg-pallete-background-blue transition-all duration-700 sm:hidden",
+            { "right-[-150vw] opacity-0": !isMenuOpen },
+            { "right-0 opacity-100": isMenuOpen }
+          )}
+        >
+          {/* Header */}
+          <div className="flex h-40 items-center justify-between border-b-2 border-b-white/30 bg-transparent p-7">
+            <Link href="/">
+              <div className="flex flex-shrink-0 items-center gap-2 text-white">
+                <Image
+                  className="block w-auto"
+                  height={8}
+                  width={8}
+                  src="/static/icons/logo.svg"
+                  alt="Computação amostra"
+                />
+                <h1 className="w-10 text-xs sm:text-sm">Computação Amostra</h1>
+              </div>
+            </Link>
+            <button onClick={toggleMenu}>
+              <XMarkIcon width={32} height={32} />
+            </button>
+          </div>
+          {/* Items */}
+          <div className="flex flex-col gap-3 p-3 pt-14">
+            {menuItens.map((item) => (
+              <NavBarItem
+                selected={item.selected}
+                key={item.name}
+                onClick={() => router.push(item.href)}
+              >
+                {item.name}
+              </NavBarItem>
+            ))}
+          </div>
+          {/* Login / Profile */}
+          <div className="flex w-full justify-center align-middle">
             {isUserLoggedIn ? (
-              <div className="border-t border-gray-700 pb-3 pt-4">
-                <div className="flex items-center px-5">
+              <div className="mt-12 flex flex-col w-full justify-between gap-5 px-4 align-middle">
+                <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <Image
                       className="rounded-full"
@@ -225,7 +178,7 @@ export function Navbar() {
                       alt={`${user?.name ?? "user"}} avatar`}
                     />
                   </div>
-                  <div className="ml-3">
+                  <div className="ml-3 w-max">
                     <div className="text-base font-medium text-white">
                       {user?.name ?? "Usuário"}
                     </div>
@@ -234,50 +187,101 @@ export function Navbar() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-3 space-y-1 px-2">
-                  <Disclosure.Button
-                    as="button"
-                    onClick={() => signOut()}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                  >
+                <div className="flex justify-end space-y-1 px-2 items-center">
+                  <Button onClick={() => signOut()}>
                     {t("navbar.logout")}
-                  </Disclosure.Button>
+                  </Button>
                 </div>
               </div>
             ) : isVotingEnd || !isVotingStarted ? (
               <div />
             ) : (
-              <div className="border-t border-gray-700 pb-3 pt-4">
-                <div className="space-y-1 px-2">
-                  <Disclosure.Button
-                    as="button"
-                    onClick={() => signIn("google")}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                  >
-                    Login
-                  </Disclosure.Button>
-                </div>
+              <div className="mt-12 px-3">
+                <Button onClick={() => signIn("google")}>Login</Button>
               </div>
             )}
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
+          </div>
+          {/* Radial Blur Superior */}
+          <div className="absolute right-[-40px] top-[-120px] z-[-100] h-[288px] w-[526px] rounded-full bg-pallete-primary-light/20 blur-[50px]" />
+          {/* Green Effect Superior */}
+          <div className="absolute right-[-90px] top-[-10px] z-[-90] h-[220px] w-[600px] bg-dots-1 bg-contain bg-no-repeat opacity-50 mix-blend-screen" />
+          {/* Radial Blur Inferior */}
+          <div className="absolute right-[80%] top-[55%] z-[-100] h-[288px] w-[526px] rounded-full bg-pallete-primary-light/20 blur-[50px]" />
+          {/* Green Effect Inferior */}
+          <div className="absolute bottom-14 left-0 z-[-90]  h-[462px] w-[181px] bg-dots-2 bg-contain bg-no-repeat opacity-50 mix-blend-screen" />
+        </div>
+        {/* Desktop */}
+        <div className="hidden w-full flex-row justify-end items-center sm:flex pr-12 py-5">
+          <div className="flex items-center gap-14">
+            {/* Items */}
+            {menuItens.map((item) => (
+              <NavBarItem
+                selected={item.selected}
+                key={item.name}
+                onClick={() => router.push(item.href)}
+              >
+                {item.name}
+              </NavBarItem>
+            ))}
+            {isUserLoggedIn ? (
+              <div className="flex w-full justify-between px-4 align-middle">
+                <div className="flex w-max items-center">
+                  <div className="flex-shrink-0">
+                    <Popover.Root>
+                      <Popover.Trigger asChild>
+                        <Image
+                          className="rounded-full cursor-pointer"
+                          height={40}
+                          width={40}
+                          src={user?.image ?? "/static/img/empty-avatar.jpg"}
+                          alt={`${user?.name ?? "user"}} avatar`}
+                        />
+                      </Popover.Trigger>
+                      <Popover.Anchor />
+                      <Popover.Portal>
+                        <Popover.Content sideOffset={5} alignOffset={10} align="end" sticky="always" hideWhenDetached >
+                          <Popover.Arrow className="fill-pallete-primary-xdark" />
+                          <div className="flex flex-col items-end bg-pallete-background-blue border-2 border-pallete-primary-xdark p-2 shadow-md shadow-pallete-primary/20">
+                            <div className="flex flex-col justify-start">
+                              <div className="text-base font-medium text-white">
+                                {user?.name ?? "Usuário"}
+                              </div>
+                              <div className="text-xs font-medium text-gray-500">
+                                {user?.email ?? ""}
+                              </div>
+                            </div>
+                            <Button className="mt-4" onClick={() => signOut()}>
+                              {t("navbar.logout")}
+                            </Button>
+                          </div>
+                        </Popover.Content>
+                      </Popover.Portal>
+                    </Popover.Root>
+                    
+                  </div>
+                  {/* <div className="ml-3">
+                    <div className="text-base font-medium text-white">
+                      {user?.name ?? "Usuário"}
+                    </div>
+                    <div className="text-xs font-medium text-gray-400">
+                      {user?.email ?? ""}
+                    </div>
+                  </div> */}
+                </div>
+                {/* <div className="flex justify-center space-y-1 px-2 align-middle">
+                  <Button onClick={() => signOut()}>
+                    {t("navbar.logout")}
+                  </Button>
+                </div> */}
+              </div>
+            ) : isVotingEnd || !isVotingStarted ? (
+              <div />
+            ) : (
+              <Button onClick={() => signIn("google")}>Login</Button>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }
-
-type NavButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode;
-};
-
-function NavButton({ children, ...props }: NavButtonProps) {
-  return (
-    <button
-      {...props}
-      className="rounded border border-green-400 px-3 py-1 text-green-400 hover:bg-green-800 hover:text-gray-100"
-    >
-      {children}
-    </button>
-  );
-}
-
