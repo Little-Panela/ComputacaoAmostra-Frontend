@@ -24,7 +24,7 @@ export function About() {
     //     <p className="text-xl text-white">{t("home.about")}</p>
     //   </div>
     // </section>
-    <section className="bg-[url('/static/img/about-background.png')] bg-cover bg-center bg-no-repeat flex flex-col px-8 lg:px-12 xl:px-36 items-center lg:items-start gap-20">
+    <section className="bg-about-linear py-32 md:bg-about-linear-md bg-cover bg-center bg-no-repeat flex flex-col px-8 lg:px-12 xl:px-36 items-center lg:items-start gap-20">
       <Heading className="border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
         O que Buscamos?
       </Heading>
