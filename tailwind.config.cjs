@@ -22,6 +22,9 @@ module.exports = {
           "menu-item-selected-end": "#01384E",
         },
       },
+      boxShadow: {
+        "blue-light": "0px 0px 250px 250px rgb(5, 225, 254)",
+      },
       keyframes: {
         // Toast
         "toast-hide": {
