@@ -115,7 +115,8 @@
       "card": {
         "details": "Detalhes"
       },
-      "noProjects": "Nenhum projeto encontrado"
+      "noProjects": "Nenhum",
+      "afterProjects": "projeto encontrado"
     },
     "modal": {
       "share": "Compartilhe",
