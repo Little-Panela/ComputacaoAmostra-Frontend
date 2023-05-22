@@ -2,12 +2,16 @@ import dynamic from "next/dynamic";
 import { useTranslation } from "next-i18next";
 import { CardAbout } from "../../modules/CardAbout";
 import { Heading } from "../../elements/Heading";
-import { AiFillAccountBook } from 'react-icons/ai'
+import { AiFillAccountBook, AiOutlineGlobal } from 'react-icons/ai'
+import { GiIsland } from 'react-icons/gi'
+import { MdOutlineSchool } from 'react-icons/md'
+import { BsDisplay } from 'react-icons/bs'
+
 const Player = dynamic(() => import("../../elements/Player"), {
   ssr: false,
 });
 
-export function About() {
+export function About () {
   const { t } = useTranslation("common");
 
   return (
@@ -19,16 +23,16 @@ export function About() {
         </b>
       </Heading>
       <div className="flex flex-wrap justify-center gap-y-9 gap-x-10 lg:grid lg:grid-cols-2">
-        <CardAbout icon={AiFillAccountBook}>
+        <CardAbout icon={BsDisplay}>
           {t("home.about.objective1")}
         </CardAbout>
-        <CardAbout icon={AiFillAccountBook}>
+        <CardAbout icon={AiOutlineGlobal}>
           {t("home.about.objective2")}
         </CardAbout>
-        <CardAbout icon={AiFillAccountBook}>
+        <CardAbout icon={MdOutlineSchool}>
           {t("home.about.objective3")}
         </CardAbout>
-        <CardAbout icon={AiFillAccountBook}>
+        <CardAbout icon={GiIsland}>
           {t("home.about.objective4")}
         </CardAbout>
       </div>
