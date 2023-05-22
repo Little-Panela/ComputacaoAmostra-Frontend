@@ -1,13 +1,9 @@
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
 import { Heading } from "../../elements/Heading";
 import { FaUniversity } from "react-icons/fa"
 import { CardProgram } from "../../modules/CardProgram";
-import { Text } from "../../elements/Text";
-import { Label } from "@headlessui/react/dist/components/label/label";
 import type { ReactNode } from "react";
-import { Children } from "react";
 
 interface CardProps {
   title: ReactNode;
@@ -37,6 +33,10 @@ export function Cards () {
 
   return (
     <section className="mx-auto mb-10 mt-10 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-16">
+      <div className="flex flex-col gap-11 items-center lg:items-start">
+        <img src={'/static/img/greenelegantdots.svg'} className="hidden lg:block absolute  left-[-230px] transform scale-x-[-1] z-[0] w-[939px] h-[719px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
+        <img src={'/static/img/connectingRight.svg'} className="absolute lg:block right-[0px] w-[466px] sm:hidden lg:w-[538px] lg:h-[750px] mix-blend-difference" alt="Elegant Dots" />
+      </div>
       <Heading className="flex border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
         {t("home.titles.curiosity")}
       </Heading>
