@@ -16,7 +16,7 @@ export function SwitchCourse ({ course }: { course: "bcc" | "ecomp" }) {
   return (
     <div className="
     bg-[#00000028] divide-x divide-gray-400
-    rounded-xl flex aling-center justify-center pb-1 pt-2 font-montserrat ">
+    rounded-xl flex aling-center justify-center pb-1 pt-2 font-montserrat z-10">
       <Link href="?course=bcc">
         <Option
           label={t("voting.header.courses.cs")}

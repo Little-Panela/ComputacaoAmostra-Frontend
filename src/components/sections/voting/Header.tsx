@@ -18,18 +18,18 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
     onChangeText(event.target.value);
   };
   return (
-    <header className="relative overflow-x-hidden mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
-      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-96"/>
-      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96"/>
+    <header className="relative mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10 overflow-hidden">
+      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-96 z-[1]"/>
+      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96 z-[1]"/>
 
-      <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="hidden md:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0"/>
-      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="hidden md:block  absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0"/>
+      <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0 z-[2]"/>
+      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0 z-[2]"/>
       
-      <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-0 -right-20 opacity-20 rotate-[-135deg]"/>
-      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg]"/>
+      <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-0 -right-20 opacity-20 rotate-[-135deg] z-[2]"/>
+      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg] z-[2]"/>
       
 
-      <div className="flex flex-col items-center w-10/12 xl:w-3/5 gap-10">
+      <div className="flex flex-col items-center w-10/12 xl:w-3/5 gap-10 z-10">
         <Heading className="text-2xl md:text-4xl w-10/12 text-center">
           {t("voting.header.projects")}
         </Heading>
@@ -40,7 +40,7 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
 
       <SwitchCourse course={course} />
 
-      <div className="flex flex-col items-center text-center gap-12 md:items-center w-10/12">
+      <div className="flex flex-col items-center text-center gap-12 md:items-center w-10/12 z-10">
         <Heading className="w-10/12 text-lg md:text-2xl">
           {t("voting.gallery.heading.part1")}
           <span className="text-pallete-primary">
