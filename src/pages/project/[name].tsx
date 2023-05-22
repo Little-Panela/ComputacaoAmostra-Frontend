@@ -349,6 +349,7 @@ export default function ProjectPage({ project }: ProjectPageProps) {
             </div>
             <div className="flex w-full items-center justify-center border-2 border-pallete-primary">
               <div className="m-10 flex w-[80%] overflow-hidden rounded-lg border-2 border-pallete-primary sm:w-[90%]">
+                {/* @ts-expect-error - locale exists */}
                 <Player videoId={project.links.youtube[locale]} />
               </div>
             </div>
