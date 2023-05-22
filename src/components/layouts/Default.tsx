@@ -45,7 +45,7 @@ export function Default({
           }),
         }}
       />
-      <div className={`${montserrat.variable} flex flex-col bg-pallete-background-blue overflow-hidden`}>
+      <div className={`${montserrat.variable} flex flex-col bg-pallete-background-blue overflow-x-hidden`}>
         <Navbar />
         <main>{children}</main>
         <Footer />
