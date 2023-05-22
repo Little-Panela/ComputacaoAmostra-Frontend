@@ -43,6 +43,13 @@
         "lecture": "Lectures",
         "fair": "Project Exhibition"
       }
+    },
+    "zenith": {
+      "title1": "The pinnacle of ",
+      "title2": "Tecnology ",
+      "title3": "and ",
+      "title4": "Innovation.",
+      "button": "Learn more"
     }
   },
   "voting": {

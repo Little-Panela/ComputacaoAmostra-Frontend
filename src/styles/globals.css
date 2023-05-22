@@ -11,6 +11,10 @@ h6 {
   font-family: "Inter", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 * {
   pointer-events: all !important;
   color: white;

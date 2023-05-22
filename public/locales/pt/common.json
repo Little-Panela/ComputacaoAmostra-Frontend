@@ -43,6 +43,13 @@
         "lecture": "Palestras",
         "fair": "Feira de Projetos"
       }
+    },
+    "zenith": {
+      "title1": "O ponto mais alto da ",
+      "title2": "Tecnologia ",
+      "title3": "e ",
+      "title4": "Inovação.",
+      "button": "Saiba mais"
     }
   },
   "voting": {

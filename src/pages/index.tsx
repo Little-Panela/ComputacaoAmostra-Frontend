@@ -9,6 +9,7 @@ import { Cards } from "../components/sections/home/Cards";
 import { About } from "../components/sections/home/About";
 // import { Winners } from "../components/sections/home/Winners";
 import { Program } from "../components/sections/home/Program";
+import {ZenithBanner} from '../components/sections/home/ZenithBanner'
 import { Logos } from "../components/sections/home/Logos";
 
 const Home: NextPage = () => {
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <Hero />
       <Cards />
       <About />
+      <ZenithBanner />
       {/* <Winners /> */}
       <Logos />
     </Default>
