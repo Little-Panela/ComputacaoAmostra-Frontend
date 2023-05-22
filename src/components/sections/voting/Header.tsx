@@ -17,7 +17,6 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChangeText(event.target.value);
   };
-
   return (
     <header className="mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
       <div className="flex flex-col items-center w-10/12 xl:w-3/5 gap-10">
@@ -33,7 +32,11 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
 
       <div className="flex flex-col items-center text-center gap-12 md:items-center w-10/12">
         <Heading className="w-10/12 text-lg md:text-2xl">
-          {t("voting.gallery.heading")}
+          {t("voting.gallery.heading.part1")}
+          <span className="text-pallete-primary">
+            {t("voting.gallery.heading.part2")}
+          </span>
+          {t("voting.gallery.heading.part3")}
         </Heading>
         <img src="/static/img/voting-trophy.svg" alt="Troféu" className="w-52 h-auto"/>
         <Text className="text-sm text-gray-400 md:text-lg">

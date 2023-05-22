@@ -15,7 +15,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { Modal } from "../elements/Modal";
 import { Text } from "../elements/Text";
 import { Button } from "../elements/Button";
-import { UsersIcon } from "@heroicons/react/24/outline";
 const Player = dynamic(() => import("../elements/Player"), {
   ssr: false,
 });
@@ -24,12 +23,10 @@ import { postVote } from "../../services/post-vote";
 
 import type { postVoteType } from "../../services/post-vote";
 import { env } from "../../env.mjs";
-import ToastComponent from "../elements/ToastComponent";
 import { Heading } from "../elements/Heading";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { title } from "process";
 
 type ModalProjectProps = {
   id: string;
@@ -360,7 +357,6 @@ export function ModalProject({
                 </div>
               </div>
             </div>
-            <ToastComponent />
           </div>
         </div>
       </>
