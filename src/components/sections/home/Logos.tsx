@@ -46,6 +46,7 @@ export function Logos() {
             key={i.alt}
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform"
           >
             <img
               src={i.logo}
@@ -62,6 +63,7 @@ export function Logos() {
             key={i.alt}
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform"
           >
             <img
               src={i.logo}
@@ -78,6 +80,7 @@ export function Logos() {
             key={i.alt}
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:scale-105 transition-transform"
           >
             <img
               src={i.logo}
