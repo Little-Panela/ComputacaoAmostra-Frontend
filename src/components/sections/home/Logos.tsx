@@ -28,7 +28,7 @@ export function Logos() {
   const { t } = useTranslation("common");
 
   return (
-    <section className="relative py-20 pb-28 flex flex-col gap-32">
+    <section className="overflow-x-hidden relative py-20 pb-28 flex flex-col gap-32">
       <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0" />
       <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0" />
       
