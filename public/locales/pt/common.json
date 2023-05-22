@@ -72,6 +72,18 @@
       "title3": "e ",
       "title4": "Inovação.",
       "button": "Saiba mais"
+    },
+    "winners": {
+      "title": "Vencedores",
+      "enginner": "Engenharia de Computação",
+      "science": "Ciência da Computação",
+      "details": "Ver detalhes",
+      "call1": "Você ainda pode ajudar a ",
+      "call2": "escrever ",
+      "call3": "essa história:",
+      "call4": "Defina o próximo ",
+      "call5": "vencedor",
+      "vote": "Votar"
     }
   },
   "voting": {

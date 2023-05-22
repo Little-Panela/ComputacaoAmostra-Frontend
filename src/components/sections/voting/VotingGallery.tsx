@@ -27,7 +27,7 @@ export function VotingGallery({
     <section className="mx-5 mt-12 flex flex-col items-center gap-6 overflow-hidden md:mt-16 md:gap-16">
       {!isLoading ? (
         projects && projects.length > 0 ? (
-          <div className="w-full flex flex-wrap justify-center gap-y-3 gap-x-4 md:gap-y-5">
+          <div className="grid w-full grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">
             {projects.map((project) => (
               <CardProject
                 key={project.id}
@@ -49,7 +49,7 @@ export function VotingGallery({
           </div>
         )
       ) : (
-        <div className="grid w-full grid-cols-project-cards gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">
+        <div className="grid w-full grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
             <CardProjectSkeleton key={index} />
           ))}

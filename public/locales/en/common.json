@@ -72,6 +72,18 @@
       "title3": "and ",
       "title4": "Innovation.",
       "button": "Learn more"
+    },
+    "winners": {
+      "title": "Winners",
+      "enginner": "Computer Engineering",
+      "science": "Computer Science",
+      "details": "See details",
+      "call1": "You can still help  ",
+      "call2": "write ",
+      "call3": "this story:",
+      "call4": "Set the next ",
+      "call5": "winner",
+      "vote": "Vote"
     }
   },
   "voting": {

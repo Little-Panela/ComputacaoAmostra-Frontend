@@ -25,9 +25,9 @@ const LogoCard = ({ teamName }: NormalCardProps) => {
 
   return (
     <div className="flex justify-center items-center bg-pallete-primary-dark w-24 h-24 sm:w-40 sm:h-40 rounded-full group-hover:w-16 group-hover:h-16 group-hover:sm:w-28 group-hover:sm:h-28">
-      <Text className='drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
+      <p className='font-montserrat drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
         {getFirstLetter(teamName)}
-      </Text>
+      </p>
     </div>
   )
 }
@@ -52,7 +52,7 @@ export function CardProject({
 
   return (
     <>
-      <div className='group w-40 h-72 sm:w-64 sm:h-[430px] relative flex flex-col items-center py-10 sm:py-20 px-4 sm:px-8 bg-black rounded-lg border-pallete-primary border-4 gap-10 hover:gap-6 hover:py-4'>
+      <div className='group w-40 h-72 sm:w-64 sm:h-[430px] relative flex flex-col items-center py-10 sm:py-20 px-4 sm:px-8 bg-black bg-opacity-40 rounded-lg border-pallete-primary border-4 gap-10 hover:gap-6 hover:py-4'>
         <div className='flex gap-10 group-hover:hidden animate-card-show flex-col items-center opacity-100 h-full w-full group-hover:opacity-0'>
           {logoUrl ? <Image alt={name} src={logoUrl} className='w-24 h-24 sm:w-40 sm:h-40' /> : <LogoCard teamName={name} />}
           <Heading className='break-all text-white text-xl sm:text-2xl'>

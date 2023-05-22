@@ -11,7 +11,7 @@ export function ZenithBanner() {
   const { t } = useTranslation("common");
 
   return (
-    <section className="relative bg-pallete-background-zen flex flex-col items-center gap-20 pt-24 pb-32 lg:flex-row-reverse lg:justify-center lg:px-20 xl:px-40">
+    <section className="overflow-hidden relative bg-pallete-background-zen flex flex-col items-center gap-20 pt-24 pb-32 lg:flex-row-reverse lg:justify-center lg:px-20 xl:px-40">
       <img src="/static/img/zenith-wave-top.png" alt="Wave Top" className="absolute top-0 right-0 lg:scale-[200%]" />
       <img src="/static/img/zenith-wave-middle.png" alt="Wave Middle" className="absolute left-0 bottom-1/2 translate-y-1/2 lg:scale-[200%]" />
       <img src="/static/img/zenith-wave-bottom.png" alt="Wave Bottom" className="absolute bottom-0 right-0 lg:scale-[200%]" />

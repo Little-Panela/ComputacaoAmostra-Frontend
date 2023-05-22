@@ -17,9 +17,9 @@ const Home: NextPage = () => {
     <Default>
       <Header />
       <Program />
+      <About />
       <Hero />
       <Cards />
-      <About />
       <ZenithBanner />
       <Winners />
       <Logos />
