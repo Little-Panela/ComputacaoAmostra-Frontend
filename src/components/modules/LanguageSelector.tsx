@@ -88,7 +88,7 @@ export const LanguageSelector = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              className="inline-flex w-full items-center justify-center rounded-md border border-pallete-purple-zen bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm focus:outline-none"
               id={LANGUAGE_SELECTOR_ID}
               aria-haspopup="true"
               aria-expanded={isOpen}
@@ -112,7 +112,7 @@ export const LanguageSelector = () => {
           </div>
           {isOpen && (
             <div
-              className="absolute -right-32 mt-2 w-96 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+              className="absolute -right-32 mt-2 w-96 origin-top-right rounded-md border-pallete-purple-zen border-2 bg-transparent shadow-lg ring-1 ring-black ring-opacity-5"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="language-selector"
@@ -125,9 +125,9 @@ export const LanguageSelector = () => {
                       onClick={() => handleLanguageChange(language)}
                       className={`${
                         selectedLanguage.key === language.key
-                          ? "bg-gray-100 text-gray-900"
+                          ? "text-gray-900"
                           : "text-gray-700"
-                      } block inline-flex items-center px-4 py-2 text-left text-sm hover:bg-gray-100 ${
+                      } block inline-flex items-center px-4 py-2 text-left text-sm ${
                         index % 2 === 0 ? "rounded-r" : "rounded-l"
                       }`}
                       role="menuitem"

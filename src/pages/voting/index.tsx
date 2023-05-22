@@ -62,7 +62,9 @@ const Voting: NextPage = () => {
   return (
     <Default
       title={t("voting.title") ?? "Votação"}
-      description={t("voting.description") ?? "Quem você quer que vença a computação amostra"}
+      description={
+        (t("voting.description")) ?? "Quem você quer que vença a computação amostra"
+      }
       path={`/voting?course=${course}`}
     >
       <Header course={course ?? "bcc"} onChangeText={handleSearch} />

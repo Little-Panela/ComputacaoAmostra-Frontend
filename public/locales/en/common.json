@@ -89,8 +89,8 @@
   "voting": {
     "title": "Voting",
     "header": {
-      "projects": "2023 Amazon Hacking Projects",
-      "description": "UmaOs universitários elaboram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB, uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão.",
+      "projects": "Amazon Hacking 2023 Projects",
+      "description": "After experiencing an immersive visit, the university students developed sustainable projects for Cotijuba Island and its community, in partnership with MMIB, a nonprofit institution dedicated to promoting autonomy and citizen knowledge.",
       "searchPlaceholder": "Search for a project",
       "courses": {
         "cs": "Computer Science",
@@ -98,9 +98,13 @@
       }
     },
     "gallery": {
-      "heading": "Who do you want to win the Computing Sample 2023?",
-      "subheading-bcc": "Vote para definir o melhor projeto de Ciência da computação!!",
-      "subheading-ecomp": "Vote para definir o melhor projeto de Engenharia da Computação!!",
+      "heading": {
+        "part1": "Declare the winner of the ",
+        "part2": "Computação Amostra ",
+        "part3": "2023!"
+      },
+      "subheading-bcc": "Choose the top Computer Science project!",
+      "subheading-ecomp": "Choose the top Computer Engineering project!",
       "card": {
         "details": "Details"
       },
@@ -115,7 +119,9 @@
       "alertMessages": {
         "success": "Vote successfully registered!",
         "error": "Error registering vote, try again later."
-      }
+      },
+      "team": "Team",
+      "description": "Description"
     }
   },
   "countdown": {
@@ -126,7 +132,9 @@
     "seconds": "Seconds"
   },
   "footer": {
-    "copyright": "© 2023 CESUPA. All rights reserved.",
+    "copyrightBefore": "© 2023",
+    "copyrightCesupa": " CESUPA ",
+    "copyrightAfter": ". All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms of Use",
     "developed": "Made with ♥ by Panic"
