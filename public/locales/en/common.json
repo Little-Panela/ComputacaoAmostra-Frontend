@@ -114,7 +114,9 @@
     "seconds": "Seconds"
   },
   "footer": {
-    "copyright": "© 2023 CESUPA. All rights reserved.",
+    "copyrightBefore": "© 2023",
+    "copyrightCesupa": " CESUPA ",
+    "copyrightAfter": ". All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms of Use",
     "developed": "Made with ♥ by Panic"
