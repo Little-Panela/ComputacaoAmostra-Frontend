@@ -14,7 +14,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-main-linear flex flex-col px-12 justify-center items-center bg-cover bg-center bg-no-repeat h-screen py-40">
+    <header className="bg-main-linear flex flex-col px-12 -mt-[160px] pt-[160px] justify-center items-center bg-cover bg-center bg-no-repeat h-screen pb-40">
 
       <div className="flex flex-col gap-4 items-center mb-16">
         <img src="/static/img/logo-amazon.png" alt="Logo Amazon Hacking" />
