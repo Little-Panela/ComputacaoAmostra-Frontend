@@ -66,11 +66,14 @@ export function Footer() {
           </div>
 
           <div className="flex lg:w-[320px] flex-col items-center justify-center">
+          <Link href="https://zenithinova.com.br" target="_blank" className="relative z-10 hover:scale-105 transition-transform">
             <img
-              src="/static/img/zenith.svg"
-              alt="logo zenith"
-              className="mt-10 h-[172px] w-[202px]"
-            />
+                src="/static/img/zenith.svg"
+                alt="logo zenith"
+                className="mt-10 h-[172px] w-[202px]"
+              />
+          </Link>
+            
             <Text className="mb-[60px] font-bold">
               {t("home.footer.partner")} <a className="text-red-600">♥</a>
             </Text>

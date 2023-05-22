@@ -20,7 +20,9 @@ export function ZenithBanner() {
       <img src="/static/img/zenith-light.png" alt="Zenith Light" className="z-0 absolute -bottom-20 -right-48 xl:-right-24 xl:-bottom-40 xl:w-[1000px]" />
       <img src="/static/img/zenith-light.png" alt="Zenith Light" className="z-0 absolute -top-48 -left-64 xl:left-48 xl:w-[1100px] xl:-top-64" />
 
-      <img src="/static/img/zenith.svg" alt="Logo da Zenith Inova" className="w-80 xl:w-96" />
+      <Link href="https://zenithinova.com.br" target="_blank" className="relative z-10 hover:scale-105 transition-transform">
+        <img src="/static/img/zenith.svg" alt="Logo da Zenith Inova" className="w-80 xl:w-96" />
+      </Link>
       <div className="flex flex-col items-center gap-20 z-10 lg:gap-10 lg:items-start">
         <Heading className="text-3xl text-center w-3/4 md:text-5xl lg:text-left xl:w-8/12">
           {t("home.zenith.title1")}
