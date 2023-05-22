@@ -95,7 +95,7 @@ export function Navbar () {
   ];
 
   return (
-    <nav className="z-[10] w-full absolute">
+    <nav className="z-[10] w-full">
       <div className="flex h-40 items-center justify-between bg-transparent p-7">
         <Link href="/">
           <div className="flex flex-shrink-0 items-center gap-2 text-white">
@@ -237,7 +237,7 @@ export function Navbar () {
                       </Popover.Trigger>
                       <Popover.Anchor />
                       <Popover.Portal>
-                        <Popover.Content sideOffset={15} align="end" sticky="always" hideWhenDetached >
+                        <Popover.Content sideOffset={15} align="end" sticky="always" hideWhenDetached className="z-20">
                           <Popover.Arrow className="fill-pallete-primary-xdark" />
                           <div className="flex px-[30px] py-[20px] gap-8 shadow-userPopover justify-between items-center bg-pallete-background-blue rounded-2xl border-2 border-pallete-primary-xdark">
                             <div className="flex flex-col gap-2 justify-center">

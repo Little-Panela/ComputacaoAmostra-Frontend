@@ -46,44 +46,44 @@ const Countdown: NextPage = () => {
   return (
     <Default
       title={`${t("navbar.voting")} Countdown`}
-      description={`Inicio das votações em ${time.days} dias, ${time.hours} horas, ${time.minutes} minutos e ${time.seconds} segundos`}
+      description={`Inicio das votações em ${time.days < 0 ? "00" : time.days} dias, ${time.hours< 0 ? "00" : time.hours} horas, ${time.minutes < 0 ? "00" : time.minutes} minutos e ${time.seconds < 0 ? "00" : time.minutes} segundos`}
       path="/voting/countdown"
     >
       <div className="min-w-screen flex min-h-[calc(100vh_-_4rem)] flex-col items-center justify-center bg-gray-900 px-1 py-5">
-        <div className="text-gray-900">
+        <div className="text-white">
           <h1 className="mb-5 text-center text-3xl font-extralight text-white">
             {t("countdown.heading")}
           </h1>
           <div className="flex w-full flex-wrap items-center justify-center text-center text-6xl max-sm:gap-2">
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
-              <span className="font-mono leading-none" x-text="days">
-                {time.days}
+              <span className="font-mono leading-none text-black" x-text="days">
+                {time.days < 0 ? "00" : time.days}
               </span>
-              <span className="font-mono text-sm uppercase leading-none">
+              <span className="font-mono text-sm uppercase leading-none text-black">
                 {t("countdown.days")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
-              <span className="font-mono leading-none" x-text="hours">
-                {time.hours}
+              <span className="font-mono leading-none text-black" x-text="hours">
+                {time.hours < 0 ? "00" : time.hours}
               </span>
-              <span className="font-mono text-sm uppercase leading-none">
+              <span className="font-mono text-sm text-black uppercase leading-none">
                 {t("countdown.hours")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
-              <span className="font-mono leading-none" x-text="minutes">
-                {time.minutes}
+              <span className="font-mono leading-none text-black" x-text="minutes">
+                {time.minutes < 0 ? "00" : time.minutes}
               </span>
-              <span className="font-mono text-sm uppercase leading-none">
+              <span className="font-mono text-sm uppercase text-black leading-none">
                 {t("countdown.minutes")}
               </span>
             </div>
             <div className="mx-1 flex w-24 flex-col rounded-lg bg-white p-2">
-              <span className="font-mono leading-none" x-text="seconds">
-                {time.seconds}
+              <span className="font-mono leading-none text-black" x-text="seconds">
+                {time.seconds < 0 ? "00" : time.seconds}
               </span>
-              <span className="font-mono text-sm uppercase leading-none">
+              <span className="font-mono text-sm uppercase leading-none text-black">
                 {t("countdown.seconds")}
               </span>
             </div>
