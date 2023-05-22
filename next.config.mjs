@@ -39,6 +39,10 @@ const config = {
     domains: ["lh3.googleusercontent.com", "cdn.computacao-amostra.com"],
   },
 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   headers: async () => {
     return [
       {
