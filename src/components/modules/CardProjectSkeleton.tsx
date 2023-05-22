@@ -1,13 +1,9 @@
-import { Text } from "../elements/Text";
 
 export function CardProjectSkeleton() {
   return (
-    <div className="flex min-h-[9.125rem] animate-pulse flex-col gap-3 rounded-md border border-solid border-gray-800 p-6 shadow-lg transition-shadow hover:shadow-xl">
-      <Text asChild size="md" className="h-6 rounded bg-slate-700 md:text-2xl">
-        <strong></strong>
-      </Text>
-      <Text className="h-4 rounded bg-slate-700 text-xs md:text-lg">{""}</Text>
-      <button className="h-8 flex-1 rounded border bg-slate-700 px-3 py-1 transition-colors"></button>
+    <div className="flex items-center h-72 w-40 sm:h-[430px] sm:w-64 flex-col gap-10 rounded-[4px] bg-black border-4 border-solid border-gray-800 animate-pulse">
+      <div className="flex h-24 w-24 sm:h-40 sm:w-40 mt-12 sm:mt-20 rounded-full bg-gray-800"></div>
+      <div className="flex h-4 w-24 sm:h-[30px] sm:w-[195px] mb-12 sm:mb-20 bg-gray-800"></div>
     </div>
   );
 }
