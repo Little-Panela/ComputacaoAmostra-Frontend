@@ -1,95 +1,54 @@
+import { CardWinner } from "../../modules/CardWinner";
+import { Heading } from "../../elements/Heading";
+import { Text } from "../../elements/Text";
+import { Button } from "../../elements/Button";
+
 /* eslint-disable @next/next/no-img-element */
 export function Winners() {
   return (
-    <section className="mx-auto max-w-4xl px-2 pb-20 sm:px-6 lg:px-8">
-      <h1 className="pt-10 pb-6 text-center text-4xl font-bold">Vencedores</h1>
-      <div className="flex flex-col items-center gap-10 lg:flex-row">
-        <div className="flex h-96 w-full max-w-sm flex-col items-center border p-4 shadow-md">
-          <div className="flex items-center gap-4">
-            <img src="/static/icons/lines.svg" alt="linhas" />
-            <h2 className="font-bold text-blue-900">Ano 2023</h2>
-            <img src="/static/icons/lines.svg" alt="linhas" />
-          </div>
-          <div className="my-28 flex flex-col items-center justify-center gap-2">
-            <span>Ainda não há vencedores!!</span>
-            <button className="rounded bg-green-400 px-14 py-1 text-white shadow">
-              Vote agora
-            </button>
-          </div>
+    <section className="py-20 bg-winner-linear bg-no-repeat bg-cover flex flex-col items-center relative z-10 mx-auto max-w-4xl px-2 pb-20 sm:px-6 lg:px-8">
+      <Heading size="xl" className="border-b-4 border-pallete-primary pb-2 w-fit text-3xl text-center mb-5">
+        Vencedores
+      </Heading>
+      <div className="mb-8 relative w-0 h-20 border-[1px] border-pallete-primary border-dashed after:content-[''] after:h-2 after:w-2 after:absolute after:bg-pallete-primary after:rounded-full after:bottom-0 after:translate-y-1/2 after:-translate-x-1/2">
+      </div>
+      <Heading size="xl" className="mb-4 text-3xl text-bold">
+        2022
+      </Heading>
+      <div className="flex flex-col gap-5 items-center mb-8">
+        <Text className="font-bold">
+          Engenharia de Computação
+        </Text>
+        <div className="flex flex-col gap-5">
+          <CardWinner course="ECOMP" position={1} title="Projeto Falken" />
+          <CardWinner course="ECOMP" position={2} title="Projeto Falken" />
+          <CardWinner course="ECOMP" position={3} title="Projeto Falken" />
         </div>
-        <div className="flex h-96 w-full max-w-sm flex-col items-center border p-3 shadow-md md:p-4">
-          <div className="flex items-center gap-4">
-            <img src="/static/icons/lines.svg" alt="" />
-            <h2 className="font-bold text-blue-900">Ano 2022</h2>
-            <img src="/static/icons/lines.svg" alt="" />
-          </div>
-          <div className="my-10 flex flex-col items-center justify-center gap-2">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <h2 className="font-bold">
-                  Vencedores de ciência da computação:
-                </h2>
-                <ol className="flex w-full flex-col gap-1">
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">1º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">2º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">3º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                </ol>
-              </div>
-              <div className="flex flex-col gap-2">
-                <h2 className="font-bold">
-                  Vencedores de engenharia da computação:
-                </h2>
-                <ol className="flex w-full flex-col gap-1">
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">1º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">2º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                  <li className="flex items-center justify-between">
-                    <span className="text-sm">
-                      <span className="mr-1 font-bold">3º</span> Nome do projeto
-                    </span>
-                    <a href="#" className="text-xs text-indigo-900">
-                      Ver detalhes {"->"}
-                    </a>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div className="flex flex-col gap-5 items-center mb-5">
+        <Text className="font-bold">
+          Ciência de Computação
+        </Text>
+        <div className="flex flex-col gap-5">
+          <CardWinner course="BCC" position={1} title="Projeto Falken" />
+          <CardWinner course="BCC" position={2} title="Projeto Falken" />
+          <CardWinner course="BCC" position={3} title="Projeto Falken" />
         </div>
+      </div>
+      <div className="mb-8 relative w-0 h-20 border-[1px] border-pallete-primary border-dashed before:content-[''] before:h-2 before:w-2 before:absolute before:bg-pallete-primary before:rounded-full before:top-0 before:-translate-y-1/2 before:-translate-x-1/2 after:content-[''] after:h-2 after:w-2 after:absolute after:bg-pallete-primary after:rounded-full after:bottom-0 after:translate-y-1/2 after:-translate-x-1/2">
+      </div>
+      <Heading size="xl" className="border-b-4 border-pallete-primary pb-2 w-fit text-3xl text-center mb-5"> 
+        2023
+      </Heading>
+      <div className="flex flex-col rounded-lg px-4 py-5 gap-3 w-11/12 items-center border-2 border-pallete-primary">
+        <img src="/static/img/voting-trophy.svg" alt="Trophy" className="w-40 h-40" />
+        <Text>
+          Você ainda pode ajudar a escrever essa história:
+        </Text>
+        <Text className="text-xs text-gray-400">
+          Defina o próximo vencedor
+        </Text>
+        <Button>Votar</Button>
       </div>
     </section>
   );

@@ -81,11 +81,14 @@ module.exports = {
           "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
         "about-linear-md":
           "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
-        "main-linear":
+        "winner-linear": "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.8) 80%, rgba(0,11,28,1) 100%), url('/static/img/winner-background.png')",
+        "winner-linear-md": "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/winner-background-md.png')",
+          "main-linear":
           "linear-gradient(180deg, rgba(0,11,28,0.8) 0%, rgba(0,11,28,0.5) 12%, rgba(0,11,28,0) 29%, rgba(0,11,28,0) 62%, rgba(0,11,28,0.8) 90%, rgba(0,11,28,1) 100%), url('/static/img/main-background.png')",
         "dots-1": "url('/static/img/dots_technology_green_top.png')",
         "dots-2": "url('/static/img/dots_technology_green_bottom.png')",
-        "focus-zenith": "radial-gradient(circle, rgba(115,39,187,.5) 0%, rgba(0,0,31,.5) 60%, rgba(0,0,31,1) 100%)"
+        "focus-zenith": "radial-gradient(circle, rgba(115,39,187,.5) 0%, rgba(0,0,31,.5) 60%, rgba(0,0,31,1) 100%)",
+        "winner-card": "radial-gradient(68% 96.98% at 50% -43.95%, #05E1FE 0%, rgba(0, 0, 0, 0) 100%), #000B1C",
       },
       boxShadow: {
         "userPopover": "0px 1px 10px rgba(5, 255, 254, 0.5)"

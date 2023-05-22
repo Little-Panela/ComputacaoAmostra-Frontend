@@ -7,7 +7,7 @@ import { Header } from "../components/sections/home/Header";
 import { Hero } from "../components/sections/home/Hero";
 import { Cards } from "../components/sections/home/Cards";
 import { About } from "../components/sections/home/About";
-// import { Winners } from "../components/sections/home/Winners";
+import { Winners } from "../components/sections/home/Winners";
 import { Program } from "../components/sections/home/Program";
 import {ZenithBanner} from '../components/sections/home/ZenithBanner'
 import { Logos } from "../components/sections/home/Logos";
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <Cards />
       <About />
       <ZenithBanner />
-      {/* <Winners /> */}
+      <Winners />
       <Logos />
     </Default>
   );
