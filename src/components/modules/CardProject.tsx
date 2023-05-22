@@ -78,16 +78,16 @@ export function CardProject({
             course={course}
             trigger={
               // TODO: Verificar
-              <Button className='text-white bg-transparent block w-full border-[1px] py-3 rounded-2xl border-pallete-primary text-sm font-bold'>
-                <Link
-                  href={`/voting?course=${course}`}
-                  as={`/project/${nameForSlug}`}
-                  scroll={false}
-                  className="cursor-pointer"
-                >
+              <Link
+                href={`/voting?course=${course}`}
+                as={`/project/${nameForSlug}`}
+                scroll={false}
+                className="cursor-pointer w-full"
+              >
+                <Button className='text-white bg-transparent block w-full border-[1px] py-3 rounded-2xl border-pallete-primary text-sm font-bold'>
                   {t("voting.gallery.card.details")}
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             } />
 
         </div>

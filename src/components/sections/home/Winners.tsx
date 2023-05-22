@@ -12,7 +12,9 @@ export function Winners() {
   const { t } = useTranslation("common");
 
   return (
-    <section className="py-20 bg-winner-linear lg:bg-winner-linear-md bg-no-repeat bg-cover flex flex-col items-center relative z-10 mx-auto px-2 pb-20 sm:px-6 lg:px-8 2xl:px-20">
+    <section className="relative py-20 bg-winner-linear lg:bg-winner-linear-md bg-no-repeat bg-cover flex flex-col items-center z-10 mx-auto px-2 pb-20 sm:px-6 lg:px-8 2xl:px-20">
+      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-40 -right-48 opacity-30 rotate-[270deg]"/>
+      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-40 -left-20 opacity-20 rotate-[45deg]"/>
       <Heading size="xl" className="border-b-4 border-pallete-primary pb-2 w-fit text-3xl text-center mb-5 xl:mb-20">
         {t("home.winners.title")}
       </Heading>
@@ -58,7 +60,7 @@ export function Winners() {
       <Heading size="xl" className="border-b-4 border-pallete-primary pb-2 w-fit text-3xl text-center mb-5">
         2023
       </Heading>
-      <div className="flex flex-col rounded-lg px-4 py-5 gap-3 md:gap-6 w-11/12 md:w-3/4 items-center border-2 border-pallete-primary">
+      <div className="relative text-center z-10 flex flex-col rounded-lg px-4 py-8 gap-3 md:gap-6 w-11/12 md:w-3/4 items-center lg:w-2/5 border-2 border-pallete-primary">
         <img src="/static/img/voting-trophy.svg" alt="Trophy" className="w-40 h-40" />
         <Text>
           {t("home.winners.call1")}

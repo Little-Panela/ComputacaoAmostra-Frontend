@@ -24,13 +24,13 @@ function NavBarItem (props: NavbarProps) {
     <button className="w-full" onClick={props.onClick}>
       <div
         className={clsx(
-          "flex w-full justify-start bg-gradient-to-r px-8 py-4",
+          "flex w-full justify-start bg-gradient-to-r px-8 py-4 hover:text-pallete-primary",
           {
             "rounded-lg  from-pallete-menu-item-start to-pallete-menu-item-end             sm:items-center sm:justify-center sm:gap-0 sm:rounded-none sm:bg-none sm:px-0 sm:py-0":
               !props.selected,
           },
           {
-            "rounded-none border-l-4 border-pallete-primary from-black from-[50.15%] to-pallete-menu-item-selected-end to-[127%]             sm:items-center sm:justify-center sm:gap-0 sm:rounded-none sm:border-b-2 sm:border-l-0 sm:bg-none sm:px-3 sm:py-5":
+            "rounded-none text-pallete-primary border-l-4 border-pallete-primary from-black from-[50.15%] to-pallete-menu-item-selected-end to-[127%]             sm:items-center sm:justify-center sm:gap-0 sm:rounded-none sm:border-b-2 sm:border-l-0 sm:bg-none sm:px-3 sm:py-5":
               props.selected,
           }
         )}

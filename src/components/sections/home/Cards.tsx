@@ -19,7 +19,7 @@ interface CardProps {
 function Card ({ title, children, exclamation, icon }: CardProps) {
   return (
     <div className="bg-gradient-to-tl from-transparent to-pallete-gradient-top h-[472px] text-xs flex max-w-xs flex-col gap-2 rounded-md border-pallete-primary-light border-2 p-4 shadow-md">
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col pt-6 items-center gap-4">
         <span className="h-[76px] w-[76px] rounded-full border-2 border-white flex justify-center items-center">{createElement(icon, { size: 40, color: "#05E1FE", fill: "#05E1FE" })}</span>
         <div className="flex flex-row">
           <Heading className="text-base md:text-xl">{title}</Heading>
@@ -35,7 +35,7 @@ export function Cards () {
   const { t } = useTranslation("common");
 
   return (
-    <section className="mx-auto mb-10 mt-10 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-16">
+    <section className="mx-auto mb-48 max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col justify-center items-center gap-16">
       <div className="flex flex-col gap-11 items-center lg:items-start">
         <img src={'/static/img/greenelegantdots.svg'} className="hidden lg:block absolute  left-[-230px] transform scale-x-[-1] z-[0] w-[939px] h-[719px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
         <img src={'/static/img/connectingRight.svg'} className="absolute lg:block right-[0px] w-[466px] sm:hidden lg:w-[538px] lg:h-[750px] mix-blend-difference" alt="Elegant Dots" />

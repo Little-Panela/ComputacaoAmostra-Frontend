@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex flex-col w-full lg:flex-row lg:justify-around">
           <div className="flex justify-center items-center flex-col">
             <img
-              src="/static/img/logo-comp-amostra.png"
+              src="/static/img/logo-computacao-amostra.png"
               alt="logo computação amostra"
               className="h-auto w-[319px]"
             />
@@ -24,7 +24,7 @@ export function Footer() {
                 rel="noreferrer"
                 className="z-[2]"
               >
-                <img src="/static/img/facebook-white.svg" alt="facebook logo" />
+                <img src="/static/img/facebook-white.svg" alt="facebook logo" className="opacity-80 transition-opacity hover:opacity-100"/>
               </a>
               <a
                 href="https://www.instagram.com/cesupaonline/"
@@ -35,6 +35,7 @@ export function Footer() {
                 <img
                   src="/static/img/instagram-white.svg"
                   alt="instagram logo"
+                  className="opacity-80 transition-opacity hover:opacity-100"
                 />
               </a>
               <a
@@ -43,7 +44,7 @@ export function Footer() {
                 rel="noreferrer"
                 className="z-[2]"
               >
-                <img src="/static/img/youtube-white.svg" alt="youtube logo" />
+                <img src="/static/img/youtube-white.svg" alt="youtube logo" className="opacity-80 transition-opacity hover:opacity-100"/>
               </a>
             </div>
           </div>
@@ -71,19 +72,19 @@ export function Footer() {
               className="mt-10 h-[172px] w-[202px]"
             />
             <Text className="mb-[60px] font-bold">
-              EM PARCERIA COM PANIC <a className="text-red-600">♥</a>
+              {t("home.footer.partner")} <a className="text-red-600">♥</a>
             </Text>
           </div>
         </div>
         <div className="mt-3 lg:hidden flex flex-wrap items-center justify-center space-x-7">
               <Link className="z-[2]" href="/legal/privacy-policy">
-                <p className="text-xs font-bold leading-5 text-white transition-colors hover:text-gray-400">
+                <p className="text-xs font-bold leading-5 text-white hover:text-pallete-primary transition-colors">
                   {t("footer.privacyPolicy")}
                 </p>
               </Link>
               <div className="divide-white font-bold">|</div>
               <Link className="z-[2]" href="/legal/terms">
-                <p className="text-xs font-bold leading-5 text-white transition-colors hover:text-gray-400">
+                <p className="text-xs font-bold leading-5 text-white hover:text-pallete-primary transition-colors">
                   {t("footer.terms")}
                 </p>
               </Link>

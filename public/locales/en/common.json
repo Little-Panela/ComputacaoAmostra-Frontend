@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Home",
-    "voting": "Voting",
+    "voting": "Projects",
     "logout": "Logout",
     "contact": "Contact"
   },
@@ -72,6 +72,14 @@
       "title3": "and ",
       "title4": "Innovation.",
       "button": "Learn more"
+    },
+    "logos": {
+      "realization": "Realization",
+      "partners": "Partners",
+      "sponsorship": "Sponsorship"
+    },
+    "footer": {
+      "partner": "IN PARTNERSHIP WITH PANIC"
     },
     "winners": {
       "title": "Winners",

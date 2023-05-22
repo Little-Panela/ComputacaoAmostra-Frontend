@@ -11,7 +11,7 @@ type CardAboutProps = {
 
 export function CardAbout({children, icon}: CardAboutProps) {
     return(
-        <div className={`flex items-center w-[240px] lg:w-full lg:max-h-[400px] min-h-[292px] flex-col bg-black/[0.7] rounded-[20px]
+        <div className={`flex pt-6 items-center w-[240px] md:pt-0 lg:w-full lg:max-h-[400px] min-h-[292px] flex-col bg-black/[0.7] rounded-[20px]
                         md:flex-row md:w-[550px] md:h-[auto] md:items-center md:justify-start md:bg-black/[0.5] md:pt-2 md:pb-2 md:box-border md:pl-3 md:min-h-[150px]`}>
                     <span className="flex rounded-full md:mt-0 mt-3 items-center justify-center border-white border-[3px] text-white w-[76px] h-[76px] md:w-24 md:h-24">
                         {createElement(icon, {size: 50, color: "#05E1FE", fill: "#05E1FE", stroke: '#05E1FE'})}

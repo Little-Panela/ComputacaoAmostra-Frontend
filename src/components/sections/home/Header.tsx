@@ -8,8 +8,14 @@ import { UseTranslation, useTranslation } from "next-i18next";
 export function Header() {
   const { t } = useTranslation("common")
 
+  const scrollToProgram = () => {
+    const program = document.getElementById("program");
+    program?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="bg-main-linear flex flex-col px-12 justify-center items-center bg-cover bg-center bg-no-repeat h-screen py-40">
+
       <div className="flex flex-col gap-4 items-center mb-16">
         <img src="/static/img/logo-amazon.png" alt="Logo Amazon Hacking" />
         <Heading className="text-center text-lg md:text-2xl">
@@ -26,7 +32,7 @@ export function Header() {
       <Text className="mb-16 text-sm text-gray-300 text-center md:w-3/4 md:text-lg xl:w-3/5">
         {`"${t("home.header.description")}"`}
       </Text>
-      <Button>
+      <Button onClick={scrollToProgram}>
         {t("home.header.button")}
       </Button>
     </header>

@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Início",
-    "voting": "Votação",
+    "voting": "Projetos",
     "logout": "Sair",
     "contact": "Contato"
   },
@@ -37,7 +37,6 @@
         "description4": "e ",
         "googleBolder": "GOOGLE for STARTUPS ",
         "description5": "como sendo um evento de destaque da cultura empreendedora do Norte."
-
       },
       "cesupaSthem": {
         "description1": "O ",
@@ -73,6 +72,14 @@
       "title4": "Inovação.",
       "button": "Saiba mais"
     },
+    "logos": {
+      "realization": "Realização",
+      "partners": "Parceiros",
+      "sponsorship": "Patrocínio"
+    },
+    "footer": {
+      "partner": "EM PARCERIA COM PANIC"
+    },
     "winners": {
       "title": "Vencedores",
       "enginner": "Engenharia de Computação",
@@ -98,7 +105,11 @@
       }
     },
     "gallery": {
-      "heading": "Defina o vencedor da Computação Amostra 2023!",
+      "heading": {
+        "part1": "Defina o vencedor da ",
+        "part2": "Computação Amostra ",
+        "part3": "2023!"
+      },
       "subheading-bcc": "Escolha o melhor projeto de Ciência da Computação!",
       "subheading-ecomp": "Escolha o melhor projeto de Engenharia da Computação!",
       "card": {
