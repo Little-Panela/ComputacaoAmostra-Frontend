@@ -18,7 +18,7 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
     onChangeText(event.target.value);
   };
   return (
-    <header className="relative overflow-x-hidden mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
+    <header className="relative overflow-hidden mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-96"/>
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96"/>
 

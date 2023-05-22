@@ -24,7 +24,7 @@ export function VotingGallery({
   const { t } = useTranslation("common");
 
   return (
-    <section className="relative mx-5 py-20 pb-40 mt-12 flex flex-col items-center gap-6 overflow-hidden md:mt-8 md:gap-16">
+    <section className="overflow-x-hidden relative mx-5 py-20 pb-40 mt-12 flex flex-col items-center gap-6 overflow-hidden md:mt-8 md:gap-16">
       <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-40 -right-20 opacity-20 rotate-[-135deg]" />
       <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg]" />
 
