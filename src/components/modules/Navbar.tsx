@@ -19,7 +19,7 @@ interface NavbarProps {
   children: ReactNode;
 }
 
-function NavBarItem(props: NavbarProps) {
+function NavBarItem (props: NavbarProps) {
   return (
     <button className="w-full" onClick={props.onClick}>
       <div
@@ -41,7 +41,7 @@ function NavBarItem(props: NavbarProps) {
   );
 }
 
-function AvatarButton(props: {
+function AvatarButton (props: {
   user?: { name?: string | null; image?: string | null };
 }) {
   return (
@@ -57,7 +57,7 @@ function AvatarButton(props: {
   );
 }
 
-export function Navbar() {
+export function Navbar () {
   const router = useRouter();
   const { data: session } = useSession();
   const { t } = useTranslation("common");
@@ -77,7 +77,7 @@ export function Navbar() {
   const linkToVoting = isVotingStarted
     ? `/voting?course=${randomCourse}`
     : "/voting/countdown";
-  function toggleMenu() {
+  function toggleMenu () {
     setIsMenuOpen((prev) => !prev);
   }
 
@@ -95,7 +95,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="z-[10]">
+    <nav className="z-[10] w-full absolute">
       <div className="flex h-40 items-center justify-between bg-transparent p-7">
         <Link href="/">
           <div className="flex flex-shrink-0 items-center gap-2 text-white">
@@ -237,25 +237,25 @@ export function Navbar() {
                       </Popover.Trigger>
                       <Popover.Anchor />
                       <Popover.Portal>
-                        <Popover.Content sideOffset={5} alignOffset={10} align="end" sticky="always" hideWhenDetached >
+                        <Popover.Content sideOffset={15} align="end" sticky="always" hideWhenDetached >
                           <Popover.Arrow className="fill-pallete-primary-xdark" />
-                          <div className="flex flex-col items-end bg-pallete-background-blue border-2 border-pallete-primary-xdark p-2 shadow-md shadow-pallete-primary/20">
-                            <div className="flex flex-col justify-start">
-                              <div className="text-base font-medium text-white">
+                          <div className="flex px-[30px] py-[20px] gap-8 shadow-userPopover justify-between items-center bg-pallete-background-blue rounded-2xl border-2 border-pallete-primary-xdark">
+                            <div className="flex flex-col gap-2 justify-center">
+                              <div className="font-montserrat text-sm font-semibold text-white">
                                 {user?.name ?? "Usuário"}
                               </div>
-                              <div className="text-xs font-medium text-gray-500">
+                              <div className="text-xs font-montserrat font-normal text-gray-500">
                                 {user?.email ?? ""}
                               </div>
                             </div>
-                            <Button className="mt-4" onClick={() => signOut()}>
+                            <Button onClick={() => signOut()}>
                               {t("navbar.logout")}
                             </Button>
                           </div>
                         </Popover.Content>
                       </Popover.Portal>
                     </Popover.Root>
-                    
+
                   </div>
                   {/* <div className="ml-3">
                     <div className="text-base font-medium text-white">

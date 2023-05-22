@@ -28,24 +28,6 @@ export function VotingGallery({
       {!isLoading ? (
         projects && projects.length > 0 ? (
           <div className="w-full flex flex-wrap justify-center gap-y-3 gap-x-4 md:gap-y-5">
-            <CardProject
-              key={1}
-              name={"Teste Teste"}
-              description={"Duis veniam labore id culpa laboris non Lorem non aliqua."}
-              links={{ github: "https://github.com", youtube: { pt: "adasdas", en: "asdsadasd" } }}
-              team={["asdasd", "adsad"]}
-              // @ts-expect-error - bcc and ecomp strings are valid
-              course={course}
-            />
-            <CardProject
-              key={2}
-              name={"Teste Teste"}
-              description={"Duis veniam labore id culpa laboris non Lorem non aliqua."}
-              links={{ github: "https://github.com", youtube: { pt: "adasdas", en: "asdsadasd" } }}
-              team={["asdasd", "adsad"]}
-              // @ts-expect-error - bcc and ecomp strings are valid
-              course={course}
-            />
             {projects.map((project) => (
               <CardProject
                 key={project.id}

@@ -11,35 +11,25 @@ export function About() {
   const { t } = useTranslation("common");
 
   return (
-    // <section className="bg-[url('/static/img/about-bg.png')] bg-cover bg-center bg-no-repeat px-4 pb-10 sm:px-6 lg:px-8">
-    //   <div className="mx-auto max-w-7xl">
-    //     <Heading size="lg" className="pt-9 text-center text-white md:text-4xl">
-    //       {t("home.titles.about")}
-    //     </Heading>
-
-    //     <div className="mx-auto my-6">
-    //       <Player videoId="PuRcj4yvfso" />
-    //     </div>
-
-    //     <p className="text-xl text-white">{t("home.about")}</p>
-    //   </div>
-    // </section>
     <section className="bg-about-linear py-32 md:bg-about-linear-md bg-cover bg-center bg-no-repeat flex flex-col px-8 lg:px-12 xl:px-36 items-center lg:items-start gap-20">
       <Heading className="border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
-        O que Buscamos?
+        {t("home.about.about1")}
+        <b className="text-pallete-primary">
+          {t("home.about.about2")}
+        </b>
       </Heading>
       <div className="flex flex-wrap justify-center gap-y-9 gap-x-10 lg:grid lg:grid-cols-2">
         <CardAbout icon={AiFillAccountBook}>
-          Fornecer soluções tecnológicas e empreendedoras na região amazônica.
+          {t("home.about.objective1")}
         </CardAbout>
         <CardAbout icon={AiFillAccountBook}>
-          Inter-relacionamento entre alunos e empresas de tecnologia do mercado.
+          {t("home.about.objective2")}
         </CardAbout>
         <CardAbout icon={AiFillAccountBook}>
-          Fortalecer o ecossistema de inovação e networking.
+          {t("home.about.objective3")}
         </CardAbout>
         <CardAbout icon={AiFillAccountBook}>
-          Criar experiências imersivas em ilhas e comunidades para os alunos.
+          {t("home.about.objective4")}
         </CardAbout>
       </div>
     </section>
