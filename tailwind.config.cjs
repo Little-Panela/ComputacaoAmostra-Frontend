@@ -10,13 +10,13 @@ module.exports = {
       },
       colors: {
         pallete: {
-          "primary": "#01E5FB",
+          primary: "#01E5FB",
           "primary-light": "#05E1FE",
           "primary-dark": "#00A2B8",
           "primary-xdark": "#006D7B",
           "background-blue": "#000B1C",
-          "gradient-top": "#05ffff20",
-          "secondary": "#0F861C",
+          "gradient-top": "#05ffff10",
+          secondary: "#0F861C",
           "menu-item-start": "#00384F",
           "menu-item-end": "#000B1C",
           "menu-item-selected-end": "#01384E",
@@ -24,6 +24,9 @@ module.exports = {
           "purple-zen": "#7327BB",
           "dark-purple-zen": "#55188f"
         },
+      },
+      boxShadow: {
+        "blue-light": "0px 0px 250px 250px rgb(5, 225, 254)",
       },
       keyframes: {
         // Toast
@@ -78,11 +81,15 @@ module.exports = {
           "linear-gradient(180deg, rgba(0,11,28,1) 0%, rgba(0,11,28,0.9) 20%, rgba(0,11,28,0) 50%, rgba(0,11,28,0.7) 85%, rgba(0,11,28,1) 100%), url('/static/img/about-background.png')",
         "about-linear-md":
           "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('/static/img/about-background-md.png')",
-        "main-linear": "linear-gradient(180deg, rgba(0,11,28,0.8) 0%, rgba(0,11,28,0.5) 12%, rgba(0,11,28,0) 29%, rgba(0,11,28,0) 62%, rgba(0,11,28,0.8) 90%, rgba(0,11,28,1) 100%), url('/static/img/main-background.png')",
+        "main-linear":
+          "linear-gradient(180deg, rgba(0,11,28,0.8) 0%, rgba(0,11,28,0.5) 12%, rgba(0,11,28,0) 29%, rgba(0,11,28,0) 62%, rgba(0,11,28,0.8) 90%, rgba(0,11,28,1) 100%), url('/static/img/main-background.png')",
         "dots-1": "url('/static/img/dots_technology_green_top.png')",
         "dots-2": "url('/static/img/dots_technology_green_bottom.png')",
         "focus-zenith": "radial-gradient(circle, rgba(115,39,187,.5) 0%, rgba(0,0,31,.5) 60%, rgba(0,0,31,1) 100%)"
       },
+      boxShadow: {
+        "userPopover": "0px 1px 10px rgba(5, 255, 254, 0.5)"
+      }
     },
   },
   plugins: [require("tailwindcss-radix")],

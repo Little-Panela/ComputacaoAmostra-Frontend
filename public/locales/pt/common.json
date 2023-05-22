@@ -8,9 +8,10 @@
   "home": {
     "titles": {
       "mmib": "MMIB",
-      "compamostra": "Computação Amostra",
-      "university": "CESUPA",
-      "about": "Sobre"
+      "comp": "Somos destaque!",
+      "university": "CESUPA & STHEM",
+      "about": "Sobre",
+      "curiosity": "Curiosidades"
     },
     "header": {
       "date1": "27 de ",
@@ -21,9 +22,30 @@
       "button": "Saiba Mais"
     },
     "curiosity": {
-      "mmib": "O MMIB estimula o ecoturismo na Ilha de Cotijuba e realiza projetos que atendem toda a comunidade, desde os jovens até os mais velhos, além de fomentar o trabalho em conjunto e empoderamento feminino e o bioempreendedorismo.",
-      "compamostra": "A Computação Amostra, o maior evento de tecnologia da Instituição Cesupa, é reconhecido pela ABSTARTUPS e GOOGLE for STARTUPS como sendo um evento de destaque da cultura empreendedora do Norte.",
-      "sthem": "O Cesupa busca implementar a cultura empreendedora e inovadora no cotiadiano do universitário. O Consórcio STHEM é um grande parceiro do CESUPA na formação de professores em metodologias ativas, desde a parceria houve o fortalecimento do aprendizado baseado em jogos, com a criação dos Hackatons e as maratonas de inovação e o Project Based Learning (PBL)"
+      "mmibDescription": {
+        "description1": "O ",
+        "mmibBolder": "MMIB ",
+        "mmib": "estimula o ecoturismo na Ilha de Cotijuba e realiza projetos que atendem toda a comunidade, desde os jovens até os mais velhos, além de fomentar o trabalho em conjunto e empoderamento feminino e o bioempreendedorismo."
+      },
+      "compamostraDescription": {
+        "description1": "A ",
+        "compamostraBolder": "Computação Amostra, ",
+        "description2": "o maior evento de tecnologia do ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "é reconhecido pela ",
+        "ABSBolder": "ABSTARTUPS ",
+        "description4": "e ",
+        "googleBolder": "GOOGLE for STARTUPS ",
+        "description5": "como sendo um evento de destaque da cultura empreendedora do Norte."
+
+      },
+      "cesupaSthem": {
+        "description1": "O ",
+        "sthemBolder": "Consórcio STHEM ",
+        "description2": "é um grande parceiro do ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "na formação de professores em metodologias ativas, gerando fortalecimento do aprendizado baseado em jogos, com a criação dos Hackatons e as maratonas de inovação e o Project Based Learning (PBL)"
+      }
     },
     "about": {
       "about1": "O que ",

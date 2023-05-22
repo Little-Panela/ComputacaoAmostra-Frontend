@@ -8,9 +8,11 @@
   "home": {
     "titles": {
       "mmib": "MMIB",
+      "comp": "We are remarkable!",
       "compamostra": "Computação Amostra",
-      "university": "CESUPA",
-      "about": "About"
+      "university": "CESUPA & STHEM",
+      "about": "About",
+      "curiosity": "Fun Facts"
     },
     "header": {
       "date1": "May ",
@@ -21,9 +23,29 @@
       "button": "Learn More"
     },
     "curiosity": {
-      "mmib": "MMIB promotes ecotourism on Cotijuba Island and carries out projects that serve the entire community, from the young to the elderly, in addition to fostering teamwork, female empowerment, and bio-entrepreneurship.",
-      "compamostra": "Computação Amostra, the largest technology event of Cesupa Institution, is recognized by ABSTARTUPS and GOOGLE for STARTUPS as a prominent event in the entrepreneurial culture of the North.",
-      "sthem": "Cesupa aims to implement an entrepreneurial and innovative culture in the daily lives of university students. The STHEM Consortium is a major partner of CESUPA in training teachers in active methodologies, and since the partnership, there has been a strengthening of game-based learning, with the creation of Hackathons and innovation marathons, as well as Project-Based Learning (PBL)."
+      "mmibDescription": {
+      "description1": "The ",
+      "mmibBolder": "MMIB ",
+      "mmib": "promotes ecotourism on Cotijuba Island and implements projects that benefit the entire community, from the youth to the elderly, while fostering collaboration, female empowerment, and bioentrepreneurship."
+      },
+        "compamostraDescription": {
+        "description1": "The ",
+        "compamostraBolder": "Computação Amostra, ",
+        "description2": "the largest technology event at ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "is recognized by ",
+        "ABSBolder": "ABStartups  ",
+        "description4": "and ",
+        "googleBolder": "GOOGLE for STARTUPS ",
+        "description5": "as a prominent event in the entrepreneurial culture on the North of Brazil."
+      },
+      "cesupaSthem": {
+        "description1": "The ",
+        "sthemBolder": "STHEM Consortium ",
+        "description2": "is a major partner of ",
+        "cesupaBolder": "CESUPA, ",
+        "description3": "in teacher training for active methodologies, promoting the strengthening of game-based learning through the creation of Hackathons, innovation marathons, and Project Based Learning (PBL)."
+      }
     },
     "about": {
       "about1": "Our ",
