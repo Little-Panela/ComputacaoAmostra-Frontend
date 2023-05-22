@@ -50,7 +50,7 @@ export function VotingGallery({
             <div className="bg-transparent flex items-center justify-center w-[120px] h-[120px] md:w-[180px] md:h-[180px] rounded-full border-pallete-primary border-[4px]">
               <a className="font-bold translate-x-[6px] text-center justify-center items-center text-pallete-primary text-5xl md:text-7xl rotate-90">:(</a>
             </div>
-            <Text className="md:text-2xl text-lg font-montserrat font-semibold text-pallete-primary">
+            <Text className="md:text-2xl box-border pt-3 md:pt-6 text-lg font-montserrat font-semibold text-pallete-primary">
               {t("voting.gallery.noProjects")} <a className="text-white">{t("voting.gallery.afterProjects")}</a>
             </Text>
           </div>
