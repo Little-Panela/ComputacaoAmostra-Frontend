@@ -103,7 +103,9 @@
       "alertMessages": {
         "success": "Voto realizado com sucesso!",
         "error": "Erro ao realizar voto, tente novamente mais tarde."
-      }
+      },
+      "team": "Equipe",
+      "description": "Descrição"
     }
   },
   "countdown": {

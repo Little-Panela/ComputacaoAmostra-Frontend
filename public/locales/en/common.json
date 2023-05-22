@@ -103,7 +103,9 @@
       "alertMessages": {
         "success": "Vote successfully registered!",
         "error": "Error registering vote, try again later."
-      }
+      },
+      "team": "Team",
+      "description": "Description",
     }
   },
   "countdown": {
