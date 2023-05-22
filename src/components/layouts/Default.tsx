@@ -3,10 +3,8 @@ import { NextSeo } from "next-seo";
 
 import { Navbar } from "../modules/Navbar";
 import { Footer } from "../modules/Footer";
-import { Button } from "../elements/Button";
-import { TextInput } from "../elements/TextInput";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Montserrat } from "next/font/google"
+import ToastComponent from "../elements/ToastComponent";
 
 const montserrat = Montserrat({subsets: ['latin'], weight: ["800", "700", "500"], variable: "--font-montserrat"});
 
@@ -51,6 +49,7 @@ export function Default({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ToastComponent />
       </div>
     </>
   );

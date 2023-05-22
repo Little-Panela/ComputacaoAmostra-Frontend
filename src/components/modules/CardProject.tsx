@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Link from "next/link";
-import { ToastContainer } from "react-toastify";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 
@@ -93,7 +92,6 @@ export function CardProject({
 
         </div>
       </div>
-      <ToastContainer />
     </>
   );
 }

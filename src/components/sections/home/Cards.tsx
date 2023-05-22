@@ -1,23 +1,26 @@
 import { useTranslation } from "next-i18next";
 
 import { Heading } from "../../elements/Heading";
-import { FaUniversity } from "react-icons/fa"
-import { CardProgram } from "../../modules/CardProgram";
+import { BsPersonFillGear } from "react-icons/bs"
+import { IoIosWoman } from "react-icons/io"
+import { AiFillStar } from "react-icons/ai"
+import { createElement } from "react";
 import type { ReactNode } from "react";
+import type { IconType } from "react-icons";
 
 interface CardProps {
   title: ReactNode;
   children: ReactNode;
+  icon: IconType;
   exclamation?: ReactNode;
+
 }
 
-function Card ({ title, children, exclamation }: CardProps) {
+function Card ({ title, children, exclamation, icon }: CardProps) {
   return (
     <div className="bg-gradient-to-tl from-transparent to-pallete-gradient-top h-[472px] text-xs flex max-w-xs flex-col gap-2 rounded-md border-pallete-primary-light border-2 p-4 shadow-md">
       <div className="flex flex-col items-center gap-4">
-        <span className="h-[76px] w-[76px] rounded-full border-2 pt-5 border-white flex justify-center items-center">
-          <CardProgram icon={FaUniversity} />
-        </span>
+        <span className="h-[76px] w-[76px] rounded-full border-2 border-white flex justify-center items-center">{createElement(icon, { size: 40, color: "#05E1FE", fill: "#05E1FE" })}</span>
         <div className="flex flex-row">
           <Heading className="text-base md:text-xl">{title}</Heading>
           <Heading className="text-base text-pallete-primary-light md:text-xl">{exclamation}</Heading>
@@ -43,6 +46,7 @@ export function Cards () {
       <div className="flex flex-col items-center justify-around gap-6 lg:flex-row lg:items-start">
         <Card
           title={t("home.titles.mmib")}
+          icon={IoIosWoman}
         >
           <p className="text-base text-justify md:text-left lg:text-jusify p-4">
             {t("home.curiosity.mmibDescription.description1")}
@@ -54,6 +58,7 @@ export function Cards () {
         </Card>
         <Card
           title={t("home.titles.comp")}
+          icon={AiFillStar}
         >
           <p className="text-base text-justify md:text-left lg:text-jusify p-4">
             {t("home.curiosity.compamostraDescription.description1")}
@@ -77,6 +82,7 @@ export function Cards () {
         </Card>
         <Card
           title={t("home.titles.university")}
+          icon={BsPersonFillGear}
         >
           <p className="text-base text-justify md:text-left  lg:text-jusify p-4">
             {t("home.curiosity.cesupaSthem.description1")}

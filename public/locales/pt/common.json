@@ -78,7 +78,7 @@
     "title": "Votação",
     "header": {
       "projects": "Projetos do Amazon Hacking 2023",
-      "description": "UmaOs universitários elaboram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB, uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão.",
+      "description": "Após realizar uma visita imersiva, os universitários elaboraram projetos sustentáveis para a Ilha de Cotijuba e sua comunidade, aliando-se ao MMIB. Uma instituição sem fins lucrativos que busca firmar a autonomia e o conhecimento cidadão.",
       "searchPlaceholder": "Pesquisar por nome do projeto",
       "courses": {
         "cs": "Ciência da Computação",
@@ -86,9 +86,9 @@
       }
     },
     "gallery": {
-      "heading": "Quem você quer que vença a computação amostra 2023?",
-      "subheading-bcc": "Vote para definir o melhor projeto de Ciência da computação!!",
-      "subheading-ecomp": "Vote para definir o melhor projeto de Engenharia da Computação!!",
+      "heading": "Defina o vencedor da Computação Amostra 2023!",
+      "subheading-bcc": "Escolha o melhor projeto de Ciência da Computação!",
+      "subheading-ecomp": "Escolha o melhor projeto de Engenharia da Computação!",
       "card": {
         "details": "Detalhes"
       },
@@ -103,7 +103,9 @@
       "alertMessages": {
         "success": "Voto realizado com sucesso!",
         "error": "Erro ao realizar voto, tente novamente mais tarde."
-      }
+      },
+      "team": "Equipe",
+      "description": "Descrição"
     }
   },
   "countdown": {

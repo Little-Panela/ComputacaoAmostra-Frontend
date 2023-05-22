@@ -27,6 +27,7 @@ module.exports = {
       },
       boxShadow: {
         "blue-light": "0px 0px 250px 250px rgb(5, 225, 254)",
+        "userPopover": "0px 1px 10px rgba(5, 255, 254, 0.5)"
       },
       keyframes: {
         // Toast
@@ -89,10 +90,8 @@ module.exports = {
         "dots-2": "url('/static/img/dots_technology_green_bottom.png')",
         "focus-zenith": "radial-gradient(circle, rgba(115,39,187,.5) 0%, rgba(0,0,31,.5) 60%, rgba(0,0,31,1) 100%)",
         "winner-card": "radial-gradient(68% 96.98% at 50% -43.95%, #05E1FE 0%, rgba(0, 0, 0, 0) 100%), #000B1C",
+        "modal-radial-gradient": "radial-gradient(99.73% 65.48% at 0% -2.81%, rgba(5,255,254,.4) 0%, rgba(0,0,0,0) 100%, rgba(0,11,28,0.7))"
       },
-      boxShadow: {
-        "userPopover": "0px 1px 10px rgba(5, 255, 254, 0.5)"
-      }
     },
   },
   plugins: [require("tailwindcss-radix")],
