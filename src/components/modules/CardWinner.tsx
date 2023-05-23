@@ -3,14 +3,19 @@ import { Text } from "../elements/Text"
 import { Button } from "../elements/Button"
 import clsx from "clsx"
 import { useTranslation } from "react-i18next"
+import { ModalProject } from "./ModalProject"
 
 type CardWinnerProps = {
     title: string,
     position: number,
-    course: "BCC" | "ECOMP"
+    course: "bcc" | "ecomp",
+    description: string,
+    team: string[],
+    isZenith: boolean,
+    youtubeId: string,
 }
 
-export function CardWinner({ title, position, course }: CardWinnerProps) {
+export function CardWinner({ title, position, course, description, isZenith, team, youtubeId }: CardWinnerProps) {
     const { t } = useTranslation("common")
 
     return (
@@ -20,9 +25,25 @@ export function CardWinner({ title, position, course }: CardWinnerProps) {
             {position === 3 && <img src="/static/img/third.svg" alt="terceiro lugar" className="h-24 w-auto" />}
             <div className="flex flex-col gap-5 flex-1">
                 <Text className="text-white text-left text-base md:text-2xl">{title}</Text>
-                <Button className="text-xs md:text-base">
-                    {t("home.winners.details")}
-                </Button>
+                <ModalProject
+                    id=""
+                    name={title}
+                    nameForSlug={title}
+                    isWinner={true}
+                    isZenith={isZenith}
+                    title={title}
+                    position={position}
+                    trigger={
+                        <Button className="text-xs md:text-base">
+                            {t("home.winners.details")}
+                        </Button>
+                    }
+                    course={course}
+                    description={description}
+                    teamMembers={team}
+                    videoId={youtubeId}
+                    githubLink=""
+                />
             </div>
         </div>
     )

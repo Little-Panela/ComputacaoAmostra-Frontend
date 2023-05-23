@@ -16,7 +16,6 @@ export type ModalProps = {
   description?: string;
   closeButton?: boolean;
   course: string;
-  githubLink: string;
   children: React.ReactNode;
 };
 
@@ -26,7 +25,6 @@ export function Modal({
   description,
   closeButton,
   course,
-  githubLink,
   children,
 }: ModalProps) {
   const router = useRouter();
@@ -82,9 +80,6 @@ export function Modal({
                   <button
                     className="absolute right-3 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full transition-all hover:scale-150"
                     aria-label="Close"
-                    onClick={() => {
-                      void router.push(`/voting?course=${course}`, undefined, { scroll: false });
-                    }}
                   >
                     <XMarkIcon className="h-5 w-5 text-white" />
                   </button>

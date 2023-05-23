@@ -129,7 +129,8 @@
         "error": "Erro ao realizar voto, tente novamente mais tarde."
       },
       "team": "Equipe",
-      "description": "Descrição"
+      "description": "Descrição",
+      "noVideo": "Nenhum vídeo disponível"
     }
   },
   "countdown": {
@@ -146,5 +147,35 @@
     "privacyPolicy": "Política de Privacidade",
     "terms": "Termos de Serviço",
     "developed": "Feito com ♥ por Panic"
+  },
+  "winners": {
+    "ecomp": {
+      "firstPlace": {
+        "title": "Zenith Inova",
+        "description": "A Zenith desenvolveu o Módulo Falken , composto por um um leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G. Juntos, esses equipamentos se tornam um módulo de medição para as aeronaves remotamente pilotadas. Ou RPAS."
+      },
+      "secondPlace": {
+        "title": "CVGreen",
+        "description": "Aplicativo mobile de reconhecimento de troncos de árvores através de uma inteligência artificial."
+      },
+      "thirdPlace": {
+        "title": "Helix",
+        "description": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar parâmetros de qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de monitoramento), proposto pela Agência nacional de águas, que busca equipamentos capazes de fornecer informações sobre a qualidade recursos hídricos de todo o território nacional."
+      }
+    },
+    "bcc": {
+      "firstPlace": {
+        "title": "BioTank",
+        "description": "BioTank e um projeto que visa fornecer um fonte de gás de cozinha limpa e sustentável para os habitantes da ilha das Onças."
+      },
+      "secondPlace": {
+        "title": "SICFAA",
+        "description": "Primeira instância de um projeto de tratamento de água para irrigação, no qual foi feito a criação de um sistema inteligente de captação, filtragem e armazenamento de água (SICFAA)"
+      },
+      "thirdPlace": {
+        "title": "AutoDrops",
+        "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção."
+      }
+    }
   }
 }
