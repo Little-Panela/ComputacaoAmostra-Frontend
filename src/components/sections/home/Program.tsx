@@ -18,12 +18,12 @@ export function Program () {
                 <img src={'/static/img/greenelegantdots.svg'} className="lg:hidden top-[0] w-auto h-[462px] mix-blend-difference transform scale-x-[-1] z-[0]" alt="Elegant Dots" />
                 <img src={'/static/img/greenelegantdots.svg'} className="lg:hidden w-auto h-[462px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
             </div>
-            <img src={'static/img/coconutstree.svg'} className=" absolute w-[335px] h-[537px] mix-blend-lighten left-[-38px] top-[100px] " />
+            <img src={'static/img/coconutstree.svg'} className=" absolute w-[335px] h-[537px] mix-blend-lighten left-[-38px] top-[100px] z-[2]" />
 
             <div className="flex flex-col gap-11 items-center lg:items-start">
                 <img src={'/static/img/greenelegantdots.svg'} className="hidden lg:block absolute top-[-150px] left-[-500px] transform scale-x-[-1] z-[0] w-[939px] h-[719px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
                 <img src={'/static/img/greenelegantdots.svg'} className="hidden lg:block absolute bottom-[-200px] left-0 transform scale-x-[-1] z-[0] w-auto h-[462px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
-                <Heading className="relative z-10border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
+                <Heading className="relative z-10border-b-4 border-pallete-primary pb-4 w-fit border-b-4 " size="2xl">
                     {t("home.program.title")}
                 </Heading>
                 <Text className="relative z-10 text-base text-center lg:text-left">
