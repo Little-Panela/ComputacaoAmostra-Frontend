@@ -167,7 +167,7 @@ export function Winners() {
             {t("home.winners.call5")}
           </b>
         </Text>
-        <Button onClick={() => router.push("/voting")}>{t("home.winners.vote")}</Button>
+        <Button onClick={() => {void router.push("/voting")}}>{t("home.winners.vote")}</Button>
       </div>
     </section>
   );
