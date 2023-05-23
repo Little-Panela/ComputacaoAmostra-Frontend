@@ -11,6 +11,9 @@ import nextI18nConfig from "../../next-i18next.config.mjs";
 
 import { AppProvider } from "../contexts/AppProvider";
 import { Analytics } from "@vercel/analytics/react";
+import { useRouter } from "next/dist/client/router";
+import { useState, useEffect } from 'react'
+import Loading from "../components/modules/Loading";
 
 import "../styles/globals.css";
 
@@ -18,11 +21,28 @@ const MyApp: AppType<{
   session: Session | null;
   dehydrateState: DehydratedState;
 }> = ({ Component, pageProps: { session, ...pageProps } }) => {
+  const [loading, setLoading] = useState(false)
+  const route = useRouter();
+
+  useEffect(() => {
+    const handleStart = () => setLoading(true)
+    const handleComplete = () => setLoading(false)
+
+    route.events.on('routeChangeStart', handleStart)
+    route.events.on('routeChangeComplete', handleComplete)
+
+    return () => {
+      route.events.off('routeChangeStart', handleStart)
+      route.events.off('routeChangeComplete', handleComplete)
+    }
+  })
+
   return (
     <SessionProvider session={session}>
       <AppProvider>
         <Hydrate state={pageProps.dehydrateState}>
           <DefaultSeo {...SEO} />
+          {/* <Loading /> */}
           <Component {...pageProps} />
           <Analytics />
         </Hydrate>

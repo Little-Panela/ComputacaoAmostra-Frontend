@@ -5,6 +5,7 @@
     "logout": "Sair",
     "contact": "Contato"
   },
+  "loading": "Carregando...",
   "home": {
     "titles": {
       "mmib": "MMIB",
