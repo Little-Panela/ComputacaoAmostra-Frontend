@@ -169,9 +169,11 @@ export function ModalProject({
             )
         }>
           <div className={clsx(
-            "relative mt-20 flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
+            "relative flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
             {"border-pallete-primary-light": !isZenith},
             {"border-pallete-purple-zen": isZenith},
+            {"py-4": !isWinner},
+            {"py-10": isWinner}
           )}>
             {isWinner ? (
               <Image
@@ -196,7 +198,7 @@ export function ModalProject({
             </Link>
             )}
             <Heading size="2xl" className={clsx(
-              "text-white border-b-4 py-4",
+              "text-white border-b-2 py-2",
               {"border-pallete-primary-light": !isZenith},
               {"border-pallete-purple-zen": isZenith},
               )}>
