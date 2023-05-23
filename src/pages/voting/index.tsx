@@ -56,6 +56,8 @@ const Voting: NextPage = () => {
     if (!isVotingStarted) {
       void router.push("/voting/countdown");
     }
+
+    console.log(projects)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -69,7 +71,7 @@ const Voting: NextPage = () => {
     >
       <Header course={course ?? "bcc"} onChangeText={handleSearch} />
       <VotingGallery
-        projects={/*filteredProjects*/[]}
+        projects={filteredProjects}
         course={course}
         isLoading={isProjectsLoading}
       />

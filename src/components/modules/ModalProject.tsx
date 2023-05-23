@@ -169,7 +169,7 @@ export function ModalProject({
             )
         }>
           <div className={clsx(
-            "relative mt-20 flex w-full items-center justify-center gap-5 border-b-2  px-[104px] pb-12",
+            "relative mt-20 flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
             {"border-pallete-primary-light": !isZenith},
             {"border-pallete-purple-zen": isZenith},
           )}>
@@ -206,12 +206,12 @@ export function ModalProject({
 
           <div className={
             clsx(
-              "h-full",
+              "h-fit",
               {"bg-modal-radial-gradient": !isZenith},
               {"bg-modal-radial-gradient-zenith": isZenith}
               )
             }>
-            <div className="flex w-full flex-col items-center bg-black/50 h-full">
+            <div className="flex w-full flex-col items-center bg-black/50 h-full gap-10">
               <div className="flex w-full flex-col items-center justify-center px-20 sm:flex-row sm:justify-around sm:gap-32">
                 {/* Equipe */}
                 <div className={clsx(
@@ -398,10 +398,9 @@ export function ModalProject({
                 videoId === "" ?
                 null :
                 <div className={clsx(
-                  "flex w-full items-center justify-center border-2 ",
+                  "flex w-full items-center justify-center border-2 mt-10",
                   {"border-pallete-primary-light": !isZenith},
                   {"border-pallete-purple-zen": isZenith},
-                  {"mt-20": isWinner},
                 )}>
                   <div className={clsx(
                     "m-10 flex w-[80%] overflow-hidden rounded-lg border-2 sm:w-[90%]",
