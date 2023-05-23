@@ -59,6 +59,10 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        "rotate": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        }
       },
       animation: {
         // Toast
@@ -70,6 +74,7 @@ module.exports = {
         "toast-swipe-out-x": "toast-swipe-out-x 100ms ease-out forwards",
         "toast-swipe-out-y": "toast-swipe-out-y 100ms ease-out forwards",
         "card-show": "card-show .7s linear forwards",
+        "rotate": "rotate 1.5s ease-out infinite",
       },
       gridTemplateColumns: {
         "project-cards": "repeat(auto-fill, minmax(0, 160px))",

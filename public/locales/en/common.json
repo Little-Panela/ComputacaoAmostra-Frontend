@@ -5,6 +5,7 @@
     "logout": "Logout",
     "contact": "Contact"
   },
+  "loading": "Loading...",
   "home": {
     "titles": {
       "mmib": "MMIB",
