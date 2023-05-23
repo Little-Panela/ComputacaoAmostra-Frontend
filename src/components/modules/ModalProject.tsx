@@ -27,6 +27,7 @@ import { Heading } from "../elements/Heading";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import clsx from "clsx";
 
 type ModalProjectProps = {
   id: string;
@@ -37,7 +38,12 @@ type ModalProjectProps = {
   githubLink: string;
   description: string;
   course: "bcc" | "ecomp";
+  isWinner?: boolean;
+  position?: number;
+  isZenith?: boolean;
 } & Omit<ModalProps, "children">;
+
+const positionIcon = ["/static/img/first.svg","/static/img/second.svg","/static/img/third.svg"]
 
 export function ModalProject({
   trigger,
@@ -49,6 +55,9 @@ export function ModalProject({
   videoId,
   githubLink,
   course,
+  isWinner = false,
+  isZenith = false,
+  position = 1,
   ...rest
 }: ModalProjectProps) {
   const { data: session } = useSession();
@@ -151,19 +160,31 @@ export function ModalProject({
   };
 
   return (
-    <Modal
-      githubLink={githubLink}
-      trigger={trigger}
-      course={course}
-      closeButton
-      {...rest}
-    >
+    <Modal trigger={trigger} course={course} closeButton {...rest}>
       <>
-        <div className="bg-modal-radial-gradient">
-          <div className="relative px-[104px] mt-20 flex w-full items-center justify-center gap-5 border-b-2 border-pallete-primary-light pb-12">
-            <Link
+        <div className={
+          clsx(
+            {"bg-modal-radial-gradient": !isZenith},
+            {"bg-modal-radial-gradient-zenith": isZenith}
+            )
+        }>
+          <div className={clsx(
+            "relative mt-20 flex w-full items-center justify-center gap-5 border-b-2  px-[104px] pb-12",
+            {"border-pallete-primary-light": !isZenith},
+            {"border-pallete-purple-zen": isZenith},
+          )}>
+            {isWinner ? (
+              <Image
+                src={isZenith ? "/static/img/first-zenith.svg" : (positionIcon[position-1] ?? "/static/img/first.svg")}
+                className="text-white w-fit p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
+                height={64}
+                width={64}
+                alt="Colocação do projeto"
+              />
+            ) : (
+              <Link
               href={githubLink}
-              className="w-fit cursor-pointer rounded-full p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
+              className="w-fit cursor-pointer p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
             >
               <Image
                 src="/static/icons/github-white-logo.svg"
@@ -173,22 +194,38 @@ export function ModalProject({
                 alt="Logo do github"
               />
             </Link>
-            <div className="relative flex flex-col self-center">
-              <Heading size="2xl" className="text-white">
-                {name.split("-")[0]}
-              </Heading>
-              <div className="absolute bottom-[-10px] mt-2 h-[2px] w-full bg-pallete-primary-light" />
-            </div>
+            )}
+            <Heading size="2xl" className={clsx(
+              "text-white border-b-4 py-4",
+              {"border-pallete-primary-light": !isZenith},
+              {"border-pallete-purple-zen": isZenith},
+              )}>
+              {name.split("-")[0]}
+            </Heading>
           </div>
 
-          <div className="bg-modal-radial-gradient">
-            <div className="flex w-full flex-col items-center bg-black/50">
+          <div className={
+            clsx(
+              "h-full",
+              {"bg-modal-radial-gradient": !isZenith},
+              {"bg-modal-radial-gradient-zenith": isZenith}
+              )
+            }>
+            <div className="flex w-full flex-col items-center bg-black/50 h-full">
               <div className="flex w-full flex-col items-center justify-center px-20 sm:flex-row sm:justify-around sm:gap-32">
                 {/* Equipe */}
-                <div className="mt-10 flex w-max min-w-[200px] flex-col border-[1px] border-pallete-primary px-4 py-6 text-center sm:w-1/2 sm:items-start">
+                <div className={clsx(
+                    "mt-10 flex w-max min-w-[200px] flex-col border-[1px] px-4 py-6 text-center sm:w-1/2 sm:items-start",
+                    {"border-pallete-primary-light": !isZenith},
+                    {"border-pallete-purple-zen": isZenith},
+                  )}>
                   <Text
                     size="xl"
-                    className="font-bold text-pallete-primary-light"
+                    className={clsx("font-bold",
+                      {"text-pallete-primary": !isZenith},
+                      {"text-pallete-purple-zen": isZenith},
+
+                    )}
                   >
                     {t("voting.modal.team")}
                   </Text>
@@ -211,151 +248,170 @@ export function ModalProject({
                   {/* Descrição */}
                   <div className="mt-20 flex w-full min-w-[200px] flex-col gap-8 sm:mt-0">
                     <div className="flex w-full flex-col items-center">
-                      <div className="relative flex w-fit flex-col items-center">
-                        <Heading size="md" className="text-white">
-                          {t("voting.modal.description")}
-                        </Heading>
-                        <div className="absolute bottom-[-10px] mt-2 h-[2px] w-full bg-pallete-primary-light" />
-                      </div>
+                      <Heading size="md" className={clsx(
+                        "text-white border-b-4 py-4",
+                        {"border-pallete-primary-light": !isZenith},
+                        {"border-pallete-purple-zen": isZenith},
+                      )}>
+                        {t("voting.modal.description")}
+                      </Heading>
                     </div>
                     <Text size="sm">{description}</Text>
                   </div>
-                  <div className="flex w-full flex-col items-center justify-center sm:hidden">
-                    {/* Mobile Compartilhar */}
-                    <div className="mt-32 flex w-full min-w-[200px] flex-col items-center gap-5">
-                      <Text size="xl" className="font-bold">
-                        {t("voting.modal.share")}
-                      </Text>
-                      <div className="flex w-full items-center justify-center gap-5">
-                        <a href={`https://wa.me/?text=${shareMessage}`}>
-                          <FaWhatsapp
-                            color="white"
-                            size={36}
-                            className="cursor-pointer transition-all hover:scale-125"
-                          />
-                        </a>
-                        <a
-                          href={`http://twitter.com/share?text=${twitterShareMessage}&url=${shareUrl}`}
-                        >
-                          <FaTwitter
-                            color="white"
-                            size={36}
-                            className="cursor-pointer transition-all hover:scale-125"
-                          />
-                        </a>
+                  {isWinner ? null : (
+                    <div className="flex w-full flex-col items-center justify-center sm:hidden">
+                      {/* Mobile Compartilhar */}
 
-                        <a
-                          href={`http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&t=${twitterShareMessage}`}
-                        >
-                          <FaFacebook
-                            color="white"
-                            size={36}
-                            className="cursor-pointer transition-all hover:scale-125"
-                          />
-                        </a>
+                      <div className="mt-32 flex w-full min-w-[200px] flex-col items-center gap-5">
+                        <Text size="xl" className="font-bold">
+                          {t("voting.modal.share")}
+                        </Text>
+                        <div className="flex w-full items-center justify-center gap-5">
+                          <a href={`https://wa.me/?text=${shareMessage}`}>
+                            <FaWhatsapp
+                              color="white"
+                              size={36}
+                              className="cursor-pointer transition-all hover:scale-125"
+                            />
+                          </a>
+                          <a
+                            href={`http://twitter.com/share?text=${twitterShareMessage}&url=${shareUrl}`}
+                          >
+                            <FaTwitter
+                              color="white"
+                              size={36}
+                              className="cursor-pointer transition-all hover:scale-125"
+                            />
+                          </a>
+
+                          <a
+                            href={`http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&t=${twitterShareMessage}`}
+                          >
+                            <FaFacebook
+                              color="white"
+                              size={36}
+                              className="cursor-pointer transition-all hover:scale-125"
+                            />
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    {/* Captcha */}
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      hl="pt-BR"
-                      size="invisible"
-                      sitekey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
-                      onChange={onReCAPTCHAChange}
-                      badge="inline"
-                      className="mt-16 sm:mt-0"
-                    />
-                    {/* Vote / Sigin */}
-                    <div className="mb-10 mt-10">
-                      {isVotingEnd ? (
-                        <div />
-                      ) : isUserLoggedIn ? (
-                        <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8">
-                          <Button onClick={handleVote}>
-                            {t("voting.modal.vote")}
-                          </Button>
-                        </div>
-                      ) : (
-                        <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
-                          <div>{t("voting.modal.signMensage")}</div>
-                          <Button onClick={() => signIn("google")}>
-                            {t("voting.modal.signIn")}
-                          </Button>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden w-full items-center justify-around gap-32 px-20 sm:flex">
-                {/* Desktop Compartilhar */}
-                <div className="mt-32 flex w-1/2 min-w-[200px] flex-col items-center gap-5 sm:mt-0 sm:items-start">
-                  <Text size="xl" className="font-bold">
-                    {t("voting.modal.share")}
-                  </Text>
-                  <div className="flex w-full items-center justify-start gap-5">
-                    <a href={`https://wa.me/?text=${shareMessage}`}>
-                      <FaWhatsapp
-                        color="white"
-                        size={36}
-                        className="cursor-pointer transition-all hover:scale-125"
+                      {/* Captcha */}
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        hl="pt-BR"
+                        size="invisible"
+                        sitekey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
+                        onChange={onReCAPTCHAChange}
+                        badge="inline"
+                        className="mt-16 sm:mt-0"
                       />
-                    </a>
-                    <a
-                      href={`http://twitter.com/share?text=${twitterShareMessage}&url=${shareUrl}`}
-                    >
-                      <FaTwitter
-                        color="white"
-                        size={36}
-                        className="cursor-pointer transition-all hover:scale-125"
-                      />
-                    </a>
-
-                    <a
-                      href={`http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&t=${twitterShareMessage}`}
-                    >
-                      <FaFacebook
-                        color="white"
-                        size={36}
-                        className="cursor-pointer transition-all hover:scale-125"
-                      />
-                    </a>
-                  </div>
-                </div>
-                {/* Captcha */}
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  hl="pt-BR"
-                  size="invisible"
-                  sitekey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
-                  onChange={onReCAPTCHAChange}
-                  badge="inline"
-                />
-                {/* Vote / Sigin */}
-                <div className="mb-10 mt-10 flex w-1/2">
-                  {isVotingEnd ? (
-                    <div />
-                  ) : isUserLoggedIn ? (
-                    <div className="flex w-full flex-col items-end justify-between gap-5 rounded-2xl px-4 py-8">
-                      <Button onClick={handleVote}>
-                        {t("voting.modal.vote")}
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
-                      <div>{t("voting.modal.signMensage")}</div>
-                      <Button onClick={() => signIn("google")}>
-                        {t("voting.modal.signIn")}
-                      </Button>
+                      {/* Vote / Sigin */}
+                      <div className="mb-10 mt-10">
+                        {isVotingEnd ? (
+                          <div />
+                        ) : isUserLoggedIn ? (
+                          <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8">
+                            <Button onClick={handleVote}>
+                              {t("voting.modal.vote")}
+                            </Button>
+                          </div>
+                        ) : (
+                          <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
+                            <div>{t("voting.modal.signMensage")}</div>
+                            <Button onClick={() => signIn("google")}>
+                              {t("voting.modal.signIn")}
+                            </Button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
-              <div className="flex w-full items-center justify-center border-2 border-pallete-primary">
-                <div className="m-10 flex w-[80%] overflow-hidden rounded-lg border-2 border-pallete-primary sm:w-[90%]">
-                  <Player videoId={videoId} />
+              {isWinner ? null : (
+                <div className="hidden w-full items-center justify-around gap-32 px-20 sm:flex">
+                  {/* Desktop Compartilhar */}
+                  <div className="mt-32 flex w-1/2 min-w-[200px] flex-col items-center gap-5 sm:mt-0 sm:items-start">
+                    <Text size="xl" className="font-bold">
+                      {t("voting.modal.share")}
+                    </Text>
+                    <div className="flex w-full items-center justify-start gap-5">
+                      <a href={`https://wa.me/?text=${shareMessage}`}>
+                        <FaWhatsapp
+                          color="white"
+                          size={36}
+                          className="cursor-pointer transition-all hover:scale-125"
+                        />
+                      </a>
+                      <a
+                        href={`http://twitter.com/share?text=${twitterShareMessage}&url=${shareUrl}`}
+                      >
+                        <FaTwitter
+                          color="white"
+                          size={36}
+                          className="cursor-pointer transition-all hover:scale-125"
+                        />
+                      </a>
+
+                      <a
+                        href={`http://www.facebook.com/sharer/sharer.php?u=${shareUrl}&t=${twitterShareMessage}`}
+                      >
+                        <FaFacebook
+                          color="white"
+                          size={36}
+                          className="cursor-pointer transition-all hover:scale-125"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  {/* Captcha */}
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    hl="pt-BR"
+                    size="invisible"
+                    sitekey={env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_KEY}
+                    onChange={onReCAPTCHAChange}
+                    badge="inline"
+                  />
+                  {/* Vote / Sigin */}
+                  <div className="mb-10 mt-10 flex w-1/2">
+                    {isVotingEnd ? (
+                      <div />
+                    ) : isUserLoggedIn ? (
+                      <div className="flex w-full flex-col items-end justify-between gap-5 rounded-2xl px-4 py-8">
+                        <Button onClick={handleVote}>
+                          {t("voting.modal.vote")}
+                        </Button>
+                      </div>
+                    ) : (
+                      <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8 md:max-w-[24rem]">
+                        <div>{t("voting.modal.signMensage")}</div>
+                        <Button onClick={() => signIn("google")}>
+                          {t("voting.modal.signIn")}
+                        </Button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
+              {
+                videoId === "" ?
+                null :
+                <div className={clsx(
+                  "flex w-full items-center justify-center border-2 ",
+                  {"border-pallete-primary-light": !isZenith},
+                  {"border-pallete-purple-zen": isZenith},
+                  {"mt-20": isWinner},
+                )}>
+                  <div className={clsx(
+                    "m-10 flex w-[80%] overflow-hidden rounded-lg border-2 sm:w-[90%]",
+                    {"border-pallete-primary-light": !isZenith},
+                    {"border-pallete-purple-zen": isZenith},
+                  )}>
+                    <Player videoId={videoId} />
+                  </div>
+                </div>
+              }
             </div>
           </div>
         </div>

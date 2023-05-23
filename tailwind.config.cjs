@@ -91,7 +91,8 @@ module.exports = {
         "focus-zenith": "radial-gradient(circle, rgba(115,39,187,.5) 0%, rgba(0,0,31,.5) 60%, rgba(0,0,31,1) 100%)",
         "winner-card": "radial-gradient(68% 96.98% at 50% -43.95%, #05E1FE 0%, rgba(0, 0, 0, 0) 100%), #000B1C",
         "modal-radial-gradient": "radial-gradient(99.73% 65.48% at 0% -2.81%, rgba(5,255,254,.4) 0%, rgba(0,0,0,0) 100%, rgba(0,11,28,0.7))",
-        "radial-bg": "radial-gradient(250.47% 250.47% at 50.05% -115.6%, rgba(5, 225, 254, 0.2) 0%, rgba(5, 225, 254, 0) 100%), #000B1C"
+        "radial-bg": "radial-gradient(250.47% 250.47% at 50.05% -115.6%, rgba(5, 225, 254, 0.2) 0%, rgba(5, 225, 254, 0) 100%), #000B1C",
+        "modal-radial-gradient-zenith": "radial-gradient(99.73% 65.48% at 0% -2.81%, rgba(115,39,187,.4) 0%, rgba(0,0,0,0) 100%, rgba(0,11,28,0.7))",
       },
     },
   },

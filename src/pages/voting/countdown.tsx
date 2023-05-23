@@ -90,7 +90,7 @@ const Countdown: NextPage = () => {
           </Text>
         </div>
         <div className="relative z-10 text-white">
-          <Heading size="xl" className="mb-12 md:mb-16 text-center text-4xl md:text-5xl">
+          <Heading size="xl" className="mb-12 md:mb-16 text-center text-3xl md:text-4xl">
             {t("countdown.heading")}
           </Heading>
           <div className="flex w-full flex-wrap gap-1 md:gap-5 items-center justify-center text-center">

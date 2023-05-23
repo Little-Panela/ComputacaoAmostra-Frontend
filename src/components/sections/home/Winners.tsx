@@ -2,14 +2,104 @@ import { CardWinner } from "../../modules/CardWinner";
 import { Heading } from "../../elements/Heading";
 import { Text } from "../../elements/Text";
 import { Button } from "../../elements/Button";
-import { useRouter } from 'next/router'
-import Link from "next/dist/client/link";
+import { useRouter } from 'next/router';
 import { useTranslation } from "next-i18next";
+
+
+
 
 /* eslint-disable @next/next/no-img-element */
 export function Winners() {
   const router = useRouter();
   const { t } = useTranslation("common");
+
+  const ecompWinners = [
+    {
+      position: 1,
+      title: t("winners.ecomp.firstPlace.title"),
+      description: t("winners.ecomp.firstPlace.description"),
+      isZenith: true,
+      team: [
+        "Gabriel Pinheiro Marcelino de Oliveira",
+        "Matheus Tsuchiya Dourado",
+        "Marco Antonio Gomes Pierozan",
+        "Renan Andrew Oliveira Canuto",
+        "Rian Ernesto Leão da Silva",
+      ],
+      youtubeId: "bJhPNFamNwk"
+    },
+    {
+      position: 2,
+      title: t("winners.ecomp.secondPlace.title"),
+      description: t("winners.ecomp.secondPlace.description"),
+      isZenith: false,
+      team: [
+        "João Pedro Brito",
+        "Alexander Cardoso",
+        "Leonardo Arero",
+        "Nailton Sampaio",
+      ],
+      youtubeId: "XWMRPfiLbHM"
+    },
+    {
+      position: 3,
+      title: t("winners.ecomp.thirdPlace.title"),
+      description: t("winners.ecomp.thirdPlace.description"),
+      isZenith: false,
+      team: [
+        "Lucas Gabriel Carvalho de Amorim",
+        "Rômulo Di Córdova",
+        "Fernando Otavio",
+        "Antonio Bernardo",
+      ],
+      youtubeId: "7kFMQciPRcI"
+    },
+  ];
+  
+  const bccWinners = [
+    {
+      position: 1,
+      title: t("winners.bcc.firstPlace.title"),
+      description: t("winners.bcc.firstPlace.description"),
+      isZenith: false,
+      team: [
+        "Thiago Augusto Souza Silva",
+        "Arthur Kenji Enomoto de Oliveira",
+        "Edson Ney da Paixao Filho",
+        "Igor Hiroshi Matsumoto",
+        "Vitoria Suely Pantoja Silva",
+      ],
+      youtubeId: ""
+    },
+    {
+      position: 2,
+      title: t("winners.bcc.secondPlace.title"),
+      description: t("winners.bcc.secondPlace.description"),
+      isZenith: false,
+      team: [
+        "Felipe Machado Dias Ramos",
+        "Letícia Keuffer Cavalleiro de Macedo",
+        "Pedro Benitah Sanchez de Melo",
+        "Vitor Gurjão Sampaio Pombo",
+        "Vítor Longhi Ramôa",
+      ],
+      youtubeId: "Rz6ecyAGyRw"
+    },
+    {
+      position: 3,
+      title: t("winners.bcc.thirdPlace.title"),
+      description: t("winners.bcc.thirdPlace.description"),
+      isZenith: false,
+      team: [
+        "Fabio Neves",
+        "João Vitor Cardoso",
+        "Marco Aurélio",
+        "Newton Miranda",
+        "João Guilherme Beltrão",
+      ],
+      youtubeId: "Q-fDlpqaWDA"
+    },
+  ];
 
   return (
     <section className="overflow-hidden relative py-20 bg-winner-linear lg:bg-winner-linear-md bg-no-repeat bg-cover flex flex-col items-center z-10 mx-auto px-2 pb-20 sm:px-6 lg:px-8 2xl:px-20">
@@ -36,9 +126,9 @@ export function Winners() {
             <div className="hidden xl:block absolute h-[350px] w-full border-t-2 border-b-2 border-r-2 border-pallete-primary border-dashed -right-12 after:contents=[''] after:w-full after:h-0 after:border-[1px] after:border-pallete-primary after:absolute after:border-dashed after:top-1/2 after:-translate-y-1/2 after:left-5 2xl:after:left-20">
 
             </div>
-            <CardWinner course="ECOMP" position={1} title="Projeto Falken" />
-            <CardWinner course="ECOMP" position={2} title="Projeto Falken" />
-            <CardWinner course="ECOMP" position={3} title="Projeto Falken" />
+            {ecompWinners.map((winner, index) => (
+              <CardWinner key={index} course="ecomp" position={winner.position} title={winner.title} description={winner.description} isZenith={winner.isZenith} team={winner.team} youtubeId={winner.youtubeId}/>
+            ))}
           </div>
         </div>
         <div className="flex flex-col gap-5 items-center justify-start mb-5 xl:col-start-3 xl:col-end-4 xl:mb-4">
@@ -49,9 +139,11 @@ export function Winners() {
             <div className="hidden xl:block absolute h-[350px] w-full border-t-2 border-b-2 border-l-2 border-pallete-primary border-dashed -left-12 after:contents=[''] after:w-full after:h-0 after:border-[1px] after:border-pallete-primary after:absolute after:border-dashed after:top-1/2 after:-translate-y-1/2 after:right-5 2xl:after:right-20">
 
             </div>
-            <CardWinner course="BCC" position={1} title="Projeto Falken" />
-            <CardWinner course="BCC" position={2} title="Projeto Falken" />
-            <CardWinner course="BCC" position={3} title="Projeto Falken" />
+            {
+              bccWinners.map((winner, index) => (
+                <CardWinner key={index} course="bcc" position={winner.position} title={winner.title} description={winner.description} isZenith={winner.isZenith} team={winner.team} youtubeId={winner.youtubeId}/>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -75,7 +167,7 @@ export function Winners() {
             {t("home.winners.call5")}
           </b>
         </Text>
-        <Button onClick={() => router.push("/voting")}>{t("home.winners.vote")}</Button>
+        <Button onClick={() => {void router.push("/voting")}}>{t("home.winners.vote")}</Button>
       </div>
     </section>
   );

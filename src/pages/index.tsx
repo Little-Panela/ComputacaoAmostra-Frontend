@@ -20,8 +20,8 @@ const Home: NextPage = () => {
       <Program />
       <About />
       <Video />
-      <Cards />
       <ZenithBanner />
+      <Cards />
       <Winners />
       <Logos />
     </Default>

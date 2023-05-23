@@ -57,14 +57,27 @@ const PrivacyPolicy: NextPage = () => {
       description="Esta Política de Privacidade descreve como o site Computação Amostra
       do CESUPA"
     >
-      <header className="flex mt-20 gap-16 flex-col sm:min-h-[16.4145625rem] md:min-h-[27.0448125rem] mb-20 min-h-[13.025rem] min-w-[0.0625rem] max-w-[100%] flex-1 items-center justify-center px-4 text-center">
-        <Heading className="sm:text-[4rem] text-[2.5rem] leading-4 text-white md:text-7xl">
+      <header className="relative flex gap-16 flex-col sm:min-h-[16.4145625rem] md:min-h-[27.0448125rem] mb-20 min-w-[0.0625rem] max-w-[100%] flex-1 items-center justify-center px-4 text-center">
+        <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-1/2 left-0" />
+        <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute top-full -right-96" />
+        <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute w-full -bottom-[650%] md:-bottom-[480%] lg:-bottom-[360%]" />
+        <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute w-full h-auto top-[300%] right-0" />
+        <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute w-[900px] -bottom-[500%] md:-bottom-[300%] -right-96" />
+
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-40 -right-48 opacity-30 rotate-[270deg]" />
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-[100%] -left-20 opacity-20 rotate-[45deg]" />
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-[250%] -left-48 opacity-10 rotate-[270deg]" />
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-[250%] -right-48 opacity-10 rotate-[270deg]" />
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-[400%] -left-48 opacity-20 rotate-[70deg]" />
+        <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-[500%] md:-bottom-[450%] -left-0 opacity-30 rotate-[45deg]" />
+
+        <Heading size="lg" className="w-10/12 lg:w-1/2 leading-4 text-white md:text-7xl">
           <b className="text-pallete-primary">
             Política
           </b>
           {` de Privacidade`}
         </Heading>
-        <p className="text-xl text-gray-400 w-1/2">
+        <p className="text-lg md:text-xl text-gray-400 w-10/12 lg:w-1/2">
           Esta Política de Privacidade descreve como o site Computação Amostra do CESUPA (doravante referido como "nós", "nosso" ou "site") coleta, usa e protege as informações pessoais dos usuários durante o processo de votação aberta, utilizando o serviço de autenticação OAuth do Google em conjunto com o NextAuth para obter o endereço de e-mail, foto de perfil e nome dos usuários, em conformidade com a Lei nº 13.709 de 14 de agosto de 2018 (Lei Geral de Proteção de Dados Pessoais), doravante denominada de "LGPD".
         </p>
       </header>
