@@ -40,13 +40,31 @@ const Voting: NextPage = () => {
 
   const filteredProjects = useMemo(() => {
     if (!projects) return [];
-    if (!searchTerm || "") return projects;
+    if (!searchTerm || "") return projects.sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
     return projects.filter((project) =>
       NormalizeTextToSearch(project.name).includes(
         NormalizeTextToSearch(searchTerm)
       )
-    );
+    ).sort(function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
   }, [projects, searchTerm]);
+
+  console.log(projects)
 
   const handleSearch = (text: string) => {
     setSearchTerm(text);

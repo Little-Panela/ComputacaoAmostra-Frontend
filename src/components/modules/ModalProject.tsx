@@ -35,7 +35,7 @@ type ModalProjectProps = {
   nameForSlug: string;
   videoId: string;
   teamMembers: string[];
-  githubLink: string;
+  githubLink?: string;
   description: string;
   course: "bcc" | "ecomp";
   isWinner?: boolean;
@@ -126,7 +126,7 @@ export function ModalProject({
 
     try {
       await voteProject({
-        projectId: `${id}`,
+        projectId: id,
         captcha: `${captchaCode}`,
       });
 
@@ -169,9 +169,11 @@ export function ModalProject({
             )
         }>
           <div className={clsx(
-            "relative mt-20 flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
+            "relative flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
             {"border-pallete-primary-light": !isZenith},
             {"border-pallete-purple-zen": isZenith},
+            {"py-4": !isWinner},
+            {"py-10": isWinner}
           )}>
             {isWinner ? (
               <Image
@@ -182,21 +184,23 @@ export function ModalProject({
                 alt="Colocação do projeto"
               />
             ) : (
-              <Link
-              href={githubLink}
-              className="w-fit cursor-pointer p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
-            >
-              <Image
-                src="/static/icons/github-white-logo.svg"
-                className="text-white"
-                height={64}
-                width={64}
-                alt="Logo do github"
-              />
-            </Link>
+              githubLink ? 
+                <Link
+                  href={githubLink}
+                  className="w-fit cursor-pointer p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
+                >
+                  <Image
+                    src="/static/icons/github-white-logo.svg"
+                    className="text-white"
+                    height={64}
+                    width={64}
+                    alt="Logo do github"
+                  />
+                </Link>
+              : null       
             )}
             <Heading size="2xl" className={clsx(
-              "text-white border-b-4 py-4",
+              "text-white border-b-4 py-4 text-center",
               {"border-pallete-primary-light": !isZenith},
               {"border-pallete-purple-zen": isZenith},
               )}>

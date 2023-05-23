@@ -25,6 +25,7 @@ export function VotingGallery({
   const { t } = useTranslation("common");
   const router = useRouter();
   const locale = router.locale ?? "pt";
+
   return (
     <section className="relative mx-5 py-20 pb-40 mt-12 flex flex-col items-center gap-6 md:mt-8 md:gap-16">
       <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-[-100px] -right-10 opacity-20 rotate-[-135deg] z-[0]" />
@@ -35,6 +36,7 @@ export function VotingGallery({
             {projects.map((project) => (
               <CardProject
                 key={project.id}
+                id={project.id}
                 name={project.name}
                 description={project.description}
                 links={project.links}
