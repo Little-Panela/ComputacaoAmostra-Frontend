@@ -47,9 +47,9 @@ export function Modal({
             <DialogPrimitive.Overlay
               forceMount
               className="fixed inset-0 z-20 bg-black/50"
-              onClick={() => {
-                void router.push(`/voting?course=${course}`, undefined, { scroll: false });
-              }}
+              // onClick={() => {
+              //   void router.push(`/voting?course=${course}`, undefined, { scroll: false });
+              // }}
             />
           </Transition.Child>
           <Transition.Child

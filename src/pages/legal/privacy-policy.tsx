@@ -57,7 +57,7 @@ const PrivacyPolicy: NextPage = () => {
       description="Esta Política de Privacidade descreve como o site Computação Amostra
       do CESUPA"
     >
-      <header className="relative pt-[160px] flex gap-16 flex-col sm:min-h-[16.4145625rem] md:min-h-[27.0448125rem] mb-20 min-h-[13.025rem] min-w-[0.0625rem] max-w-[100%] flex-1 items-center justify-center px-4 text-center">
+      <header className="relative flex gap-16 flex-col sm:min-h-[16.4145625rem] md:min-h-[27.0448125rem] mb-20 min-w-[0.0625rem] max-w-[100%] flex-1 items-center justify-center px-4 text-center">
         <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-1/2 left-0" />
         <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute top-full -right-96" />
         <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute w-full -bottom-[650%] md:-bottom-[480%] lg:-bottom-[360%]" />

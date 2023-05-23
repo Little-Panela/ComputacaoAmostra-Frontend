@@ -18,15 +18,9 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
     onChangeText(event.target.value);
   };
   return (
-<<<<<<< HEAD
-    <header className="relative overflow-hidden mt-5 flex flex-col items-center pt-40 gap-20 md:gap-10">
-      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-96"/>
-      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96"/>
-=======
     <header className="relative flex flex-col items-center -mt-[160px] pt-[160px] gap-20 md:gap-10 overflow-hidden">
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute h-[800px] xl:[1100px] -top-24 xl:top-0 -left-96 lg:-left-32 z-[1]"/>
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute h-[800px] xl:[1100px] -top-24 xl:top-0 -right-96 lg:-right-32 z-[1]"/>
->>>>>>> 3a42f74ffbfbab94ff1cacdba480a90c2ce19a07
 
       <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0 z-[2]"/>
       <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0 z-[2]"/>

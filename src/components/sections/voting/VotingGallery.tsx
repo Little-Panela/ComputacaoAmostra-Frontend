@@ -29,7 +29,6 @@ export function VotingGallery({
     <section className="relative mx-5 py-20 pb-40 mt-12 flex flex-col items-center gap-6 md:mt-8 md:gap-16">
       <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-40 -right-10 opacity-20 rotate-[-135deg] z-[2]" />
       <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg] z-[2]" />
-
       {!isLoading ? (
         projects && projects.length > 0 ? (
           <div className="grid w-full grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16 z-10">
