@@ -126,7 +126,7 @@ export function ModalProject({
 
     try {
       await voteProject({
-        projectId: `${id}`,
+        projectId: id,
         captcha: `${captchaCode}`,
       });
 
