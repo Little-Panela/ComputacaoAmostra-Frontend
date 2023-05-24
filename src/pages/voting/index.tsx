@@ -64,8 +64,6 @@ const Voting: NextPage = () => {
     });
   }, [projects, searchTerm]);
 
-  console.log(projects)
-
   const handleSearch = (text: string) => {
     setSearchTerm(text);
   };
