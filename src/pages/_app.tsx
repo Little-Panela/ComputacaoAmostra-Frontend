@@ -42,7 +42,7 @@ const MyApp: AppType<{
       <AppProvider>
         <Hydrate state={pageProps.dehydrateState}>
           <DefaultSeo {...SEO} />
-          {/* <Loading /> */}
+          {loading && <Loading />}
           <Component {...pageProps} />
           <Analytics />
         </Hydrate>
