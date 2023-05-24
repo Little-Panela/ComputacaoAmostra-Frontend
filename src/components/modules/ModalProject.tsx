@@ -35,7 +35,7 @@ type ModalProjectProps = {
   nameForSlug: string;
   videoId: string;
   teamMembers: string[];
-  githubLink: string;
+  githubLink?: string;
   description: string;
   course: "bcc" | "ecomp";
   isWinner?: boolean;
@@ -184,21 +184,23 @@ export function ModalProject({
                 alt="Colocação do projeto"
               />
             ) : (
-              <Link
-              href={githubLink}
-              className="w-fit cursor-pointer p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
-            >
-              <Image
-                src="/static/icons/github-white-logo.svg"
-                className="text-white"
-                height={64}
-                width={64}
-                alt="Logo do github"
-              />
-            </Link>
+              githubLink ? 
+                <Link
+                  href={githubLink}
+                  className="w-fit cursor-pointer p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"
+                >
+                  <Image
+                    src="/static/icons/github-white-logo.svg"
+                    className="text-white"
+                    height={64}
+                    width={64}
+                    alt="Logo do github"
+                  />
+                </Link>
+              : null       
             )}
             <Heading size="2xl" className={clsx(
-              "text-white border-b-2 py-2",
+              "text-white border-b-4 py-4 text-center",
               {"border-pallete-primary-light": !isZenith},
               {"border-pallete-purple-zen": isZenith},
               )}>

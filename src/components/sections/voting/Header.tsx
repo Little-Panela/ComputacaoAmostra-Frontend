@@ -22,11 +22,11 @@ export function Header({ course, onChangeText }: HeaderProps): JSX.Element {
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute h-[800px] xl:[1100px] -top-24 xl:top-0 -left-96 lg:-left-32 z-[1]"/>
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute h-[800px] xl:[1100px] -top-24 xl:top-0 -right-96 lg:-right-32 z-[1]"/>
 
-      <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0 z-[2]"/>
-      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0 z-[2]"/>
+      <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0 z-[3]"/>
+      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="hidden sm:block absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0 z-[3]"/>
       
-      <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-0 -right-20 opacity-20 rotate-[-135deg] z-[2]"/>
-      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg] z-[2]"/>
+      <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] top-0 -right-20 opacity-20 rotate-[-135deg] z-[1]"/>
+      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-20 -left-20 opacity-20 -rotate-[270deg] z-[0]"/>
       
 
       <div className="flex flex-col items-center w-10/12 xl:w-3/5 gap-10 z-10">

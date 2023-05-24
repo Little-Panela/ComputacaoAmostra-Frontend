@@ -8,8 +8,8 @@ export function Footer() {
   const { t } = useTranslation("common");
 
   return (
-    <footer className="bg-pallete-background- relative overflow-hidden">
-      <div className="pt-10 lg:pt-0 flex h-auto w-full flex-col items-center">
+    <footer className="relative z-[5] overflow-hidden">
+      <div className="pt-10 lg:pt-0 z-10 flex h-auto w-full flex-col items-center">
         <div className="flex flex-col w-full lg:flex-row lg:justify-around">
           <div className="flex justify-center items-center flex-col">
             <img
@@ -104,7 +104,7 @@ export function Footer() {
         <img
           src="/static/img/zenith-light.png"
           alt="zenith-light"
-          className="absolute lg:w-[10000px] lg:top-[-300px] lg:h-[500px] bottom-[-200px] z-[0] h-auto w-auto scale-150 transform"
+          className="absolute z-[-1] lg:w-[10000px] lg:top-[-300px] lg:h-[500px] bottom-[-200px] h-auto w-auto scale-150 transform"
         />
       </div>
     </footer>
