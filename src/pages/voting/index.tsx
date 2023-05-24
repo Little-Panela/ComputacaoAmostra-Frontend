@@ -72,8 +72,6 @@ const Voting: NextPage = () => {
     if (!isVotingStarted) {
       void router.push("/voting/countdown");
     }
-
-    console.log(projects)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
