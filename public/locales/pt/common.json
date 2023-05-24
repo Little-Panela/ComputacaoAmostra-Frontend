@@ -160,8 +160,8 @@
         "description": "Aplicativo mobile de reconhecimento de troncos de árvores através de uma inteligência artificial."
       },
       "thirdPlace": {
-        "title": "Helix",
-        "description": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar parâmetros de qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de monitoramento), proposto pela Agência nacional de águas, que busca equipamentos capazes de fornecer informações sobre a qualidade recursos hídricos de todo o território nacional."
+        "title": "Hélix",
+        "description": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar dados sobre a qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de Monitoramento de Qualidade da Água), proposto pela Agência nacional de águas, que tem por objetivo fornecer informações sobre a qualidade dos recursos hídricos em todo o território nacional."
       }
     },
     "bcc": {
