@@ -41,9 +41,9 @@ export const sponsorship = [
     logo: `${cdnPath}zenith-logo.png`,
   },
   {
-    website: "https://www.intersol.com.br/Index.sol",
-    alt: "Sol",
-    logo: `${cdnPath}sol-logo.png`,
+    website: "https://www.robomind.com.br/",
+    alt: "Robomind",
+    logo: `${cdnPath}LOGO-Robomind-Branca-Horizontal-2.png`,
   },
   {
     website: "https://www.voxdatati.com.br",
@@ -64,5 +64,10 @@ export const sponsorship = [
     website: "https://www5.jambu.com.br/",
     alt: "Jambu",
     logo: `${cdnPath}jambu-logo.png`,
+  },
+  {
+    website: "https://www.intersol.com.br/Index.sol",
+    alt: "Sol",
+    logo: `${cdnPath}sol-logo.png`,
   },
 ];
