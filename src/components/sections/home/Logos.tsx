@@ -30,12 +30,12 @@ export function Logos() {
   return (
     <section className="overflow-hidden relative py-20 pb-28 flex flex-col gap-32">
       <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0" />
-      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 left-0" />
+      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="absolute h-[600px] xl:h-[800px] z-[2] top-20 lg:top-48 left-0" />
       
       <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-[500px]"/>
       {/* <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96"/> */}
 
-      <img src="/static/img/video-wave.png" alt="Onda de Cima" className="absolute h-[600px] xl:h-[800px] -top-0 -left-48 opacity-30 rotate-[45deg]"/>
+      <img src="/static/img/video-wave.png" alt="Onda de Cima" className="absolute h-[600px] xl:h-[800px] -top-0 z-[0] -left-48 opacity-30 rotate-[45deg]"/>
       <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] -bottom-0 -right-48 opacity-30 rotate-[225deg]"/>
       <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-40 -left-20 opacity-20 rotate-[45deg]"/>
       
