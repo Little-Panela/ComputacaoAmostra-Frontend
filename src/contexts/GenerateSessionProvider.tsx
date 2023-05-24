@@ -32,10 +32,8 @@ export function GenerateSessionProvider({
   const { mutateAsync, isLoading } = useMutation(
     async ({ email, name }: GenerateSessionParams) => {
       await putGenerateSession({ email, name });
-    },
+    }
   );
-
-  const sessionToken = parseCookies()["session_token"];
 
   useEffect(() => {
     if (
@@ -43,11 +41,9 @@ export function GenerateSessionProvider({
       session &&
       session.user &&
       session?.user.email &&
-      session?.user.name &&
-      !sessionToken
+      session?.user.name
     ) {
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      mutateAsync({
+      void mutateAsync({
         email: session.user.email,
         name: session.user.name,
       });
