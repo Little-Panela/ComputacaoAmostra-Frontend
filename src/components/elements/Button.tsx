@@ -25,7 +25,8 @@ export function Button({
 					transition-colors hover:border-pallete-primary-dark \
 					hover:bg-pallete-primary-dark active:border-pallete-primary-xdark \
 					active:bg-pallete-primary-xdark \
-					focus:outline-3 outline-white ring-transparent": variant === "primary",
+          disabled:border-pallete-primary-xdark disabled:text-gray-50 disabled:hover:bg-transparent disabled:cursor-wait \
+					focus:outline-3 outline-white ring-transparent": variant === "primary"
         },
         className
       )}

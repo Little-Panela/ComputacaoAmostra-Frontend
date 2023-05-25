@@ -32,7 +32,7 @@ import type { postVoteType } from "../../services/post-vote";
 import type { TProject } from "../../@types/TProject";
 import { env } from "../../env.mjs";
 import ToastComponent from "../../components/elements/ToastComponent";
-import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaSpinner, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 interface ProjectPageProps {
   project: TProject;
@@ -267,8 +267,10 @@ export default function ProjectPage({ project }: ProjectPageProps) {
                       <div />
                     ) : isUserLoggedIn ? (
                       <div className="flex w-full flex-col items-center justify-between gap-5 rounded-2xl px-4 py-8">
-                        <Button onClick={handleVote}>
-                          {t("voting.modal.vote")}
+                        <Button onClick={handleVote} disabled={isLoadingVoting}>
+                          {
+                            isLoadingVoting ? <FaSpinner className="animate-spin h-5 w-8" /> : t("voting.modal.vote")
+                          }
                         </Button>
                       </div>
                     ) : (
