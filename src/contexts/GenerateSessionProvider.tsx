@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import { useMutation } from "@tanstack/react-query";
 
 import { putGenerateSession } from "../services/put-generate-session";
-import { parseCookies } from "nookies";
 
 type GenerateSessionParams = {
   email: string;
@@ -32,24 +31,31 @@ export function GenerateSessionProvider({
   const { mutateAsync, isLoading } = useMutation(
     async ({ email, name }: GenerateSessionParams) => {
       await putGenerateSession({ email, name });
+    },
+    {
+      retry: true
     }
   );
 
   useEffect(() => {
-    if (
-      status === "authenticated" &&
-      session &&
-      session.user &&
-      session?.user.email &&
-      session?.user.name
-    ) {
-      void mutateAsync({
-        email: session.user.email,
-        name: session.user.name,
-      });
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    handleGenerateSession()
+
+    async function handleGenerateSession() {
+      if (
+        status === "authenticated" &&
+        session &&
+        session.user &&
+        session?.user.email &&
+        session?.user.name
+      ) {
+        await mutateAsync({
+          email: session.user.email,
+          name: session.user.name,
+        });
+      }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, status]);
+  }, [mutateAsync, session, status]);
 
   return (
     <GenerateSessionContext.Provider

@@ -1,35 +1,36 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-
-import { NormalizeTextToSlug } from "../../helpers/normalize-text-to-slug";
-
-import { ModalProject } from "./ModalProject";
-import { Text } from "../elements/Text";
 import Image from "next/image";
 
 import type { TProject } from "../../@types/TProject";
+import { NormalizeTextToSlug } from "../../helpers/normalize-text-to-slug";
+
+import { Text } from "../elements/Text";
 import { Heading } from "../elements/Heading";
 import { Button } from "../elements/Button";
+import { ModalProject } from "./ModalProject";
+
+import { env } from "../../env.mjs";
+const cdnUrl = env.NEXT_PUBLIC_CDN_URL;
 
 type CardProjectProps = TProject;
 type NormalCardProps = {
-  logoUrl?: string,
-  teamName: string
-}
+  logoUrl?: string;
+  teamName: string;
+};
 
 const LogoCard = ({ teamName }: NormalCardProps) => {
-  const getFirstLetter = (word: string) => word[0]
+  const getFirstLetter = (word: string) => word[0];
 
   return (
-    <div className="flex justify-center items-center bg-pallete-primary-dark w-24 h-24 sm:w-40 sm:h-40 rounded-full group-hover:w-16 group-hover:h-16 group-hover:sm:w-28 group-hover:sm:h-28">
-      <p className='font-montserrat drop-shadow-lg shadow-black text-6xl group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl font-bold text-white'>
+    <div className="flex h-24 w-24 items-center justify-center rounded-full bg-pallete-primary-dark group-hover:h-16 group-hover:w-16 sm:h-40 sm:w-40 group-hover:sm:h-28 group-hover:sm:w-28">
+      <p className="font-montserrat text-6xl font-bold text-white shadow-black drop-shadow-lg group-hover:text-4xl sm:text-8xl group-hover:sm:text-6xl">
         {getFirstLetter(teamName)}
       </p>
     </div>
-  )
-}
+  );
+};
 
 export function CardProject({
   id,
@@ -38,7 +39,6 @@ export function CardProject({
   team,
   links,
   course,
-  logoUrl
 }: CardProjectProps) {
   const router = useRouter();
   const locale = router.locale ?? "pt";
@@ -47,23 +47,45 @@ export function CardProject({
 
   const truncate = (str: string, n: number) => {
     return str.length > n ? str.slice(0, n - 1) + "..." : str;
-  }
+  };
 
   return (
     <>
-      <div className='group w-40 h-72 sm:w-64 sm:h-[430px] relative flex flex-col items-center py-10 sm:py-20 px-4 sm:px-8 bg-black bg-opacity-40 rounded-lg border-pallete-primary border-4 gap-10 hover:gap-6 hover:py-4'>
-        <div className='flex gap-10 group-hover:hidden animate-card-show flex-col items-center opacity-100 h-full w-full group-hover:opacity-0'>
-          {links.banner ? <img alt={name} src={links.banner} className='w-24 h-24 sm:w-40 sm:h-40 rounded-full object-cover bg-no-repeat' /> : <LogoCard teamName={name} />}
-          <Heading className='text-white text-center text-xl sm:text-2xl'>
+      <div className="group relative flex h-72 w-40 flex-col items-center gap-10 rounded-lg border-4 border-pallete-primary bg-black bg-opacity-40 px-4 py-10 hover:gap-6 hover:py-4 sm:h-[430px] sm:w-64 sm:px-8 sm:py-20">
+        <div className="flex h-full w-full animate-card-show flex-col items-center gap-10 opacity-100 group-hover:hidden group-hover:opacity-0">
+          {links.banner ? (
+            <Image
+              alt={name}
+              src={cdnUrl + links.banner}
+              className="h-24 w-24 rounded-full bg-no-repeat object-cover sm:h-40 sm:w-40"
+              width={160}
+              height={160}
+              quality={100}
+            />
+          ) : (
+            <LogoCard teamName={name} />
+          )}
+          <Heading className="text-center text-xl text-white sm:text-2xl">
             {name}
           </Heading>
         </div>
-        <div className='hidden group-hover:flex flex-col gap-3 sm:gap-6 items-center animate-card-show h-full w-full'>
-          {links.banner ? <img alt={name} src={links.banner} className='w-16 h-16 sm:w-28 sm:h-28 rounded-full object-cover bg-no-repeat' /> : <LogoCard teamName={name} />}
-          <Heading className='break-all text-white text-xl sm:text-2xl'>
+        <div className="hidden h-full w-full animate-card-show flex-col items-center gap-3 group-hover:flex sm:gap-6">
+          {links.banner ? (
+            <Image
+            alt={name}
+            src={cdnUrl + links.banner}
+            className="h-16 w-16 rounded-full bg-no-repeat object-cover sm:h-28 sm:w-28"
+            width={112}
+            height={112}
+            quality={100}
+          />
+          ) : (
+            <LogoCard teamName={name} />
+          )}
+          <Heading className="break-all text-xl text-white sm:text-2xl">
             {name}
           </Heading>
-          <Text className='text-xs sm:text-sm font-bold flex-1 overflow-y-hidden text-white'>
+          <Text className="flex-1 overflow-y-hidden text-xs font-bold text-white sm:text-sm">
             {truncate(description, 120)}
           </Text>
           <ModalProject
@@ -77,18 +99,11 @@ export function CardProject({
             videoId={links.youtube[locale]}
             course={course}
             trigger={
-              // TODO: Verificar
-              // <Link
-              //   href={`/voting?course=${course}`}
-              //   as={`/project/${nameForSlug}`}
-              //   scroll={false}
-              //   className="cursor-pointer w-full"
-              // >
-                <Button className='text-white bg-transparent block w-full border-[1px] py-3 rounded-2xl border-pallete-primary text-sm font-bold'>
-                  {t("voting.gallery.card.details")}
-                </Button>
-            } />
-
+              <Button className="block w-full rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
+                {t("voting.gallery.card.details")}
+              </Button>
+            }
+          />
         </div>
       </div>
     </>

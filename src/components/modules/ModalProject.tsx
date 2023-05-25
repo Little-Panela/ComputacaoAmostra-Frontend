@@ -24,7 +24,7 @@ import { postVote } from "../../services/post-vote";
 import type { postVoteType } from "../../services/post-vote";
 import { env } from "../../env.mjs";
 import { Heading } from "../elements/Heading";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaSpinner, FaWhatsapp } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import clsx from "clsx";
@@ -383,8 +383,10 @@ export function ModalProject({
                       <div />
                     ) : isUserLoggedIn ? (
                       <div className="flex w-full flex-col items-end justify-between gap-5 rounded-2xl px-4 py-8">
-                        <Button onClick={handleVote}>
-                          {t("voting.modal.vote")}
+                        <Button onClick={handleVote} disabled={isLoadingVoting}>
+                          {
+                            isLoadingVoting ? <FaSpinner className="animate-spin h-5 w-8" /> : t("voting.modal.vote")
+                          }
                         </Button>
                       </div>
                     ) : (
