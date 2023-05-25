@@ -31,6 +31,9 @@ export function GenerateSessionProvider({
   const { mutateAsync, isLoading } = useMutation(
     async ({ email, name }: GenerateSessionParams) => {
       await putGenerateSession({ email, name });
+    },
+    {
+      retry: true
     }
   );
 
