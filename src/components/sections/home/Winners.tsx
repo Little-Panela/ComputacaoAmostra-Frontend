@@ -65,9 +65,9 @@ export function Winners() {
       team: [
         "Thiago Augusto Souza Silva",
         "Arthur Kenji Enomoto de Oliveira",
-        "Edson Ney da Paixao Filho",
+        "Amora Sofia da Paixão",
         "Igor Hiroshi Matsumoto",
-        "Vitoria Suely Pantoja Silva",
+        "Muriel Áquila Pantoja Silva",
       ],
       youtubeId: ""
     },
