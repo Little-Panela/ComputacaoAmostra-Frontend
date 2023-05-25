@@ -18,7 +18,7 @@ export function Program () {
                 <img src={'/static/img/greenelegantdots.svg'} className="lg:hidden top-[0] w-auto h-[462px] mix-blend-difference transform scale-x-[-1] z-[0]" alt="Elegant Dots" />
                 <img src={'/static/img/greenelegantdots.svg'} className="lg:hidden w-auto h-[462px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
             </div>
-            <img src={'static/img/coconutstree.svg'} className=" absolute w-[335px] h-[537px] mix-blend-lighten left-[-38px] top-[100px] z-[2]" />
+            <img src={'static/img/coconutstree.svg'} className=" absolute w-[335px] h-[537px] mix-blend-lighten left-[0px] sm:left-[-38px] bottom-[0px] sm:top-[100px] z-[2]" />
 
             <div className="flex flex-col gap-11 items-center lg:items-start">
                 <img src={'/static/img/greenelegantdots.svg'} className="hidden lg:block absolute top-[-150px] left-[-500px] transform scale-x-[-1] z-[0] w-[939px] h-[719px] right-[0px] mix-blend-difference" alt="Elegant Dots" />
