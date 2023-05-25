@@ -7,18 +7,10 @@ export type postVoteType = {
   projectId: string;
 };
 
-export async function postVote({
-  captcha,
-  projectId,
-}: postVoteType) {
-  const { data } = await api.post(`users/vote`, {
-    data: {
-      captcha
-    },
-    params: {
-      projectId,
-    },
-  });
+export async function postVote({ captcha, projectId }: postVoteType) {
+  const { data } = await api.post(
+    `users/vote?projectId=${projectId}&response=${captcha}`
+  );
 
   return data;
 }
