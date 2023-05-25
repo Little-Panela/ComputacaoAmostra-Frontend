@@ -59,7 +59,7 @@ const config = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "https:computacao-amostra.com",
+              "https://computacao-amostra.com",
           },
         ],
       },
