@@ -41,9 +41,9 @@ export const sponsorship = [
     logo: `${cdnPath}zenith-logo.png`,
   },
   {
-    website: "https://www.robomind.com.br/",
-    alt: "Robomind",
-    logo: `${cdnPath}LOGO-Robomind-Branca-Horizontal-2.png`,
+    website: "https://www.paratic.com.br",
+    alt: "Paratic",
+    logo: `${cdnPath}paratic-logo.png`,
   },
   {
     website: "https://www.voxdatati.com.br",
@@ -56,9 +56,9 @@ export const sponsorship = [
     logo: `${cdnPath}idopter-logo.png`,
   },
   {
-    website: "https://www.paratic.com.br",
-    alt: "Paratic",
-    logo: `${cdnPath}paratic-logo.png`,
+    website: "",
+    alt: "GSA Consultoria Educacional",
+    logo: `${cdnPath}GSA-Consultoria-Educacional.png`,
   },
   {
     website: "https://www5.jambu.com.br/",
