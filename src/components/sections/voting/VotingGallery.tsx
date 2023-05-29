@@ -57,7 +57,7 @@ export function VotingGallery({
           </div>
         )
       ) : (
-        <div className="grid w-full grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">
+        <div className="grid w-full justify-center grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
             <CardProjectSkeleton key={index} />
           ))}
