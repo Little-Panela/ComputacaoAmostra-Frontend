@@ -32,7 +32,7 @@ export function VotingGallery({
       <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -top-[150px] -left-20 opacity-20 -rotate-[270deg] z-[0]" />
       {!isLoading ? (
         projects && projects.length > 0 ? (
-          <div className="grid w-full grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16 z-10">
+          <div className="grid w-full justify-center grid-cols-project-cards sm:grid-cols-project-cards-md gap-6 px-5 max-md:px-1 md:gap-16 md:px-16 z-10">
             {projects.map((project) => (
               <CardProject
                 key={project.id}
