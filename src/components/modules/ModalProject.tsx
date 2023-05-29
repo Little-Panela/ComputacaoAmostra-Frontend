@@ -191,7 +191,7 @@ export function ModalProject({
                 >
                   <Image
                     src="/static/icons/github-white-logo.svg"
-                    className="text-white"
+                    className="text-white max-w-none"
                     height={64}
                     width={64}
                     alt="Logo do github"
@@ -200,7 +200,7 @@ export function ModalProject({
               : null       
             )}
             <Heading size="2xl" className={clsx(
-              "text-white border-b-4 py-4 text-center",
+              "text-white border-b-4 text-center py-4",
               {"border-pallete-primary-light": !isZenith},
               {"border-pallete-purple-zen": isZenith},
               )}>
