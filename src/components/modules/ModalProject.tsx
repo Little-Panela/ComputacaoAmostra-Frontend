@@ -169,7 +169,7 @@ export function ModalProject({
             )
         }>
           <div className={clsx(
-            "relative flex w-full items-center justify-center gap-5 border-b-2  px-[104px]",
+            "relative flex w-full items-center justify-center gap-5 border-b-2 sm:px-[104px] pr-[80px]",
             {"border-pallete-primary-light": !isZenith},
             {"border-pallete-purple-zen": isZenith},
             {"py-4": !isWinner},
