@@ -65,7 +65,7 @@ export function CardProject({
           ) : (
             <LogoCard teamName={name} />
           )}
-          <Heading className="text-center text-xl text-white sm:text-2xl">
+          <Heading className="break-all text-center text-xl text-white sm:text-2xl">
             {name}
           </Heading>
         </div>
