@@ -6,6 +6,11 @@ import { realization, partnership, sponsorship } from "../../../constants/compan
 import { ReactNode, createElement } from "react";
 import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
+import { SwitchYear } from "../../modules/SwitchYear";
+
+type SectionProps = {
+  year: "2022" | "2023";
+}
 
 type LogoSectionProps = {
   title: string,
@@ -51,86 +56,23 @@ function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
   )
 }
 
-export function PublicVoteSection() {
+export function PublicVoteSection({ year }: SectionProps) {
   const { t } = useTranslation("common");
 
   return (
     <div className="h-full">
-      <Text title={t("publicVote.award")}/>
+      <Text title={t("publicVote.award")} />
+      <SwitchYear />
       <div className="w-full px-10">
-      <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")}/>
+        <div> active = 2022
+          <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")} />
+          <WinnersCard name={t("publicVote.scienceWinner.2022.name")} description={t("publicVote.scienceWinner.2022.description")} btnLabel={t("home.winners.details")} />
+        </div>
+        <div> active = 2023
+          <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")} />
+          <WinnersCard name={t("publicVote.scienceWinner.2022.name")} description={t("publicVote.scienceWinner.2022.description")} btnLabel={t("home.winners.details")} />
+        </div>
       </div>
     </div>
   )
-}
-
-export function Logos() {
-  const { t } = useTranslation("common");
-
-  return (
-    <section className="overflow-hidden relative py-20 pb-28 flex flex-col gap-32">
-      <img src="/static/img/video-right-tree.png" alt="Planta da direita" className="absolute h-[600px] xl:h-[800px] top-20 lg:top-48 right-0" />
-      <img src="/static/img/video-left-tree.png" alt="Planta da esquerda" className="absolute h-[600px] xl:h-[800px] z-[2] top-20 lg:top-48 left-0" />
-      
-      <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -left-[500px]"/>
-      {/* <img src="/static/img/light-focus.png" alt="Foco de Luz" className="absolute -top-24 -right-96"/> */}
-
-      <img src="/static/img/video-wave.png" alt="Onda de Cima" className="absolute h-[600px] xl:h-[800px] -top-0 z-[0] -left-48 opacity-30 rotate-[45deg]"/>
-      <img src="/static/img/video-wave.png" alt="Onda da Direita" className="absolute h-[600px] xl:h-[800px] -bottom-0 -right-48 opacity-30 rotate-[225deg]"/>
-      <img src="/static/img/video-wave.png" alt="Onda da Esquerda" className="absolute h-[600px] xl:h-[800px] -bottom-40 -left-20 opacity-20 rotate-[45deg]"/>
-      
-      <LogoSection title={t("home.logos.sponsorship")}>
-        {sponsorship.map((i) => (
-          <a
-            href={i.website}
-            key={i.alt}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform"
-          >
-            <img
-              src={i.logo}
-              alt={i.alt}
-              className="w-[150px] h-auto md:w-[200px]"
-            />
-          </a>
-        ))}
-      </LogoSection>
-      <LogoSection title={t("home.logos.partners")}>
-        {partnership.map((i) => (
-          <a
-            href={i.website}
-            key={i.alt}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform"
-          >
-            <img
-              src={i.logo}
-              alt={i.alt}
-              className="w-[150px] h-auto md:w-[200px]"
-            />
-          </a>
-        ))}
-      </LogoSection>
-      <LogoSection title={t("home.logos.realization")}>
-        {realization.map((i) => (
-          <a
-            href={i.website}
-            key={i.alt}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform"
-          >
-            <img
-              src={i.logo}
-              alt={i.alt}
-              className="w-[150px] h-auto md:w-[200px]"
-            />
-          </a>
-        ))}
-      </LogoSection>
-
-    </section>
-  );
 }
