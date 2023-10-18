@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-
+import CardTrophy from "../../../../public/static/img/trophy icon.png"
 import { realization, partnership, sponsorship } from "../../../constants/companies";
 import { ReactNode, createElement } from "react";
 import { Heading } from "../../elements/Heading";
+import { Button } from "../../elements/Button";
 
 type LogoSectionProps = {
   title: string,
@@ -13,7 +14,8 @@ type LogoSectionProps = {
 
 type WinnerCardProps = {
   name: string,
-  description: string
+  description: string,
+  btnLabel: string,
 }
 
 function Text({title}: LogoSectionProps) {
@@ -27,17 +29,24 @@ function Text({title}: LogoSectionProps) {
   )
 }
 
-function WinnersCard({name, description}: WinnerCardProps) {
+function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
   return (
-    <div className="bg-gradient-to-tl from-transparent to-pallete-gradient-top h-[472px] text-xs flex max-w-xs flex-col gap-2 rounded-md border-pallete-primary-light border-2 p-4 shadow-md">
-      <div className="flex flex-col pt-6 items-center gap-4">
-        {/* <span className="h-[76px] w-[76px] rounded-full border-2 border-white flex justify-center items-center">{createElement(icon, { size: 40, color: "#05E1FE", fill: "#05E1FE" })}</span> */}
+    <div className="items-center bg-transparent h-fit text-xs flex max-w-xs flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md">
+      <div className="h-1/5 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
+      <div className="flex flex-col items-center p-4">
+        <Image src={CardTrophy} alt="Imagem de um trofeu" width={120} height={120} />
         <div className="flex flex-row">
-          <Heading className="text-base md:text-xl">{name}</Heading>
-          {/* <Heading className="text-base text-pallete-primary-light md:text-xl">{exclamation}</Heading> */}
+          <Heading className="text-base p-4 md:text-xl">{name}</Heading>
+        </div>
+        <div className="text-center flex flex-col leading-7 text-xs items-center gap-8">
+          <div className="opacity-50">
+            {description}
+          </div>
+          <Button className="text-xs md:text-base">
+            {btnLabel}
+          </Button>
         </div>
       </div>
-      {description}
     </div>
   )
 }
@@ -48,7 +57,9 @@ export function PublicVoteSection() {
   return (
     <div className="h-full">
       <Text title={t("publicVote.award")}/>
-      <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")}/>
+      <div className="w-full px-10">
+      <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")}/>
+      </div>
     </div>
   )
 }
