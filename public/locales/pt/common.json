@@ -178,5 +178,32 @@
         "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção."
       }
     }
+  },
+  "publicVote": {
+    "award": "P R E M I A Ç Ã O",
+    "mainText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "engineering": "Engenharia",
+    "science": "Ciência",
+    "computing": "de Computação",
+    "engineeringWinner": {
+      "2022": {
+        "name": "Falken",
+        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+      },
+      "2023": {
+        "name": "Carrinho",
+        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+      }
+    },
+    "scienceWinner": {
+      "2022": {
+        "name": "ProfisonaLisa",
+        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+      },
+      "2023": {
+        "name": "EcoRota",
+        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+      }
+    }
   }
 }
