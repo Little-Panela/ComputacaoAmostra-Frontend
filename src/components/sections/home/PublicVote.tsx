@@ -2,14 +2,13 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import CardTrophy from "../../../../public/static/img/trophy icon.png"
-import { realization, partnership, sponsorship } from "../../../constants/companies";
-import { ReactNode, createElement } from "react";
+import { ReactNode, useState } from "react";
 import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
 import { SwitchYear } from "../../modules/SwitchYear";
 
 type SectionProps = {
-  year: "2022" | "2023";
+  year?: "2022" | "2023";
 }
 
 type LogoSectionProps = {
@@ -56,22 +55,47 @@ function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
   )
 }
 
-export function PublicVoteSection({ year }: SectionProps) {
+export function PublicVoteSection({ }: SectionProps) {
   const { t } = useTranslation("common");
+  const [selectedYear, setSelectedYear] = useState<"2022" | "2023">("2023");
+
+  const handleYearChange = (newYear: "2022" | "2023") => {
+    setSelectedYear(newYear);
+  };
 
   return (
     <div className="h-full">
       <Text title={t("publicVote.award")} />
-      <SwitchYear />
+      <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
       <div className="w-full px-10">
-        <div> active = 2022
-          <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")} />
-          <WinnersCard name={t("publicVote.scienceWinner.2022.name")} description={t("publicVote.scienceWinner.2022.description")} btnLabel={t("home.winners.details")} />
-        </div>
-        <div> active = 2023
-          <WinnersCard name={t("publicVote.engineeringWinner.2022.name")} description={t("publicVote.engineeringWinner.2022.description")} btnLabel={t("home.winners.details")} />
-          <WinnersCard name={t("publicVote.scienceWinner.2022.name")} description={t("publicVote.scienceWinner.2022.description")} btnLabel={t("home.winners.details")} />
-        </div>
+        {selectedYear === "2023" && (
+          <div className="flex flex-col gap-y-10">
+            <WinnersCard
+              name={t("publicVote.engineeringWinner.2023.name")}
+              description={t("publicVote.engineeringWinner.2023.description")}
+              btnLabel={t("home.winners.details")}
+            />
+            <WinnersCard
+              name={t("publicVote.scienceWinner.2023.name")}
+              description={t("publicVote.scienceWinner.2023.description")}
+              btnLabel={t("home.winners.details")}
+            />
+          </div>
+        )}
+        {selectedYear === "2022" && (
+          <div className="flex flex-col gap-y-10">
+            <WinnersCard
+              name={t("publicVote.engineeringWinner.2022.name")}
+              description={t("publicVote.engineeringWinner.2022.description")}
+              btnLabel={t("home.winners.details")}
+            />
+            <WinnersCard
+              name={t("publicVote.scienceWinner.2022.name")}
+              description={t("publicVote.scienceWinner.2022.description")}
+              btnLabel={t("home.winners.details")}
+            />
+          </div>
+        )}
       </div>
     </div>
   )

@@ -3,7 +3,8 @@ import clsx from "clsx";
 import { Text } from "../elements/Text";
 
 interface SwitchProps {
-  year: string;
+  year?: string;
+  onYearChange: (selectedYear: "2022" | "2023") => void;
 }
 interface OptionProps {
   label: string;
@@ -11,11 +12,12 @@ interface OptionProps {
   onClick: () => void;
 }
 
-export function SwitchYear({year}:SwitchProps) {
+export function SwitchYear({ onYearChange }: SwitchProps) {
   const [selectedYear, setSelectedYear] = useState<"2022" | "2023">("2023");
 
   const handleOptionClick = (selectedYear: "2022" | "2023") => {
     setSelectedYear(selectedYear);
+    onYearChange(selectedYear);
   };
 
   return (
