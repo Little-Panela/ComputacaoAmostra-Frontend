@@ -188,21 +188,21 @@
     "engineeringWinner": {
       "2022": {
         "name": "Falken",
-        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+        "description": "Um leitor de frequência que mede a potência de sinais de rede 2G, 3G e 4G."
       },
       "2023": {
-        "name": "Carrinho",
-        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+        "name": "Minerva",
+        "description": "Drone terrestre para aumentar e automatizar o plantio de priprioca."
       }
     },
     "scienceWinner": {
       "2022": {
-        "name": "ProfisonaLisa",
-        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+        "name": "EducaOnça",
+        "description": "Aplicação para auxiliar no ensino remoto de crianças ribeirinhas."
       },
       "2023": {
         "name": "EcoRota",
-        "description": "Leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G."
+        "description": "A Ecorota é uma agência digital de ecoturismo comunitário nas ilhas de Belém."
       }
     }
   }

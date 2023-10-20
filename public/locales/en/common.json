@@ -178,5 +178,32 @@
         "description": "An automated irrigation system for those who don't have time to take care of their plants on their balcony or for those who make a living from production."
       }
     }
+  },
+  "publicVote": {
+    "award": "A W A R D",
+    "mainText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "engineering": "Engineering",
+    "science": "Science",
+    "computing": "Computer",
+    "engineeringWinner": {
+      "2022": {
+        "name": "Falken",
+        "description": "A frequency reader that measures the strength of 2G, 3G and 4G network signals."
+      },
+      "2023": {
+        "name": "Minerva",
+        "description": "Terrestrial drone to increase and automate priprioca planting."
+      }
+    },
+    "scienceWinner": {
+      "2022": {
+        "name": "EducaOnça",
+        "description": "Application to assist in remote teaching of riverside children."
+      },
+      "2023": {
+        "name": "EcoRota",
+        "description": "Ecorota is a digital community ecotourism agency on the islands of Belém."
+      }
+    }
   }
 }

@@ -15,6 +15,7 @@ import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
 import { SwitchYear } from "../../modules/SwitchYear";
 import { Text } from "../../elements/Text";
+import { ModalProject } from "../../modules/ModalProject";
 
 type SectionProps = {
   year?: "2022" | "2023";
@@ -33,7 +34,7 @@ type WinnerCardProps = {
 
 function SectionLabel({ title, mainText }: LogoSectionProps) {
   return (
-    <div className="w-full flex flex-col items-center xl:w-1/2">
+    <div className="w-full flex flex-col items-center lg:w-1/2">
       <div className="flex text-base text-pallete-primary justify-center items-center pb-10">{title}</div>
       <Heading size="xl" className="w-fit z-10 flex border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
         CONCEIÇÃO FIÚZA DE MELO
@@ -47,14 +48,14 @@ function SectionLabel({ title, mainText }: LogoSectionProps) {
 
 function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
   return (
-    <div className="items-center bg-transparent h-fit text-xs flex max-w-xs flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
+    <div className="items-center bg-transparent h-[360px] text-xs flex max-w-xs flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
       <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center p-4 h-full">
         <Image src={CardTrophy} alt="Imagem de um trofeu" width={120} height={120} />
         <div className="flex flex-row">
           <Heading className="text-base p-4 md:text-xl">{name}</Heading>
         </div>
-        <div className="text-center flex flex-col leading-7 text-xs items-center gap-8">
+        <div className="text-center flex flex-col leading-7 text-xs items-center justify-end gap-8">
           <div className="opacity-50">
             {description}
           </div>
@@ -77,11 +78,11 @@ export function PublicVoteSection({ }: SectionProps) {
 
   return (
     <div className="h-full">
-      <div className="px-10 xl:flex xl:items-center xl:justify-center">
-        <Image src={TrophyL} alt="troféu" className="absolute left-0 xl:hidden" />
-        <Image src={TrophyR} alt="troféu" className="absolute right-0 xl:hidden" />
-        <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden xl:block" />
-        <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden xl:block" />
+      <div className="px-10 lg:flex lg:items-center lg:justify-center">
+        <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
+        <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
+        <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" />
+        <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" />
         <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
@@ -111,8 +112,9 @@ export function PublicVoteSection({ }: SectionProps) {
           </div>
         )}
         {selectedYear === "2022" && (
-          <div className="flex flex-col text-center gap-y-10 pt-10">
-            <div className="w-full flex justify-center gap-x-1">
+          <div className="flex flex-col gap-y-10 pt-10 lg:flex-row lg:gap-x-36">
+          <div>
+            <div className="w-full flex justify-center gap-x-1 py-5">
               <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
             </div>
             <WinnersCard
@@ -120,7 +122,9 @@ export function PublicVoteSection({ }: SectionProps) {
               description={t("publicVote.engineeringWinner.2022.description")}
               btnLabel={t("home.winners.details")}
             />
-            <div className="w-full flex justify-center gap-x-1">
+          </div>
+          <div>
+            <div className="w-full flex justify-center gap-x-1 py-5">
               <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
             </div>
             <WinnersCard
@@ -129,6 +133,7 @@ export function PublicVoteSection({ }: SectionProps) {
               btnLabel={t("home.winners.details")}
             />
           </div>
+        </div>
         )}
       </div>
     </div>

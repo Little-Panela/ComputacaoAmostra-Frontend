@@ -30,13 +30,13 @@ export function SwitchYear({ onYearChange }: SwitchProps) {
 
 function Option({ label, active, onClick }: OptionProps) {
   return (
-    <div className={clsx("flex aling-center justify-center border-pallete-primary-light border-2 rounded-xl px-6 py-2 md:px-12", {
+    <div className={clsx("flex aling-center justify-center border-pallete-primary-light border-2 rounded-xl px-6 py-2", {
       "bg-transparent": !active, "bg-pallete-primary-light": active,
     })}
     onClick={onClick}>
       <Text
         size="sm"
-        className={clsx("text-[10px] transition-all md:py-6 md:text-xl lg:text-2xl", {
+        className={clsx("text-[10px] transition-all  md:text-xl lg:text-2xl", {
           "text-white hover:text-gray-600": !active,
           "text-pallete-background-blue": active,
         })}
