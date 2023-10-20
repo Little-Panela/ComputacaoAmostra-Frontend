@@ -2,10 +2,14 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import CardTrophy from "../../../../public/static/img/trophy icon.png"
+import TrophyL from "../../../../public/static/img/trophy left.png"
+import TrophyR from "../../../../public/static/img/trophy right.png"
+import Folhas from "../../../../public/static/img/coconutstree.png"
 import { ReactNode, useState } from "react";
 import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
 import { SwitchYear } from "../../modules/SwitchYear";
+import { Text } from "../../elements/Text";
 
 type SectionProps = {
   year?: "2022" | "2023";
@@ -13,7 +17,7 @@ type SectionProps = {
 
 type LogoSectionProps = {
   title: string,
-  children?: ReactNode
+  mainText: string,
 }
 
 type WinnerCardProps = {
@@ -22,13 +26,15 @@ type WinnerCardProps = {
   btnLabel: string,
 }
 
-function Text({title}: LogoSectionProps) {
+function SectionLabel({ title, mainText }: LogoSectionProps) {
   return (
     <div className="w-full">
       <div className="flex text-base text-pallete-primary justify-center items-center">{title}</div>
-      <Heading size="xl" className="border-b-2 pb-4 border-b-pallete-primary px-10 text-center text-3xl md:text-4xl">
-      CONCEIÇÃO FIÚZA DE MELO
+      <Heading size="xl" className="w-fit border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
+        CONCEIÇÃO FIÚZA DE MELO
       </Heading>
+      <Image alt="folha" src={Folhas} className="absolute left-0" />
+      <Text className="flex text-center text-xs py-10 font-normal leading-8">{mainText}</Text>
     </div>
   )
 }
@@ -65,16 +71,26 @@ export function PublicVoteSection({ }: SectionProps) {
 
   return (
     <div className="h-full">
-      <Text title={t("publicVote.award")} />
+      <div className="px-10 "> 
+      <Image src={TrophyL} alt="troféu" className="absolute left-0"/>
+      <Image src={TrophyR} alt="troféu" className="absolute right-0"/>
+      <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")}/>
+      </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
       <div className="w-full px-10">
         {selectedYear === "2023" && (
-          <div className="flex flex-col gap-y-10">
+          <div className="flex flex-col gap-y-10 pt-10">
+            <div className="w-full flex justify-center gap-x-1">
+              <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+            </div>
             <WinnersCard
               name={t("publicVote.engineeringWinner.2023.name")}
               description={t("publicVote.engineeringWinner.2023.description")}
               btnLabel={t("home.winners.details")}
             />
+            <div className="w-full flex justify-center gap-x-1">
+              <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+            </div>
             <WinnersCard
               name={t("publicVote.scienceWinner.2023.name")}
               description={t("publicVote.scienceWinner.2023.description")}
@@ -83,18 +99,24 @@ export function PublicVoteSection({ }: SectionProps) {
           </div>
         )}
         {selectedYear === "2022" && (
-          <div className="flex flex-col gap-y-10">
-            <WinnersCard
-              name={t("publicVote.engineeringWinner.2022.name")}
-              description={t("publicVote.engineeringWinner.2022.description")}
-              btnLabel={t("home.winners.details")}
-            />
-            <WinnersCard
-              name={t("publicVote.scienceWinner.2022.name")}
-              description={t("publicVote.scienceWinner.2022.description")}
-              btnLabel={t("home.winners.details")}
-            />
+          <div className="flex flex-col text-center gap-y-10 pt-10">
+          <div className="w-full flex justify-center gap-x-1">
+            <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
           </div>
+          <WinnersCard
+            name={t("publicVote.engineeringWinner.2022.name")}
+            description={t("publicVote.engineeringWinner.2022.description")}
+            btnLabel={t("home.winners.details")}
+          />
+          <div className="w-full flex justify-center gap-x-1">
+            <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+          </div>
+          <WinnersCard
+            name={t("publicVote.scienceWinner.2022.name")}
+            description={t("publicVote.scienceWinner.2022.description")}
+            btnLabel={t("home.winners.details")}
+          />
+        </div>
         )}
       </div>
     </div>
