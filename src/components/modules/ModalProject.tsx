@@ -30,7 +30,7 @@ import { FaFacebook } from "react-icons/fa";
 import clsx from "clsx";
 
 type ModalProjectProps = {
-  id: string;
+  id?: string;
   name: string;
   nameForSlug: string;
   videoId: string;

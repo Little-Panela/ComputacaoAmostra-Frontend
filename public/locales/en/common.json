@@ -204,6 +204,18 @@
         "name": "EcoRota",
         "description": "Ecorota is a digital community ecotourism agency on the islands of Belém."
       }
+    },
+    "modal": {
+      "engineeringWinner": {
+
+      },
+      "scienceWinner": {
+        "2023": {
+          "description": "Ecorota is a digital community ecotourism agency on the islands of Belém, where tourists will use services from the islands themselves, thus learning more about the culture, community and environmental problems, thereby contributing to the local economy and environmental education in the region.",
+          "gitHub": "https://github.com/EcoRota",
+          "youTube": "https://youtu.be/64g5r67363Y?si=lhmhnkQ6LqcTclvW"
+        }
+      }
     }
   }
 }

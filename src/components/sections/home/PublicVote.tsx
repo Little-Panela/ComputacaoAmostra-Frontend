@@ -17,6 +17,60 @@ import { SwitchYear } from "../../modules/SwitchYear";
 import { Text } from "../../elements/Text";
 import { ModalProject } from "../../modules/ModalProject";
 
+const Zenith = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "Gabriel Pinheiro Marcelino de Oliveira",
+    "Matheus Tsuchiya Dourado",
+    "Marco Antonio Gomes Pierozan",
+    "Renan Andrew Oliveira Canuto",
+    "Rian Ernesto Leão da Silva",
+  ],
+  youtubeId: "bJhPNFamNwk"
+}
+
+const Minerva = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "Athos Andrade Silva de Araujo",
+    "Fernanda Cordeiro Panzera",
+    "Henrique Cabral Velloso da Silva",
+    "Vinicius Eduardo Pereira Raiol",
+    "Tiago Costa Harrop Medeiros"
+  ],
+  youtubeId: "f2Xu5guID0w"
+}
+
+const EcoRota = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "João Cardoso",
+    "Marco Aurélio",
+    "Fábio Neves",
+    "João Guilherme",
+    "Luiz André"
+  ],
+  youtubeId: "64g5r67363Y"
+}
+
+const EducaOnca = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "Giovanna Souto",
+    "Marília Barbosa",
+    "Rafaela Barros"
+  ],
+  youtubeId: "B-jJFzueha4"
+}
+
 type SectionProps = {
   year?: "2022" | "2023";
 }
@@ -30,6 +84,13 @@ type WinnerCardProps = {
   name: string,
   description: string,
   btnLabel: string,
+
+  modalLabel: string,
+  modalText?: string,
+  modalDescription: string,
+  youtubeID: string,
+  isZenith: boolean,
+  team: Array[]
 }
 
 function SectionLabel({ title, mainText }: LogoSectionProps) {
@@ -46,7 +107,8 @@ function SectionLabel({ title, mainText }: LogoSectionProps) {
   )
 }
 
-function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
+function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team }: WinnerCardProps) {
+  const { t } = useTranslation("common");
   return (
     <div className="items-center bg-transparent h-[360px] text-xs flex max-w-xs flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
       <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
@@ -59,9 +121,20 @@ function WinnersCard({ name, description, btnLabel }: WinnerCardProps) {
           <div className="opacity-50">
             {description}
           </div>
-          <Button className="text-xs md:text-base">
-            {btnLabel}
-          </Button>
+          <ModalProject
+            name={modalLabel}
+            nameForSlug={modalLabel}
+            description={modalDescription}
+            teamMembers={team}
+            isWinner={true}
+            videoId={youtubeID}
+            course={"ecomp"}
+            trigger={
+              <Button className="block w-full rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
+                {btnLabel}
+              </Button>
+            }
+          />
         </div>
       </div>
     </div>
@@ -97,6 +170,11 @@ export function PublicVoteSection({ }: SectionProps) {
                 name={t("publicVote.engineeringWinner.2023.name")}
                 description={t("publicVote.engineeringWinner.2023.description")}
                 btnLabel={t("home.winners.details")}
+                modalLabel={t('publicVote.engineeringWinner.2023.name')}
+                modalDescription={t('publicVote.engineeringWinner.2023.description')}
+                youtubeID={Minerva.youtubeId}
+                isZenith={Minerva.isZenith}
+                team={Minerva.team}
               />
             </div>
             <div>
@@ -107,33 +185,48 @@ export function PublicVoteSection({ }: SectionProps) {
                 name={t("publicVote.scienceWinner.2023.name")}
                 description={t("publicVote.scienceWinner.2023.description")}
                 btnLabel={t("home.winners.details")}
+                modalLabel={t('publicVote.scienceWinner.2023.name')}
+                modalDescription={t('publicVote.scienceWinner.2023.description')}
+                youtubeID={EcoRota.youtubeId}
+                isZenith={EcoRota.isZenith}
+                team={EcoRota.team}
               />
             </div>
           </div>
         )}
         {selectedYear === "2022" && (
           <div className="flex flex-col gap-y-10 pt-10 lg:flex-row lg:gap-x-36">
-          <div>
-            <div className="w-full flex justify-center gap-x-1 py-5">
-              <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <WinnersCard
+                name={t("publicVote.engineeringWinner.2022.name")}
+                description={t("publicVote.engineeringWinner.2022.description")}
+                btnLabel={t("home.winners.details")}
+                modalLabel={t('publicVote.engineeringWinner.2022.name')}
+                modalDescription={t('publicVote.engineeringWinner.2022.description')}
+                youtubeID={Zenith.youtubeId}
+                isZenith={Zenith.isZenith}
+                team={Zenith.team}
+              />
             </div>
-            <WinnersCard
-              name={t("publicVote.engineeringWinner.2022.name")}
-              description={t("publicVote.engineeringWinner.2022.description")}
-              btnLabel={t("home.winners.details")}
-            />
-          </div>
-          <div>
-            <div className="w-full flex justify-center gap-x-1 py-5">
-              <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <WinnersCard
+                name={t("publicVote.scienceWinner.2022.name")}
+                description={t("publicVote.scienceWinner.2022.description")}
+                btnLabel={t("home.winners.details")}
+                modalLabel={t('publicVote.scienceWinner.2022.name')}
+                modalDescription={t('publicVote.scienceWinner.2022.description')}
+                youtubeID={EducaOnca.youtubeId}
+                isZenith={EducaOnca.isZenith}
+                team={EducaOnca.team}
+              />
             </div>
-            <WinnersCard
-              name={t("publicVote.scienceWinner.2022.name")}
-              description={t("publicVote.scienceWinner.2022.description")}
-              btnLabel={t("home.winners.details")}
-            />
           </div>
-        </div>
         )}
       </div>
     </div>
