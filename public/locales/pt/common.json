@@ -204,6 +204,20 @@
         "name": "EcoRota",
         "description": "A Ecorota é uma agência digital de ecoturismo comunitário nas ilhas de Belém."
       }
+    },
+    "modal": {
+      "engineeringWinner": {
+        "2023": {
+          "description": "Drone terrestre para plantio automatizado da priprioca"
+        }
+      },
+      "scienceWinner": {
+        "2023": {
+          "description": "A Ecorota é uma agência digital de ecoturismo comunitário nas ilhas de Belém, onde os turistas irão utilizar serviços das próprias ilhas, assim aprendendo mais sobre a cultura, comunidade e os problemas ambientais, com isso contribuindo para a economia local e a educação ambiental da região.",
+          "gitHub": "https://github.com/EcoRota",
+          "youTube": "https://youtu.be/64g5r67363Y?si=lhmhnkQ6LqcTclvW"
+        }
+      }
     }
   }
 }

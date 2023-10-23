@@ -20,7 +20,7 @@ import { ModalProject } from "../../modules/ModalProject";
 const Zenith = {
   title: "t('winners.ecomp.firstPlace.title')",
   description: "t('winners.ecomp.firstPlace.description')",
-  isZenith: false,
+  isZenith: true,
   team: [
     "Gabriel Pinheiro Marcelino de Oliveira",
     "Matheus Tsuchiya Dourado",
@@ -171,7 +171,7 @@ export function PublicVoteSection({ }: SectionProps) {
                 description={t("publicVote.engineeringWinner.2023.description")}
                 btnLabel={t("home.winners.details")}
                 modalLabel={t('publicVote.engineeringWinner.2023.name')}
-                modalDescription={t('publicVote.engineeringWinner.2023.description')}
+                modalDescription={t('publicVote.modal.engineeringWinner.2023.description')}
                 youtubeID={Minerva.youtubeId}
                 isZenith={Minerva.isZenith}
                 team={Minerva.team}
@@ -186,7 +186,7 @@ export function PublicVoteSection({ }: SectionProps) {
                 description={t("publicVote.scienceWinner.2023.description")}
                 btnLabel={t("home.winners.details")}
                 modalLabel={t('publicVote.scienceWinner.2023.name')}
-                modalDescription={t('publicVote.scienceWinner.2023.description')}
+                modalDescription={t('publicVote.modal.scienceWinner.2023.description')}
                 youtubeID={EcoRota.youtubeId}
                 isZenith={EcoRota.isZenith}
                 team={EcoRota.team}
@@ -205,7 +205,7 @@ export function PublicVoteSection({ }: SectionProps) {
                 description={t("publicVote.engineeringWinner.2022.description")}
                 btnLabel={t("home.winners.details")}
                 modalLabel={t('publicVote.engineeringWinner.2022.name')}
-                modalDescription={t('publicVote.engineeringWinner.2022.description')}
+                modalDescription={t('winners.ecomp.firstPlace.description')}
                 youtubeID={Zenith.youtubeId}
                 isZenith={Zenith.isZenith}
                 team={Zenith.team}

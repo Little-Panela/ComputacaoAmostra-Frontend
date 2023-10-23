@@ -198,7 +198,8 @@
     "scienceWinner": {
       "2022": {
         "name": "EducaOnça",
-        "description": "Application to assist in remote teaching of riverside children."
+        "description": "Application to assist in remote teaching of riverside children.",
+        "modalDescription": "Application to assist in remote teaching of riverside children."
       },
       "2023": {
         "name": "EcoRota",
@@ -207,7 +208,9 @@
     },
     "modal": {
       "engineeringWinner": {
-
+        "2023": {
+          "description": "Terrestrial drone for automated priprioca planting"
+        }
       },
       "scienceWinner": {
         "2023": {
