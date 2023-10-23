@@ -1,0 +1,412 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import CardTrophy from "../../../../public/static/img/trophy icon.png"
+import TrophyL from "../../../../public/static/img/trophy left.png"
+import TrophyR from "../../../../public/static/img/trophy right.png"
+
+import podium from "../../../../public/static/img/podium.png"
+import TrophyRAlt from "../../../../public/static/img/trophy right lg.png"
+
+import Folhas from "../../../../public/static/img/coconutstree.png"
+import FolhasR from "../../../../public/static/img/video-right-tree.png"
+import { ReactNode, useState } from "react";
+import { Heading } from "../../elements/Heading";
+import { Button } from "../../elements/Button";
+import { SwitchYear } from "../../modules/SwitchYear";
+import { Text } from "../../elements/Text";
+import { ModalProject } from "../../modules/ModalProject";
+
+const EcoRota = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "João Cardoso",
+    "Marco Aurélio",
+    "Fábio Neves",
+    "João Guilherme",
+    "Luiz André"
+  ],
+  youtubeId: "64g5r67363Y"
+}
+
+const EducaOnca = {
+  title: "t('winners.ecomp.firstPlace.title')",
+  description: "t('winners.ecomp.firstPlace.description')",
+  isZenith: false,
+  team: [
+    "Giovanna Souto",
+    "Marília Barbosa",
+    "Rafaela Barros"
+  ],
+  youtubeId: "B-jJFzueha4"
+}
+
+type SectionProps = {
+  year?: "2022" | "2023";
+}
+
+type LogoSectionProps = {
+  title: string,
+  mainText: string,
+}
+
+type WinnerCardProps = {
+  name: string,
+  description: string,
+  btnLabel: string,
+
+  modalLabel: string,
+  modalText?: string,
+  modalDescription: string,
+  youtubeID: string,
+  isZenith: boolean,
+  team: Array[]
+}
+
+function SectionLabel({ title, mainText }: LogoSectionProps) {
+  return (
+    <div className="w-full flex flex-col items-center lg:w-1/2">
+      <div className="flex text-base text-pallete-primary justify-center items-center pb-10">{title}</div>
+      <Heading size="xl" className="w-fit z-10 flex border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
+        COMPUTAÇÃO AMOSTRA
+      </Heading>
+      <Image alt="folha" src={Folhas} className="absolute left-0 translate-y-56 w-14 md:w-36" />
+      <Image alt="folha" src={FolhasR} className="absolute right-0 translate-y-56 w-14 md:w-36" />
+      <Text className="flex text-center text-sm py-10 font-normal leading-8 lg:text-base">{mainText}</Text>
+    </div>
+  )
+}
+
+function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team }: WinnerCardProps) {
+  // const { t } = useTranslation("common");
+  return (
+    <div className="items-center bg-transparent h-[400px] w-80 text-xs flex flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
+      <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
+      <div className="flex flex-col items-center p-4 h-full">
+        <Image src={CardTrophy} alt="Imagem de um trofeu" width={120} height={120} />
+        <div className="flex flex-row">
+          <Heading className="text-base p-4 md:text-xl">{name}</Heading>
+        </div>
+        <div className="text-center h-full flex flex-col leading-7 text-xs items-center justify-between gap-8">
+          <div className="opacity-50">
+            {description}
+          </div>
+          <ModalProject
+            name={modalLabel}
+            nameForSlug={modalLabel}
+            description={modalDescription}
+            teamMembers={team}
+            isWinner={isZenith}
+            isPublicVote={true}
+            videoId={youtubeID}
+            course={"ecomp"}
+            trigger={
+              <Button className="block w-fit rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
+                {btnLabel}
+              </Button>
+            }
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function WinnerSection2({ }: SectionProps) {
+  const { t } = useTranslation("common");
+  const [selectedYear, setSelectedYear] = useState<"2022" | "2023">("2023");
+
+  const handleYearChange = (newYear: "2022" | "2023") => {
+    setSelectedYear(newYear);
+  };
+
+  const ecompWinners2022 = [
+    {
+      position: 1,
+      title: t("winners-att.2022.ecomp.firstPlace.title"),
+      description: t("winners-att.2022.ecomp.firstPlace.description"),
+      modalDescription: t("winners-att.2022.ecomp.firstPlace.modalDescription"),
+      isZenith: true,
+      team: [
+        "Gabriel Pinheiro Marcelino de Oliveira",
+        "Matheus Tsuchiya Dourado",
+        "Marco Antonio Gomes Pierozan",
+        "Renan Andrew Oliveira Canuto",
+        "Rian Ernesto Leão da Silva",
+      ],
+      youtubeId: "bJhPNFamNwk"
+    },
+    {
+      position: 2,
+      title: t("winners-att.2022.ecomp.secondPlace.title"),
+      description: t("winners-att.2022.ecomp.secondPlace.description"),
+      modalDescription: t("winners-att.2022.ecomp.secondPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "João Pedro Brito",
+        "Alexander Cardoso",
+        "Leonardo Arero",
+        "Nailton Sampaio",
+      ],
+      youtubeId: "XWMRPfiLbHM"
+    },
+    {
+      position: 3,
+      title: t("winners-att.2022.ecomp.thirdPlace.title"),
+      description: t("winners-att.2022.ecomp.thirdPlace.description"),
+      modalDescription: t("winners-att.2022.ecomp.thirdPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Lucas Gabriel Carvalho de Amorim",
+        "Rômulo Di Córdova",
+        "Fernando Otavio",
+        "Antonio Bernardo",
+      ],
+      youtubeId: "7kFMQciPRcI"
+    },
+  ];
+  const ecompWinners2023 = [
+    {
+      position: 1,
+      title: t("winners-att.2023.ecomp.firstPlace.title"),
+      description: t("winners-att.2023.ecomp.firstPlace.description"),
+      modalDescription: t("winners-att.2023.ecomp.firstPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Lucas Gabriel Carvalho Amorim",
+        "Ivanovich Alberto Moraes Santos",
+        "Mateus Fadul Neves do Couto",
+        "Rômulo di Córdova Conceição"
+      ],
+      youtubeId: "dkNim396gew"
+    },
+    {
+      position: 2,
+      title: t("winners-att.2023.ecomp.secondPlace.title"),
+      description: t("winners-att.2023.ecomp.secondPlace.description"),
+      modalDescription: t("winners-att.2023.ecomp.secondPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Ernesto Bertoldo Brito Costa",
+        "Diego Yuta Sato",
+        "Caio Pereira Gillet Machado",
+        "Gabriel Logan Calandrini De Azevedo Tsuchiya",
+        "Geovany Miranda Vieira",
+        "Murilo Baratella Guimarães"
+      ],
+      youtubeId: "u9OdNekTEJY"
+    },
+    {
+      position: 3,
+      title: t("winners-att.2023.ecomp.thirdPlace.title"),
+      description: t("winners-att.2023.ecomp.thirdPlace.description"),
+      modalDescription: t("winners-att.2023.ecomp.thirdPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "João Victor Silva Kikuchi",
+        "Lucas Miranda Leal",
+        "Pedro Henrique Alves Luz"
+      ],
+      youtubeId: "6-2nxIQUSSI"
+    },
+  ];
+  
+  const bccWinners2022 = [
+    {
+      position: 1,
+      title: t("winners-att.2022.bcc.firstPlace.title"),
+      description: t("winners-att.2022.bcc.firstPlace.description"),
+      modalDescription: t("winners-att.2022.bcc.firstPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Thiago Augusto Souza Silva",
+        "Arthur Kenji Enomoto de Oliveira",
+        "Amora Sofia da Paixão",
+        "Igor Hiroshi Matsumoto",
+        "Muriel Áquila Pantoja Silva",
+      ],
+      youtubeId: ""
+    },
+    {
+      position: 2,
+      title: t("winners-att.2022.bcc.secondPlace.title"),
+      description: t("winners-att.2022.bcc.secondPlace.description"),
+      modalDescription: t("winners-att.2022.bcc.secondPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Felipe Machado Dias Ramos",
+        "Letícia Keuffer Cavalleiro de Macedo",
+        "Pedro Benitah Sanchez de Melo",
+        "Vitor Gurjão Sampaio Pombo",
+        "Vítor Longhi Ramôa",
+      ],
+      youtubeId: "Rz6ecyAGyRw"
+    },
+    {
+      position: 3,
+      title: t("winners-att.2022.bcc.thirdPlace.title"),
+      description: t("winners-att.2022.bcc.thirdPlace.description"),
+      modalDescription: t("winners-att.2022.bcc.thirdPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Fabio Neves",
+        "João Vitor Cardoso",
+        "Marco Aurélio",
+        "Newton Miranda",
+        "João Guilherme Beltrão",
+      ],
+      youtubeId: "Q-fDlpqaWDA"
+    },
+  ];
+
+  const bccWinners2023 = [
+    {
+      position: 1,
+      title: t("winners-att.2023.bcc.firstPlace.title"),
+      description: t("winners-att.2023.bcc.firstPlace.description"),
+      modalDescription: t("winners-att.2023.bcc.firstPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Ryan Oliveira",
+        "Letícia Malato",
+        "Letícia Lima",
+        "Vinícius Casanova",
+        "Miguel Angelim",
+      ],
+      youtubeId: "qC64t-FNUtw"
+    },
+    {
+      position: 2,
+      title: t("winners-att.2023.bcc.secondPlace.title"),
+      description: t("winners-att.2023.bcc.secondPlace.description"),
+      modalDescription: t("winners-att.2023.bcc.secondPlace.modalDescription"),
+      isZenith: false,
+      team: [
+       "Caio Johnston Soares",
+        "Vinicius Rayol",
+        "Luiz Felipe Pina",
+        "Pedro Vitor Raiol",
+        "Lucas Borges"
+      ],
+      youtubeId: "kvDKIRHMshM"
+    },
+    {
+      position: 3,
+      title: t("winners-att.2023.bcc.thirdPlace.title"),
+      description: t("winners-att.2023.bcc.thirdPlace.description"),
+      modalDescription: t("winners-att.2023.bcc.thirdPlace.modalDescription"),
+      isZenith: false,
+      team: [
+        "Bruna Melido",
+        "Isadora Lacerda",
+        "Ícaro Macedo"
+      ],
+      youtubeId: "djD7vOYDc9w"
+    },
+  ];
+  
+  return (
+    <div className="h-full py-16 lg:py-20">
+      <div className="px-10 lg:flex lg:items-center lg:justify-center">
+        <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
+        <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
+        {/* <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" /> */}
+        <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" />
+        <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")} />
+      </div>
+      <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
+      <div className="w-full px-10 flex flex-col items-center">
+        {selectedYear === "2023" && (
+          <div className="flex flex-col gap-y-10 pt-10 lg:gap-x-36">
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <div className="w-3/4 flex overflow-x-auto overflow-hidden cursor-grab gap-x-5 mx-14 lg:flex-row">
+              {ecompWinners2023.map((winner, index) =>(
+                <WinnersCard
+                key={index}
+                  name={winner.title}
+                  description={winner.description}
+                  btnLabel={t("home.winners.details")}
+                  modalLabel={winner.title}
+                  modalDescription={winner.modalDescription}
+                  youtubeID={winner.youtubeId}
+                  isZenith={winner.isZenith}
+                  team={winner.team}
+                />
+              ))}
+              </div>
+            </div>
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <div className="flex scroll-smooth gap-x-5 lg:flex-row">
+              {bccWinners2023.map((winner, index) =>(
+                <WinnersCard
+                  key={index}
+                  name={winner.title}
+                  description={winner.description}
+                  btnLabel={t("home.winners.details")}
+                  modalLabel={winner.title}
+                  modalDescription={winner.modalDescription}
+                  youtubeID={winner.youtubeId}
+                  isZenith={winner.isZenith}
+                  team={winner.team}
+                />
+              ))}
+              </div>
+            </div>
+          </div>
+        )}
+        {selectedYear === "2022" && (
+         <div className="flex flex-col gap-y-10 pt-10 lg:gap-x-36">
+         <div>
+           <div className="w-full flex justify-center gap-x-1 py-5">
+             <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+           </div>
+           <div className="w-3/4 flex overflow-x-auto overflow-hidden cursor-grab gap-x-5 mx-14 lg:flex-row">
+           {ecompWinners2022.map((winner, index) =>(
+             <WinnersCard
+             key={index}
+               name={winner.title}
+               description={winner.description}
+               btnLabel={t("home.winners.details")}
+               modalLabel={winner.title}
+               modalDescription={winner.modalDescription}
+               youtubeID={winner.youtubeId}
+               isZenith={winner.isZenith}
+               team={winner.team}
+             />
+           ))}
+           </div>
+         </div>
+         <div>
+           <div className="w-full flex justify-center gap-x-1 py-5">
+             <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+           </div>
+           <div className="flex scroll-smooth gap-x-5 lg:flex-row">
+           {bccWinners2022.map((winner, index) =>(
+             <WinnersCard
+               key={index}
+               name={winner.title}
+               description={winner.description}
+               btnLabel={t("home.winners.details")}
+               modalLabel={winner.title}
+               modalDescription={winner.modalDescription}
+               youtubeID={winner.youtubeId}
+               isZenith={winner.isZenith}
+               team={winner.team}
+             />
+           ))}
+           </div>
+         </div>
+       </div>
+        )}
+      </div>
+    </div>
+  )
+}

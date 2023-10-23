@@ -149,6 +149,80 @@
     "terms": "Termos de Serviço",
     "developed": "Feito com ♥ por Panic"
   },
+  "winners-att": {
+    "2022": {
+    "ecomp": {
+      "firstPlace": {
+        "title": "Zenith Inova",
+        "description": "A Zenith desenvolveu o Módulo Falken , composto por um leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G. Juntos, esses equipamentos se tornam um módulo de medição para as aeronaves remotamente pilotadas. Ou RPAS.",
+        "modalDescription": ""
+      },
+      "secondPlace": {
+        "title": "CVGreen",
+        "description": "Aplicativo mobile de reconhecimento de troncos de árvores através de uma inteligência artificial.",
+        "modalDescription": ""
+      },
+      "thirdPlace": {
+        "title": "Hélix",
+        "description": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar dados sobre a qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de Monitoramento de Qualidade da Água), proposto pela Agência nacional de águas, que tem por objetivo fornecer informações sobre a qualidade dos recursos hídricos em todo o território nacional.",
+        "modalDescription": ""
+      }
+    },
+    "bcc": {
+      "firstPlace": {
+        "title": "BioTank",
+        "description": "BioTank e um projeto que visa fornecer um fonte de gás de cozinha limpa e sustentável para os habitantes da ilha das Onças.",
+        "modalDescription": ""
+      },
+      "secondPlace": {
+        "title": "SICFAA",
+        "description": "Primeira instância de um projeto de tratamento de água para irrigação, no qual foi feito a criação de um sistema inteligente de captação, filtragem e armazenamento de água (SICFAA)",
+        "modalDescription": ""
+      },
+      "thirdPlace": {
+        "title": "AutoDrops",
+        "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção.",
+        "modalDescription": ""
+      }
+    }
+  },
+  "2023": {
+    "ecomp": {
+      "firstPlace": {
+        "title": "Tupã",
+        "description": "Sistema de limpeza de raízes e filtragem de água.",
+        "modalDescription": "A Hélix apresenta o Tupã, um sistema composto atualmente de dois módulos independentes, sendo eles o sistema de limpeza de raízes e de purificação de água, com isso o Tupã é capaz de aumentar tanto a produção quanto a qualidade da água de uma lavoura."
+      },
+      "secondPlace": {
+        "title": "TucuExtract ",
+        "description": "Máquina de Extração do Tucumã.",
+        "modalDescription": "Neo Plus apresenta a revolucionária Máquina de Extração do Tucumã, projetada para extrair o máximo de potencial dessa poderosa fruta da Amazônia. Combinando tecnologia avançada e eficiência incomparável, nossa máquina é a solução perfeita para a obtenção do óleo de tucumã de alta qualidade. O coração dessa inovação é a TucuExtract da Neo Plus, composto por um avançado sistema de extração. Equipado com tecnologia de ponta, a TucuExtract é capaz de processar o tucumã de forma precisa e eficiente, garantindo a obtenção de um óleo puro e valioso."
+      },
+      "thirdPlace": {
+        "title": "Inventory ",
+        "description": "Sistema Inteligente para o controle de Estoque de ONGs e pequenas empresas.",
+        "modalDescription": "Sistema Inteligente para o controle de Estoque de ONGs e pequenas empresas. Focado em soluções simples e modernização de processos tradicionais, fomentando as economias locais e os agentes do terceiro setor envolvidos."
+      }
+    },
+    "bcc": {
+      "firstPlace": {
+        "title": "Ceuci",
+        "description": "Máquina desenvolvida para otimizar a produção de papel",
+        "modalDescription": "A empresa Parajás apresenta a Ceuci, uma máquina inovadora desenvolvida para otimizar a produção de papel a partir da folha de bananeira na Ilha de Cotijuba, objetivando minimizar as dificuldades em seu processo de confecção, que são a sua demora e a segurança na produção manual do papel de folha de bananeira. Dessa forma, a Ceuci irá automatizar o corte do pseudocaule da bananeira, um processo de corte eficiente e rápido, eliminando a necessidade de realizar essa tarefa manualmente. A Ceuci também oferece uma experiência segura para os usuários, diminuindo os riscos associados ao manuseio manual de ferramentas cortantes. Diante disso, Parajás orgulha-se em oferecer essa solução inovadora, que promove eficiência, segurança e oportunidades de crescimento para a comunidade. Acesse https://parajas.com.br para saber mais"
+      },
+      "secondPlace": {
+        "title": "Cotico",
+        "description": "Aplicativo com o objetivo de incentivar a reciclagem",
+        "modalDescription": "O Cotico é um aplicativo com o objetivo de incentivar a reciclagem e recompensar os usuários com 'pets' (badges) a cada vez que eles reciclam utilizando o aplicativo."
+      },
+      "thirdPlace": {
+        "title": "Curumim ",
+        "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção.",
+        "modalDescription": "Curumim é um software acessível e simples para a catalogação, empréstimo e devolução de livros utilizando o sistema open source Biblivre integrado a tecnologia RFID."
+      }
+    }
+  }
+  },
   "winners": {
     "ecomp": {
       "firstPlace": {
