@@ -43,6 +43,7 @@ export function CardWinner({ title, position, course, description, isZenith, tea
                     teamMembers={team}
                     videoId={youtubeId}
                     githubLink=""
+                    isPublicVote={false}
                 />
             </div>
         </div>

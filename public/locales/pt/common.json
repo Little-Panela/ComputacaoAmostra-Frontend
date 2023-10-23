@@ -178,5 +178,46 @@
         "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção."
       }
     }
+  },
+  "publicVote": {
+    "award": "P R E M I A Ç Ã O",
+    "mainText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "engineering": "Engenharia",
+    "science": "Ciência",
+    "computing": "de Computação",
+    "engineeringWinner": {
+      "2022": {
+        "name": "Falken",
+        "description": "Um leitor de frequência que mede a potência de sinais de rede 2G, 3G e 4G."
+      },
+      "2023": {
+        "name": "Minerva",
+        "description": "Drone terrestre para aumentar e automatizar o plantio de priprioca."
+      }
+    },
+    "scienceWinner": {
+      "2022": {
+        "name": "EducaOnça",
+        "description": "Aplicação para auxiliar no ensino remoto de crianças ribeirinhas."
+      },
+      "2023": {
+        "name": "EcoRota",
+        "description": "A Ecorota é uma agência digital de ecoturismo comunitário nas ilhas de Belém."
+      }
+    },
+    "modal": {
+      "engineeringWinner": {
+        "2023": {
+          "description": "Drone terrestre para plantio automatizado da priprioca"
+        }
+      },
+      "scienceWinner": {
+        "2023": {
+          "description": "A Ecorota é uma agência digital de ecoturismo comunitário nas ilhas de Belém, onde os turistas irão utilizar serviços das próprias ilhas, assim aprendendo mais sobre a cultura, comunidade e os problemas ambientais, com isso contribuindo para a economia local e a educação ambiental da região.",
+          "gitHub": "https://github.com/EcoRota",
+          "youTube": "https://youtu.be/64g5r67363Y?si=lhmhnkQ6LqcTclvW"
+        }
+      }
+    }
   }
 }
