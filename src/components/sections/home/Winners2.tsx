@@ -5,8 +5,13 @@ import CardTrophy from "../../../../public/static/img/trophy icon.png"
 import TrophyL from "../../../../public/static/img/trophy left.png"
 import TrophyR from "../../../../public/static/img/trophy right.png"
 
+import TrophyFrist from "../../../../public/static/img/frist-place-trophy.png"
+import TrophySecond from "../../../../public/static/img/second-place-trophy.png"
+import TrophyThird from "../../../../public/static/img/third-place-trophy.png"
+
 import podium from "../../../../public/static/img/podium.png"
-import TrophyRAlt from "../../../../public/static/img/trophy right lg.png"
+import wavesRight from "../../../../public/static/img/wavesRight.png"
+import wavesLeft from "../../../../public/static/img/wavesLeft.png"
 
 import Folhas from "../../../../public/static/img/coconutstree.png"
 import FolhasR from "../../../../public/static/img/video-right-tree.png"
@@ -62,6 +67,7 @@ type WinnerCardProps = {
   modalDescription: string,
   youtubeID: string,
   isZenith: boolean,
+  position: number,
   team: Array[]
 }
 
@@ -72,20 +78,31 @@ function SectionLabel({ title, mainText }: LogoSectionProps) {
       <Heading size="xl" className="w-fit z-10 flex border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
         COMPUTAÇÃO AMOSTRA
       </Heading>
-      <Image alt="folha" src={Folhas} className="absolute left-0 translate-y-56 w-14 md:w-36" />
-      <Image alt="folha" src={FolhasR} className="absolute right-0 translate-y-56 w-14 md:w-36" />
+      <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 translate-y-56 w-14 md:w-36" />
+      {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 translate-y-56 w-14 md:w-36" /> */}
       <Text className="flex text-center text-sm py-10 font-normal leading-8 lg:text-base">{mainText}</Text>
     </div>
   )
 }
 
-function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team }: WinnerCardProps) {
-  // const { t } = useTranslation("common");
+function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team, position }: WinnerCardProps) {
+  const positionTrophy = () => {
+    switch(position) {
+      case 1:
+      return TrophyFrist
+      case 2:
+      return TrophySecond
+      case 3:
+      return TrophyThird
+      default:
+      return TrophyFrist;
+    }
+  }
   return (
     <div className="items-center bg-transparent h-[400px] w-80 text-xs flex flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
       <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
       <div className="flex flex-col items-center p-4 h-full">
-        <Image src={CardTrophy} alt="Imagem de um trofeu" width={120} height={120} />
+        <Image src={positionTrophy()} alt="Imagem de um trofeu" width={120} height={120} />
         <div className="flex flex-row">
           <Heading className="text-base p-4 md:text-xl">{name}</Heading>
         </div>
@@ -212,7 +229,6 @@ export function WinnerSection2({ }: SectionProps) {
       youtubeId: "6-2nxIQUSSI"
     },
   ];
-  
   const bccWinners2022 = [
     {
       position: 1,
@@ -260,7 +276,6 @@ export function WinnerSection2({ }: SectionProps) {
       youtubeId: "Q-fDlpqaWDA"
     },
   ];
-
   const bccWinners2023 = [
     {
       position: 1,
@@ -313,7 +328,7 @@ export function WinnerSection2({ }: SectionProps) {
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
         {/* <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" /> */}
-        <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" />
+        {/* <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" /> */}
         <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
@@ -324,7 +339,7 @@ export function WinnerSection2({ }: SectionProps) {
               <div className="w-full flex justify-center gap-x-1 py-5">
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
-              <div className="w-3/4 flex overflow-x-auto overflow-hidden cursor-grab gap-x-5 mx-14 lg:flex-row">
+              <div className="w-3/4 flex overflow-x-auto gap-x-5 mx-14 lg:flex-row">
               {ecompWinners2023.map((winner, index) =>(
                 <WinnersCard
                 key={index}
@@ -336,6 +351,7 @@ export function WinnerSection2({ }: SectionProps) {
                   youtubeID={winner.youtubeId}
                   isZenith={winner.isZenith}
                   team={winner.team}
+                  position={winner.position}
                 />
               ))}
               </div>
@@ -356,6 +372,7 @@ export function WinnerSection2({ }: SectionProps) {
                   youtubeID={winner.youtubeId}
                   isZenith={winner.isZenith}
                   team={winner.team}
+                  position={winner.position}
                 />
               ))}
               </div>
@@ -380,6 +397,7 @@ export function WinnerSection2({ }: SectionProps) {
                youtubeID={winner.youtubeId}
                isZenith={winner.isZenith}
                team={winner.team}
+               position={winner.position}
              />
            ))}
            </div>
@@ -400,6 +418,7 @@ export function WinnerSection2({ }: SectionProps) {
                youtubeID={winner.youtubeId}
                isZenith={winner.isZenith}
                team={winner.team}
+               position={winner.position}
              />
            ))}
            </div>
