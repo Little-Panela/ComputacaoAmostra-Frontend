@@ -24,8 +24,8 @@ const Home: NextPage = () => {
       <ZenithBanner />
       <Cards />
       <Winners />
-      <Logos />
       <PublicVoteSection />
+      <Logos />
     </Default>
   );
 };
