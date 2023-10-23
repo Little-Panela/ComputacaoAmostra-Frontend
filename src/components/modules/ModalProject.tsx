@@ -39,6 +39,7 @@ type ModalProjectProps = {
   description: string;
   course: "bcc" | "ecomp";
   isWinner?: boolean;
+  isPublicVote?: boolean
   position?: number;
   isZenith?: boolean;
 } & Omit<ModalProps, "children">;
@@ -56,6 +57,7 @@ export function ModalProject({
   githubLink,
   course,
   isWinner = false,
+  isPublicVote = false,
   isZenith = false,
   position = 1,
   ...rest
@@ -175,7 +177,7 @@ export function ModalProject({
             {"py-4": !isWinner},
             {"py-10": isWinner}
           )}>
-            {isWinner ? (
+            {isWinner && !isPublicVote ? (
               <Image
                 src={isZenith ? "/static/img/first-zenith.svg" : (positionIcon[position-1] ?? "/static/img/first.svg")}
                 className="text-white w-fit p-2 transition-all hover:first:scale-125 sm:absolute sm:left-10"

@@ -102,7 +102,7 @@ function SectionLabel({ title, mainText }: LogoSectionProps) {
       </Heading>
       <Image alt="folha" src={Folhas} className="absolute left-0 translate-y-56 w-14 md:w-36" />
       <Image alt="folha" src={FolhasR} className="absolute right-0 translate-y-56 w-14 md:w-36" />
-      <Text className="flex text-center text-xs py-10 font-normal leading-8">{mainText}</Text>
+      <Text className="flex text-center text-sm py-10 font-normal leading-8 lg:text-base">{mainText}</Text>
     </div>
   )
 }
@@ -126,7 +126,8 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
             nameForSlug={modalLabel}
             description={modalDescription}
             teamMembers={team}
-            isWinner={true}
+            isWinner={isZenith}
+            isPublicVote={true}
             videoId={youtubeID}
             course={"ecomp"}
             trigger={
@@ -150,7 +151,7 @@ export function PublicVoteSection({ }: SectionProps) {
   };
 
   return (
-    <div className="h-full">
+    <div className="h-full py-16 lg:py-20">
       <div className="px-10 lg:flex lg:items-center lg:justify-center">
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
