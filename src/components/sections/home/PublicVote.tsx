@@ -89,8 +89,8 @@ type WinnerCardProps = {
   modalText?: string,
   modalDescription: string,
   youtubeID: string,
-  isZenith: boolean,
-  team: Array[]
+  isZenith?: boolean,
+  team: Array<string>
 }
 
 function SectionLabel({ title, mainText }: LogoSectionProps) {
@@ -126,9 +126,10 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
             nameForSlug={modalLabel}
             description={modalDescription}
             teamMembers={team}
-            isWinner={isZenith}
+            isWinner={true}
             isPublicVote={true}
             videoId={youtubeID}
+            isZenith={isZenith}
             course={"ecomp"}
             trigger={
               <Button className="block w-full rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
