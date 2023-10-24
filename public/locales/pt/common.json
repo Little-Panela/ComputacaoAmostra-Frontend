@@ -79,7 +79,11 @@
       "sponsorship": "Patrocínio"
     },
     "footer": {
-      "partner": "EM PARCERIA COM PANIC"
+      "start": "Inicio",
+      "program": "O Programa",
+      "objectives": "O que Buscamos",
+      "winners": "Vencedores",
+      "partner": "Em parceria com Panic"
     },
     "winners": {
       "title": "Vencedores",
