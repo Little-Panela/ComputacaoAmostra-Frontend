@@ -10,8 +10,8 @@ import TrophySecond from "../../../../public/static/img/second-place-trophy.png"
 import TrophyThird from "../../../../public/static/img/third-place-trophy.png"
 
 import podium from "../../../../public/static/img/podium.png"
-import wavesRight from "../../../../public/static/img/wavesRight.png"
-import wavesLeft from "../../../../public/static/img/wavesLeft.png"
+// import wavesRight from "../../../../public/static/img/wavesRight.png"
+// import wavesLeft from "../../../../public/static/img/wavesLeft.png"
 
 import Folhas from "../../../../public/static/img/coconutstree.png"
 import FolhasR from "../../../../public/static/img/video-right-tree.png"
@@ -54,6 +54,7 @@ type SectionProps = {
 
 type LogoSectionProps = {
   title: string,
+  label: string
   mainText: string,
 }
 
@@ -68,34 +69,40 @@ type WinnerCardProps = {
   youtubeID: string,
   isZenith: boolean,
   position: number,
-  team: Array[]
+  team: Array<string>
 }
 
-function SectionLabel({ title, mainText }: LogoSectionProps) {
+function SectionLabel({ title, mainText, label }: LogoSectionProps) {
   return (
     <div className="w-full flex flex-col items-center lg:w-1/2">
       <div className="flex text-base text-pallete-primary justify-center items-center pb-10">{title}</div>
       <Heading size="xl" className="w-fit z-10 flex border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
         COMPUTAÇÃO AMOSTRA
       </Heading>
-      <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 translate-y-56 w-14 md:w-36" />
+      {/* <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 translate-y-56 w-14 md:w-36" /> */}
       {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 translate-y-56 w-14 md:w-36" /> */}
-      <Text className="flex text-center text-sm py-10 font-normal leading-8 lg:text-base">{mainText}</Text>
+      <div className="flex flex-col items-center md:flex-row md:justify-center">
+        <div className="flex flex-col py-10 items-center gap-y-7 md:items-start">
+          <Text className="flex text-center md:text-left text-lg font-bold leading-6 lg:text-base">{label}</Text>
+          <Text className="flex text-center md:text-left text-sm font-normal leading-6 lg:text-base">{mainText}</Text>
+        </div>
+        <Image alt="elegant dots" src={podium} className="w-[324px] md:w-[350px]" />
+      </div>
     </div>
   )
 }
 
 function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team, position }: WinnerCardProps) {
   const positionTrophy = () => {
-    switch(position) {
+    switch (position) {
       case 1:
-      return TrophyFrist
+        return TrophyFrist
       case 2:
-      return TrophySecond
+        return TrophySecond
       case 3:
-      return TrophyThird
+        return TrophyThird
       default:
-      return TrophyFrist;
+        return TrophyFrist;
     }
   }
   return (
@@ -299,7 +306,7 @@ export function WinnerSection2({ }: SectionProps) {
       modalDescription: t("winners-att.2023.bcc.secondPlace.modalDescription"),
       isZenith: false,
       team: [
-       "Caio Johnston Soares",
+        "Caio Johnston Soares",
         "Vinicius Rayol",
         "Luiz Felipe Pina",
         "Pedro Vitor Raiol",
@@ -321,15 +328,15 @@ export function WinnerSection2({ }: SectionProps) {
       youtubeId: "djD7vOYDc9w"
     },
   ];
-  
+
   return (
     <div className="h-full py-16 lg:py-20">
-      <div className="px-10 lg:flex lg:items-center lg:justify-center">
+      <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center">
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
         {/* <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" /> */}
         {/* <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" /> */}
-        <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")} />
+        <SectionLabel title={t("publicVote.award")} mainText={t("winners-att.sectionHeader.mainText")} label={t("winners-att.sectionHeader.label")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
       <div className="w-full px-10 flex flex-col items-center">
@@ -340,20 +347,20 @@ export function WinnerSection2({ }: SectionProps) {
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
               <div className="w-3/4 flex overflow-x-auto gap-x-5 mx-14 lg:flex-row">
-              {ecompWinners2023.map((winner, index) =>(
-                <WinnersCard
-                key={index}
-                  name={winner.title}
-                  description={winner.description}
-                  btnLabel={t("home.winners.details")}
-                  modalLabel={winner.title}
-                  modalDescription={winner.modalDescription}
-                  youtubeID={winner.youtubeId}
-                  isZenith={winner.isZenith}
-                  team={winner.team}
-                  position={winner.position}
-                />
-              ))}
+                {ecompWinners2023.map((winner, index) => (
+                  <WinnersCard
+                    key={index}
+                    name={winner.title}
+                    description={winner.description}
+                    btnLabel={t("home.winners.details")}
+                    modalLabel={winner.title}
+                    modalDescription={winner.modalDescription}
+                    youtubeID={winner.youtubeId}
+                    isZenith={winner.isZenith}
+                    team={winner.team}
+                    position={winner.position}
+                  />
+                ))}
               </div>
             </div>
             <div>
@@ -361,69 +368,69 @@ export function WinnerSection2({ }: SectionProps) {
                 <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
               <div className="flex scroll-smooth gap-x-5 lg:flex-row">
-              {bccWinners2023.map((winner, index) =>(
-                <WinnersCard
-                  key={index}
-                  name={winner.title}
-                  description={winner.description}
-                  btnLabel={t("home.winners.details")}
-                  modalLabel={winner.title}
-                  modalDescription={winner.modalDescription}
-                  youtubeID={winner.youtubeId}
-                  isZenith={winner.isZenith}
-                  team={winner.team}
-                  position={winner.position}
-                />
-              ))}
+                {bccWinners2023.map((winner, index) => (
+                  <WinnersCard
+                    key={index}
+                    name={winner.title}
+                    description={winner.description}
+                    btnLabel={t("home.winners.details")}
+                    modalLabel={winner.title}
+                    modalDescription={winner.modalDescription}
+                    youtubeID={winner.youtubeId}
+                    isZenith={winner.isZenith}
+                    team={winner.team}
+                    position={winner.position}
+                  />
+                ))}
               </div>
             </div>
           </div>
         )}
         {selectedYear === "2022" && (
-         <div className="flex flex-col gap-y-10 pt-10 lg:gap-x-36">
-         <div>
-           <div className="w-full flex justify-center gap-x-1 py-5">
-             <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
-           </div>
-           <div className="w-3/4 flex overflow-x-auto overflow-hidden cursor-grab gap-x-5 mx-14 lg:flex-row">
-           {ecompWinners2022.map((winner, index) =>(
-             <WinnersCard
-             key={index}
-               name={winner.title}
-               description={winner.description}
-               btnLabel={t("home.winners.details")}
-               modalLabel={winner.title}
-               modalDescription={winner.modalDescription}
-               youtubeID={winner.youtubeId}
-               isZenith={winner.isZenith}
-               team={winner.team}
-               position={winner.position}
-             />
-           ))}
-           </div>
-         </div>
-         <div>
-           <div className="w-full flex justify-center gap-x-1 py-5">
-             <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
-           </div>
-           <div className="flex scroll-smooth gap-x-5 lg:flex-row">
-           {bccWinners2022.map((winner, index) =>(
-             <WinnersCard
-               key={index}
-               name={winner.title}
-               description={winner.description}
-               btnLabel={t("home.winners.details")}
-               modalLabel={winner.title}
-               modalDescription={winner.modalDescription}
-               youtubeID={winner.youtubeId}
-               isZenith={winner.isZenith}
-               team={winner.team}
-               position={winner.position}
-             />
-           ))}
-           </div>
-         </div>
-       </div>
+          <div className="flex flex-col gap-y-10 pt-10 lg:gap-x-36">
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <div className="w-3/4 flex overflow-x-auto overflow-hidden cursor-grab gap-x-5 mx-14 lg:flex-row">
+                {ecompWinners2022.map((winner, index) => (
+                  <WinnersCard
+                    key={index}
+                    name={winner.title}
+                    description={winner.description}
+                    btnLabel={t("home.winners.details")}
+                    modalLabel={winner.title}
+                    modalDescription={winner.modalDescription}
+                    youtubeID={winner.youtubeId}
+                    isZenith={winner.isZenith}
+                    team={winner.team}
+                    position={winner.position}
+                  />
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="w-full flex justify-center gap-x-1 py-5">
+                <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
+              </div>
+              <div className="flex scroll-smooth gap-x-5 lg:flex-row">
+                {bccWinners2022.map((winner, index) => (
+                  <WinnersCard
+                    key={index}
+                    name={winner.title}
+                    description={winner.description}
+                    btnLabel={t("home.winners.details")}
+                    modalLabel={winner.title}
+                    modalDescription={winner.modalDescription}
+                    youtubeID={winner.youtubeId}
+                    isZenith={winner.isZenith}
+                    team={winner.team}
+                    position={winner.position}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
