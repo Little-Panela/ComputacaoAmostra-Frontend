@@ -103,10 +103,9 @@ export function Navbar () {
               className="block w-auto"
               height={8}
               width={8}
-              src="/static/icons/logo.svg"
+              src="/static/img/nova-logo.svg"
               alt="Computação amostra"
             />
-            <h1 className="w-fit text-xs sm:text-sm">Computação Amostra</h1>
           </div>
         </Link>
         {/* Mobile */}
@@ -140,10 +139,9 @@ export function Navbar () {
                   className="block w-auto"
                   height={8}
                   width={8}
-                  src="/static/icons/logo.svg"
+                  src="/static/img/nova-logo.svg"
                   alt="Computação amostra"
                 />
-                <h1 className="w-10 text-xs sm:text-sm">Computação Amostra</h1>
               </div>
             </Link>
             <button onClick={toggleMenu}>

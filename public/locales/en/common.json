@@ -80,7 +80,11 @@
       "sponsorship": "Sponsorship"
     },
     "footer": {
-      "partner": "IN PARTNERSHIP WITH PANIC"
+      "start": "Start",
+      "program": "The Program",
+      "objectives": "What We Seek",
+      "winners": "Winners",
+      "partner": "In Partnership with Panic"
     },
     "winners": {
       "title": "Winners",

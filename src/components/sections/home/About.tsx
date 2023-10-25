@@ -15,7 +15,7 @@ export function About () {
   const { t } = useTranslation("common");
 
   return (
-    <section className="bg-about-linear py-32 md:bg-about-linear-md bg-cover bg-center bg-no-repeat flex flex-col px-8 lg:px-12 xl:px-36 items-center lg:items-start gap-20">
+    <section id="about" className="bg-about-linear py-32 md:bg-about-linear-md bg-cover bg-center bg-no-repeat flex flex-col px-8 lg:px-12 xl:px-36 items-center lg:items-start gap-20">
       <Heading className="border-b-4 border-pallete-primary pb-4 w-fit" size="2xl">
         {t("home.about.about1")}
         <b className="text-pallete-primary">

@@ -16,7 +16,7 @@ export function Video() {
       
       <div className="mx-auto max-w-7xl z-10">
         <div className="mx-auto my-6 z-10">
-          <Player videoId="PuRcj4yvfso" />
+          <Player videoId="IKr2TJyrBBY" />
         </div>
       </div>
     </section>
