@@ -195,34 +195,40 @@
       "firstPlace": {
         "title": "Tupã",
         "description": "Sistema modular de limpeza de priprioca e filtragem de água.",
-        "modalDescription": "A Hélix apresenta o Tupã, um sistema composto atualmente de dois módulos independentes, sendo eles o sistema de limpeza de raízes e de purificação de água, com isso o Tupã é capaz de aumentar tanto a produção quanto a qualidade da água de uma lavoura."
+        "modalDescription": "A Hélix apresenta o Tupã, um sistema composto atualmente de dois módulos independentes, sendo eles o sistema de limpeza de raízes e de purificação de água, com isso o Tupã é capaz de aumentar tanto a produção quanto a qualidade da água de uma lavoura.",
+        "youtubeId": "dkNim396gew"
       },
       "secondPlace": {
         "title": "TucuExtract ",
         "description": "Máquina de Extração do Tucumã.",
-        "modalDescription": "Neo Plus apresenta a revolucionária Máquina de Extração do Tucumã, projetada para extrair o máximo de potencial dessa poderosa fruta da Amazônia. Combinando tecnologia avançada e eficiência incomparável, nossa máquina é a solução perfeita para a obtenção do óleo de tucumã de alta qualidade. O coração dessa inovação é a TucuExtract da Neo Plus, composto por um avançado sistema de extração. Equipado com tecnologia de ponta, a TucuExtract é capaz de processar o tucumã de forma precisa e eficiente, garantindo a obtenção de um óleo puro e valioso."
+        "modalDescription": "Neo Plus apresenta a revolucionária Máquina de Extração do Tucumã, projetada para extrair o máximo de potencial dessa poderosa fruta da Amazônia. Combinando tecnologia avançada e eficiência incomparável, nossa máquina é a solução perfeita para a obtenção do óleo de tucumã de alta qualidade. O coração dessa inovação é a TucuExtract da Neo Plus, composto por um avançado sistema de extração. Equipado com tecnologia de ponta, a TucuExtract é capaz de processar o tucumã de forma precisa e eficiente, garantindo a obtenção de um óleo puro e valioso.",
+        "youtubeId": "u9OdNekTEJY"
       },
       "thirdPlace": {
         "title": "Inventory ",
         "description": "Sistema Inteligente para o controle de Estoque de ONGs e pequenas empresas.",
-        "modalDescription": "Sistema Inteligente para o controle de Estoque de ONGs e pequenas empresas. Focado em soluções simples e modernização de processos tradicionais, fomentando as economias locais e os agentes do terceiro setor envolvidos."
+        "modalDescription": "Sistema Inteligente para o controle de Estoque de ONGs e pequenas empresas. Focado em soluções simples e modernização de processos tradicionais, fomentando as economias locais e os agentes do terceiro setor envolvidos.",
+        "youtubeId": "6-2nxIQUSSI"
       }
     },
     "bcc": {
       "firstPlace": {
         "title": "Ceuci",
         "description": "Máquina desenvolvida para otimizar a produção de papel.",
-        "modalDescription": "A empresa Parajás apresenta a Ceuci, uma máquina inovadora desenvolvida para otimizar a produção de papel a partir da folha de bananeira na Ilha de Cotijuba, objetivando minimizar as dificuldades em seu processo de confecção, que são a sua demora e a segurança na produção manual do papel de folha de bananeira. Dessa forma, a Ceuci irá automatizar o corte do pseudocaule da bananeira, um processo de corte eficiente e rápido, eliminando a necessidade de realizar essa tarefa manualmente. A Ceuci também oferece uma experiência segura para os usuários, diminuindo os riscos associados ao manuseio manual de ferramentas cortantes. Diante disso, Parajás orgulha-se em oferecer essa solução inovadora, que promove eficiência, segurança e oportunidades de crescimento para a comunidade. Acesse https://parajas.com.br para saber mais"
+        "modalDescription": "A empresa Parajás apresenta a Ceuci, uma máquina inovadora desenvolvida para otimizar a produção de papel a partir da folha de bananeira na Ilha de Cotijuba, objetivando minimizar as dificuldades em seu processo de confecção, que são a sua demora e a segurança na produção manual do papel de folha de bananeira. Dessa forma, a Ceuci irá automatizar o corte do pseudocaule da bananeira, um processo de corte eficiente e rápido, eliminando a necessidade de realizar essa tarefa manualmente. A Ceuci também oferece uma experiência segura para os usuários, diminuindo os riscos associados ao manuseio manual de ferramentas cortantes. Diante disso, Parajás orgulha-se em oferecer essa solução inovadora, que promove eficiência, segurança e oportunidades de crescimento para a comunidade. Acesse https://parajas.com.br para saber mais",
+        "youtubeId": "mnj4CZ-BISM"
       },
       "secondPlace": {
         "title": "Cotico",
         "description": "Aplicativo com o objetivo de incentivar a reciclagem.",
-        "modalDescription": "O Cotico é um aplicativo com o objetivo de incentivar a reciclagem e recompensar os usuários com 'pets' (badges) a cada vez que eles reciclam utilizando o aplicativo."
+        "modalDescription": "O Cotico é um aplicativo com o objetivo de incentivar a reciclagem e recompensar os usuários com 'pets' (badges) a cada vez que eles reciclam utilizando o aplicativo.",
+        "youtubeId": "kvDKIRHMshM"
       },
       "thirdPlace": {
         "title": "Curumim ",
         "description": "Software simples para a catalogação, empréstimo e devolução de livros.",
-        "modalDescription": "Curumim é um software acessível e simples para a catalogação, empréstimo e devolução de livros utilizando o sistema open source Biblivre integrado a tecnologia RFID."
+        "modalDescription": "Curumim é um software acessível e simples para a catalogação, empréstimo e devolução de livros utilizando o sistema open source Biblivre integrado a tecnologia RFID.",
+        "youtubeId": "djD7vOYDc9w"
       }
     }
   }

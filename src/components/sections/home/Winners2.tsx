@@ -97,6 +97,7 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
             description={modalDescription}
             teamMembers={team}
             isWinner={true}
+            isZenith={isZenith}
             isPublicVote={true}
             videoId={youtubeID}
             course={"ecomp"}
@@ -178,7 +179,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Mateus Fadul Neves do Couto",
         "Rômulo di Córdova Conceição"
       ],
-      youtubeId: "dkNim396gew"
+      youtubeId: t("winners-att.2023.ecomp.firstPlace.youtubeId"),
     },
     {
       position: 2,
@@ -194,7 +195,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Geovany Miranda Vieira",
         "Murilo Baratella Guimarães"
       ],
-      youtubeId: "u9OdNekTEJY"
+      youtubeId: t("winners-att.2023.ecomp.secondPlace.youtubeId"),
     },
     {
       position: 3,
@@ -207,7 +208,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Lucas Miranda Leal",
         "Pedro Henrique Alves Luz"
       ],
-      youtubeId: "6-2nxIQUSSI"
+      youtubeId: t("winners-att.2023.ecomp.thirdPlace.youtubeId"),
     },
   ];
   const bccWinners2022 = [
@@ -271,7 +272,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Vinícius Casanova",
         "Miguel Angelim",
       ],
-      youtubeId: "qC64t-FNUtw"
+      youtubeId: t("winners-att.2023.bcc.firstPlace.youtubeId")
     },
     {
       position: 2,
@@ -286,7 +287,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Pedro Vitor Raiol",
         "Lucas Borges"
       ],
-      youtubeId: "kvDKIRHMshM"
+      youtubeId: t("winners-att.2023.bcc.secondPlace.youtubeId")
     },
     {
       position: 3,
@@ -299,7 +300,7 @@ export function WinnerSection2({ }: SectionProps) {
         "Isadora Lacerda",
         "Ícaro Macedo"
       ],
-      youtubeId: "djD7vOYDc9w"
+      youtubeId: t("winners-att.2023.bcc.thirdPlace.youtubeId")
     },
   ];
 
@@ -308,8 +309,6 @@ export function WinnerSection2({ }: SectionProps) {
       <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center lg:px-32">
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
-        {/* <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" /> */}
-        {/* <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" /> */}
         <SectionLabel title={t("publicVote.award")} mainText={t("winners-att.sectionHeader.mainText")} label={t("winners-att.sectionHeader.label")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
@@ -322,7 +321,6 @@ export function WinnerSection2({ }: SectionProps) {
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
               <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
-              {/* <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 w-[284px] md:w-[484px]" /> */}
                 {ecompWinners2023.map((winner, index) => (
                   <WinnersCard
                     key={index}
@@ -338,7 +336,6 @@ export function WinnerSection2({ }: SectionProps) {
                   />
                 ))}
               </div>
-              {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 w-[284px] md:w-[484px]" /> */}
             </div>
             <div>
               <div className="w-full flex justify-center gap-x-1 py-5">
