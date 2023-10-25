@@ -158,35 +158,35 @@
     "ecomp": {
       "firstPlace": {
         "title": "Zenith Inova",
-        "description": "A Zenith desenvolveu o Módulo Falken , composto por um leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G. Juntos, esses equipamentos se tornam um módulo de medição para as aeronaves remotamente pilotadas. Ou RPAS.",
-        "modalDescription": ""
+        "description": "Um leitor de frequência que mede a potência de sinais de rede 2G, 3G e 4G.",
+        "modalDescription": "A Zenith desenvolveu o Módulo Falken , composto por um leitor de frequência, associado a uma antena unidirecional, que será capaz de realizar a medição de potência dos sinais de rede 2G, 3G e 4G. Juntos, esses equipamentos se tornam um módulo de medição para as aeronaves remotamente pilotadas. Ou RPAS."
       },
       "secondPlace": {
         "title": "CVGreen",
-        "description": "Aplicativo mobile de reconhecimento de troncos de árvores através de uma inteligência artificial.",
-        "modalDescription": ""
+        "description": "Aplicativo mobile de reconhecimento de troncos de árvores.",
+        "modalDescription": "Aplicativo mobile de reconhecimento de troncos de árvores através de uma inteligência artificial."
       },
       "thirdPlace": {
         "title": "Hélix",
-        "description": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar dados sobre a qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de Monitoramento de Qualidade da Água), proposto pela Agência nacional de águas, que tem por objetivo fornecer informações sobre a qualidade dos recursos hídricos em todo o território nacional.",
-        "modalDescription": ""
+        "description": "Sistema de baixo custo para realizar o monitoramento da qualidade da água",
+        "modalDescription": "A Hélix apresenta o S.M.H.B.C (Sistema de monitoramento hídrico de baixo custo), um sistema modular que tem por objetivo, facilitar a implementação em larga escala de equipamentos que consigam coletar dados sobre a qualidade da água. O projeto foi desenvolvido para ser altamente modular, podendo os sensores instalados serem facilmente trocados para se adequar a necessidade de cada cliente. Além disso, o protótipo consegue atingir os requisitos para fazer parte da RNQA (Rede Nacional de Monitoramento de Qualidade da Água), proposto pela Agência nacional de águas, que tem por objetivo fornecer informações sobre a qualidade dos recursos hídricos em todo o território nacional."
       }
     },
     "bcc": {
       "firstPlace": {
         "title": "BioTank",
-        "description": "BioTank e um projeto que visa fornecer um fonte de gás de cozinha limpa e sustentável para os habitantes da ilha das Onças.",
-        "modalDescription": ""
+        "description": "Projeto que visa fornecer uma fonte de gás de cozinha limpa e sustentável.",
+        "modalDescription": "BioTank e um projeto que visa fornecer um fonte de gás de cozinha limpa e sustentável para os habitantes da ilha das Onças."
       },
       "secondPlace": {
         "title": "SICFAA",
-        "description": "Primeira instância de um projeto de tratamento de água para irrigação, no qual foi feito a criação de um sistema inteligente de captação, filtragem e armazenamento de água (SICFAA)",
-        "modalDescription": ""
+        "description": "Projeto de tratamento de água para irrigação.",
+        "modalDescription": "Primeira instância de um projeto de tratamento de água para irrigação, no qual foi feito a criação de um sistema inteligente de captação, filtragem e armazenamento de água (SICFAA)"
       },
       "thirdPlace": {
         "title": "AutoDrops",
-        "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção.",
-        "modalDescription": ""
+        "description": "Sistema de irrigação automatizado.",
+        "modalDescription": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção."
       }
     }
   },
@@ -194,7 +194,7 @@
     "ecomp": {
       "firstPlace": {
         "title": "Tupã",
-        "description": "Sistema de limpeza de raízes e filtragem de água.",
+        "description": "Sistema modular de limpeza de priprioca e filtragem de água.",
         "modalDescription": "A Hélix apresenta o Tupã, um sistema composto atualmente de dois módulos independentes, sendo eles o sistema de limpeza de raízes e de purificação de água, com isso o Tupã é capaz de aumentar tanto a produção quanto a qualidade da água de uma lavoura."
       },
       "secondPlace": {
@@ -211,17 +211,17 @@
     "bcc": {
       "firstPlace": {
         "title": "Ceuci",
-        "description": "Máquina desenvolvida para otimizar a produção de papel",
+        "description": "Máquina desenvolvida para otimizar a produção de papel.",
         "modalDescription": "A empresa Parajás apresenta a Ceuci, uma máquina inovadora desenvolvida para otimizar a produção de papel a partir da folha de bananeira na Ilha de Cotijuba, objetivando minimizar as dificuldades em seu processo de confecção, que são a sua demora e a segurança na produção manual do papel de folha de bananeira. Dessa forma, a Ceuci irá automatizar o corte do pseudocaule da bananeira, um processo de corte eficiente e rápido, eliminando a necessidade de realizar essa tarefa manualmente. A Ceuci também oferece uma experiência segura para os usuários, diminuindo os riscos associados ao manuseio manual de ferramentas cortantes. Diante disso, Parajás orgulha-se em oferecer essa solução inovadora, que promove eficiência, segurança e oportunidades de crescimento para a comunidade. Acesse https://parajas.com.br para saber mais"
       },
       "secondPlace": {
         "title": "Cotico",
-        "description": "Aplicativo com o objetivo de incentivar a reciclagem",
+        "description": "Aplicativo com o objetivo de incentivar a reciclagem.",
         "modalDescription": "O Cotico é um aplicativo com o objetivo de incentivar a reciclagem e recompensar os usuários com 'pets' (badges) a cada vez que eles reciclam utilizando o aplicativo."
       },
       "thirdPlace": {
         "title": "Curumim ",
-        "description": "Um sistema de irrigação automatizado, para aqueles que não tem tempo de cuidar das suas plantinhas na varanda da casa ou aqueles que vivem da produção.",
+        "description": "Software simples para a catalogação, empréstimo e devolução de livros.",
         "modalDescription": "Curumim é um software acessível e simples para a catalogação, empréstimo e devolução de livros utilizando o sistema open source Biblivre integrado a tecnologia RFID."
       }
     }

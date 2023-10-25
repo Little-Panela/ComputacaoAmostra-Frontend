@@ -10,8 +10,8 @@ import TrophySecond from "../../../../public/static/img/second-place-trophy.png"
 import TrophyThird from "../../../../public/static/img/third-place-trophy.png"
 
 import podium from "../../../../public/static/img/podium.png"
-// import wavesRight from "../../../../public/static/img/—Pngtree—elegant connecting dots technology green_5053316 11.png"
-// import wavesLeft from "../../../../public/static/img/wavesLeft.png"
+import wavesRight from "../../../../public/static/img/Wave BG Direita.png"
+import wavesLeft from "../../../../public/static/img/Wave BG Esquerda.png"
 
 import Folhas from "../../../../public/static/img/coconutstree.png"
 import FolhasR from "../../../../public/static/img/video-right-tree.png"
@@ -55,7 +55,7 @@ function SectionLabel({ title, mainText, label }: LogoSectionProps) {
       </Heading>
       {/* <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 translate-y-56 w-14 md:w-36" /> */}
       {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 translate-y-56 w-14 md:w-36" /> */}
-      <div className="flex flex-col items-center md:flex-row md:justify-center">
+      <div className="flex flex-col items-center md:flex-row md:justify-center lg:px-16">
         <div className="flex flex-col py-10 items-center gap-y-7 md:items-start">
           <Text className="flex text-center md:text-left text-lg font-bold leading-6 lg:text-base">{label}</Text>
           <Text className="flex text-center md:text-left text-sm font-normal leading-6 lg:text-base">{mainText}</Text>
@@ -80,14 +80,14 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
     }
   }
   return (
-    <div className="items-center bg-transparent h-[400px] shrink-0 w-80 text-xs flex flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
+    <div className="z-10 items-center bg-transparent h-[400px] shrink-0 w-80 text-xs flex flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
       <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
       <div className="flex flex-col w-[300px] items-center p-4 h-full">
         <Image src={positionTrophy()} alt="Imagem de um trofeu" width={120} height={120} />
         <div className="flex flex-row">
           <Heading className="text-base p-4 md:text-xl">{name}</Heading>
         </div>
-        <div className="text-center h-full flex flex-col leading-7 text-xs items-center justify-between gap-8   overflow-y-scroll">
+        <div className="text-center h-full flex flex-col leading-7 text-xs items-center justify-between gap-8">
           <div className="opacity-50">
             {description}
           </div>
@@ -305,7 +305,7 @@ export function WinnerSection2({ }: SectionProps) {
 
   return (
     <div className="h-full py-16 lg:py-20">
-      <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center">
+      <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center lg:px-32">
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
         {/* <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" /> */}
@@ -314,6 +314,7 @@ export function WinnerSection2({ }: SectionProps) {
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
       <div className="w-full px-10 flex flex-col items-center">
+      <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 w-[284px] md:w-[484px]" />
         {selectedYear === "2023" && (
           <div className="w-[100vw] flex flex-col gap-y-10 pt-10 lg:items-center lg:gap-x-36">
             <div>
@@ -321,6 +322,7 @@ export function WinnerSection2({ }: SectionProps) {
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
               <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
+              {/* <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 w-[284px] md:w-[484px]" /> */}
                 {ecompWinners2023.map((winner, index) => (
                   <WinnersCard
                     key={index}
@@ -336,6 +338,7 @@ export function WinnerSection2({ }: SectionProps) {
                   />
                 ))}
               </div>
+              {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 w-[284px] md:w-[484px]" /> */}
             </div>
             <div>
               <div className="w-full flex justify-center gap-x-1 py-5">
@@ -406,6 +409,7 @@ export function WinnerSection2({ }: SectionProps) {
             </div>
           </div>
         )}
+        <Image alt="elegant dots" src={wavesRight} className="absolute translate-y-72 right-0 w-[284px] md:w-[484px]" />
       </div>
     </div>
   )
