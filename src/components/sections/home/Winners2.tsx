@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
-import CardTrophy from "../../../../public/static/img/trophy icon.png"
-import TrophyL from "../../../../public/static/img/trophy left.png"
-import TrophyR from "../../../../public/static/img/trophy right.png"
 
 import TrophyFrist from "../../../../public/static/img/frist-place-trophy.png"
 import TrophySecond from "../../../../public/static/img/second-place-trophy.png"
@@ -13,8 +10,6 @@ import podium from "../../../../public/static/img/podium.png"
 import wavesRight from "../../../../public/static/img/Wave BG Direita.png"
 import wavesLeft from "../../../../public/static/img/Wave BG Esquerda.png"
 
-import Folhas from "../../../../public/static/img/coconutstree.png"
-import FolhasR from "../../../../public/static/img/video-right-tree.png"
 import { ReactNode, useState } from "react";
 import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
@@ -53,8 +48,6 @@ function SectionLabel({ title, mainText, label }: LogoSectionProps) {
       <Heading size="xl" className="w-fit z-10 flex border-b-2 pb-4 border-b-pallete-primary text-center text-3xl md:text-4xl">
         COMPUTAÇÃO AMOSTRA
       </Heading>
-      {/* <Image alt="elegant dots" src={wavesLeft} className="absolute left-0 translate-y-56 w-14 md:w-36" /> */}
-      {/* <Image alt="elegant dots" src={wavesRight} className="absolute right-0 translate-y-56 w-14 md:w-36" /> */}
       <div className="flex flex-col items-center md:flex-row md:justify-center lg:px-16">
         <div className="flex flex-col py-10 items-center gap-y-7 md:items-start">
           <Text className="flex text-center md:text-left text-lg font-bold leading-6 lg:text-base">{label}</Text>
@@ -307,8 +300,6 @@ export function WinnerSection2({ }: SectionProps) {
   return (
     <div className="h-full py-16 lg:py-20">
       <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center lg:px-32">
-        <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
-        <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
         <SectionLabel title={t("publicVote.award")} mainText={t("winners-att.sectionHeader.mainText")} label={t("winners-att.sectionHeader.label")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />

@@ -22,9 +22,9 @@ const Home: NextPage = () => {
       <Program />
       <About />
       <Video />
-      <WinnerSection2 />
       <ZenithBanner />
       <Cards />
+      <WinnerSection2 />
       <Winners />
       <PublicVoteSection />
       <Logos />
