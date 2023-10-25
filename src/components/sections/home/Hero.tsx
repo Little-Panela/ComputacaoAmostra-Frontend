@@ -8,7 +8,7 @@ export function Hero() {
   const { t } = useTranslation("common");
 
   return (
-    <section className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <section id="hero" className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div className="mx-auto flex flex-col items-center py-10">
         <Heading size="sm" className="text-base md:text-4xl">
           {t("home.header.title")}
