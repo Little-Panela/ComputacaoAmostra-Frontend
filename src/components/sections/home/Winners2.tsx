@@ -50,7 +50,7 @@ function SectionLabel({ title, mainText, label }: LogoSectionProps) {
       </Heading>
       <div className="flex flex-col items-center md:flex-row md:justify-center lg:px-16">
         <div className="flex flex-col py-10 items-center gap-y-7 md:items-start">
-          <Text className="flex text-center md:text-left text-lg font-bold leading-6 lg:text-base">{label}</Text>
+          <Text className="flex text-center md:text-left text-lg font-bold leading-6 lg:text-2xl">{label}</Text>
           <Text className="flex text-center md:text-left text-sm font-normal leading-6 lg:text-base">{mainText}</Text>
         </div>
         <Image alt="elegant dots" src={podium} className="w-[324px] md:w-[350px]" />
