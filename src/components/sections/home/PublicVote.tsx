@@ -89,8 +89,8 @@ type WinnerCardProps = {
   modalText?: string,
   modalDescription: string,
   youtubeID: string,
-  isZenith: boolean,
-  team: Array[]
+  isZenith?: boolean,
+  team: Array<string>
 }
 
 function SectionLabel({ title, mainText }: LogoSectionProps) {
@@ -110,14 +110,14 @@ function SectionLabel({ title, mainText }: LogoSectionProps) {
 function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription, youtubeID, isZenith, team }: WinnerCardProps) {
   const { t } = useTranslation("common");
   return (
-    <div className="items-center bg-transparent h-[360px] text-xs flex max-w-xs flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
-      <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
-      <div className="flex flex-col items-center p-4 h-full">
+    <div className="items-center bg-transparent h-[400px] w-80 text-xs flex flex-col gap-7 rounded-md border-pallete-primary-light border-2 shadow-md relative">
+    <div className="h-1/3 w-full absolute bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pallete-primary-xdark via-transparent to-transparent" />
+    <div className="flex flex-col items-center p-4 h-full">
         <Image src={CardTrophy} alt="Imagem de um trofeu" width={120} height={120} />
         <div className="flex flex-row">
           <Heading className="text-base p-4 md:text-xl">{name}</Heading>
         </div>
-        <div className="text-center flex flex-col leading-7 text-xs items-center justify-end gap-8">
+        <div className="text-center h-full flex flex-col leading-7 text-xs items-center justify-between gap-8">
           <div className="opacity-50">
             {description}
           </div>
@@ -126,9 +126,10 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
             nameForSlug={modalLabel}
             description={modalDescription}
             teamMembers={team}
-            isWinner={isZenith}
+            isWinner={true}
             isPublicVote={true}
             videoId={youtubeID}
+            isZenith={isZenith}
             course={"ecomp"}
             trigger={
               <Button className="block w-full rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
@@ -155,8 +156,8 @@ export function PublicVoteSection({ }: SectionProps) {
       <div className="px-10 lg:flex lg:items-center lg:justify-center">
         <Image src={TrophyL} alt="troféu" className="absolute left-0 lg:hidden" />
         <Image src={TrophyR} alt="troféu" className="absolute right-0 lg:hidden" />
-        <Image src={TrophyLAlt} alt="troféu" className="absolute left-0 hidden lg:block" />
-        <Image src={TrophyRAlt} alt="troféu" className="absolute right-0 hidden lg:block" />
+        <Image src={TrophyLAlt} alt="troféu" className="absolute z-10 left-0 hidden lg:block" />
+        <Image src={TrophyRAlt} alt="troféu" className="absolute z-10 right-0 hidden lg:block" />
         <SectionLabel title={t("publicVote.award")} mainText={t("publicVote.mainText")} />
       </div>
       <SwitchYear year={selectedYear} onYearChange={handleYearChange} />
