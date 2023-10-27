@@ -13,6 +13,7 @@ import {ZenithBanner} from '../components/sections/home/ZenithBanner'
 import { Logos } from "../components/sections/home/Logos";
 import { Video } from "../components/sections/home/Video";
 import { PublicVoteSection } from "../components/sections/home/PublicVote";
+import { PremioMMIB } from "../components/sections/home/PremioMMIB";
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
       <ZenithBanner />
       <Cards />
       <Winners />
+      <PremioMMIB/>
       <PublicVoteSection />
       <Logos />
     </Default>

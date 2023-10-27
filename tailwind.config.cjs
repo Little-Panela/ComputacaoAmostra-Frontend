@@ -98,8 +98,13 @@ module.exports = {
         "modal-radial-gradient": "radial-gradient(99.73% 65.48% at 0% -2.81%, rgba(5,255,254,.4) 0%, rgba(0,0,0,0) 100%, rgba(0,11,28,0.7))",
         "radial-bg": "radial-gradient(250.47% 250.47% at 50.05% -115.6%, rgba(5, 225, 254, 0.2) 0%, rgba(5, 225, 254, 0) 100%), #000B1C",
         "modal-radial-gradient-zenith": "radial-gradient(99.73% 65.48% at 0% -2.81%, rgba(115,39,187,.4) 0%, rgba(0,0,0,0) 100%, rgba(0,11,28,0.7))",
+        "mmib-mobile":"linear-gradient(180deg, rgba(0, 8, 20, 0.40) -0.95%, rgba(0, 8, 20, 0.00) 100%), linear-gradient(180deg, #000814 2.72%, rgba(0, 0, 0, 0.00) 7.49%), linear-gradient(0deg, #000814 55.72%, rgba(0, 11, 28, 0.00) 78.07%)",
+        "mmib-desktop": "url('/static/img/mmibdesktop.png')"
       },
     },
   },
   plugins: [require("tailwindcss-radix")],
 };
+
+
+
