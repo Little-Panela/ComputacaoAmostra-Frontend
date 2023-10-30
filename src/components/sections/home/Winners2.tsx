@@ -106,7 +106,7 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
   )
 }
 
-export function WinnerSection2({ }: SectionProps) {
+export function WinnersUpdate({ }: SectionProps) {
   const { t } = useTranslation("common");
   const [selectedYear, setSelectedYear] = useState<"2022" | "2023">("2023");
 
@@ -298,7 +298,7 @@ export function WinnerSection2({ }: SectionProps) {
   ];
 
   return (
-    <div className="h-full py-16 lg:py-20">
+    <div id="winners" className="h-full py-16 lg:py-20">
       <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center lg:px-32">
         <SectionLabel title={t("publicVote.award")} mainText={t("winners-att.sectionHeader.mainText")} label={t("winners-att.sectionHeader.label")} />
       </div>
