@@ -48,7 +48,7 @@ const positionIcon = ["/static/img/first.svg","/static/img/second.svg","/static/
 
 export function ModalProject({
   trigger,
-  id,
+  id="",
   name,
   nameForSlug,
   teamMembers,

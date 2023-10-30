@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import React, { useState, useRef, useEffect } from "react";
 
 import TrophyFrist from "../../../../public/static/img/frist-place-trophy.png"
 import TrophySecond from "../../../../public/static/img/second-place-trophy.png"
@@ -10,7 +11,6 @@ import podium from "../../../../public/static/img/podium.png"
 import wavesRight from "../../../../public/static/img/Wave BG Direita.png"
 import wavesLeft from "../../../../public/static/img/Wave BG Esquerda.png"
 
-import { ReactNode, useState } from "react";
 import { Heading } from "../../elements/Heading";
 import { Button } from "../../elements/Button";
 import { SwitchYear } from "../../modules/SwitchYear";
@@ -297,6 +297,34 @@ export function WinnersUpdate({ }: SectionProps) {
     },
   ];
 
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+  
+  let pressed = false;
+  let startX = 0;
+
+  sliderRef.current?.addEventListener('mousedown', function (e) {
+    pressed = true;
+    startX = e.clientX;
+    this.style.cursor = 'grabbing';
+  });
+
+  sliderRef.current?.addEventListener('mousemove', function (e) {
+    if(!pressed) {
+      return;
+    }
+
+    this.scrollLeft += startX - e.clientX;
+  });
+
+  window.addEventListener('mouseup', function () {
+    pressed = false;
+    if (sliderRef.current)
+    sliderRef.current.style.cursor = 'grab';
+  });
+}, []);
+
   return (
     <div id="winners" className="h-full py-16 lg:py-20">
       <div className="px-10 lg:flex lg:w-full lg:items-center lg:justify-center lg:px-32">
@@ -311,7 +339,7 @@ export function WinnersUpdate({ }: SectionProps) {
               <div className="w-full flex justify-center gap-x-1 py-5">
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
-              <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
+              <div ref={sliderRef} className="flex overflow-x-auto snap-x no-scrollbar scroll-smooth gap-x-5 lg:flex-row">
                 {ecompWinners2023.map((winner, index) => (
                   <WinnersCard
                     key={index}
@@ -332,7 +360,7 @@ export function WinnersUpdate({ }: SectionProps) {
               <div className="w-full flex justify-center gap-x-1 py-5">
                 <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
-              <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
+              <div ref={sliderRef} className="flex overflow-x-auto snap-x no-scrollbar scroll-smooth gap-x-5 lg:flex-row">
                 {bccWinners2023.map((winner, index) => (
                   <WinnersCard
                     key={index}
@@ -357,7 +385,7 @@ export function WinnersUpdate({ }: SectionProps) {
               <div className="w-full flex justify-center gap-x-1 py-5">
                 <Text className="text-pallete-primary-light">{t("publicVote.engineering")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
-              <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
+              <div ref={sliderRef} className="flex overflow-x-auto snap-x no-scrollbar scroll-smooth gap-x-5 lg:flex-row">
                 {ecompWinners2022.map((winner, index) => (
                   <WinnersCard
                     key={index}
@@ -378,7 +406,7 @@ export function WinnersUpdate({ }: SectionProps) {
               <div className="w-full flex justify-center gap-x-1 py-5">
                 <Text className="text-pallete-primary-light">{t("publicVote.science")}</Text><Text>{t("publicVote.computing")}</Text>
               </div>
-              <div className="flex overflow-x-scroll gap-x-5 lg:flex-row">
+              <div ref={sliderRef} className="flex overflow-x-auto snap-x no-scrollbar scroll-smooth gap-x-5 lg:flex-row">
                 {bccWinners2022.map((winner, index) => (
                   <WinnersCard
                     key={index}
