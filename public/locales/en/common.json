@@ -153,6 +153,90 @@
     "terms": "Terms of Use",
     "developed": "Made with ♥ by Panic"
   },
+  "winners-att": {
+    "sectionHeader": {
+      "label": "The Technology Podium",
+      "mainText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      },
+    "2022": {
+    "ecomp": {
+      "firstPlace": {
+        "title": "Zenith Inova",
+        "description": "A frequency reader measuring the power of 2G, 3G, and 4G network signals.",
+        "modalDescription": "Zenith has developed the Falken Module, consisting of a frequency reader combined with a unidirectional antenna, capable of measuring the power of 2G, 3G, and 4G network signals. Together, these devices form a measurement module for remotely piloted aircraft, or RPAS."
+      },
+      "secondPlace": {
+        "title": "CVGreen",
+        "description": "Mobile application for tree trunk recognition.",
+        "modalDescription": "A mobile application for tree trunk recognition through artificial intelligence."
+      },
+      "thirdPlace": {
+        "title": "Hélix",
+        "description": "Low-cost system for water quality monitoring.",
+        "modalDescription": "Hélix introduces the L.C.H.M.S. (Low-Cost Hydraulic Monitoring System), a modular system designed to facilitate the large-scale implementation of equipment capable of collecting water quality parameters. The project was developed to be highly modular, allowing for easy replacement of installed sensors to meet the specific needs of each client. Additionally, the prototype meets the requirements to be part of the RNQA. (Rede Nacional de Monitoramento) proposed by the National Water Agency, which aims to deploy equipment capable of providing information about the quality of water resources across the entire national territory."
+      }
+    },
+    "bcc": {
+      "firstPlace": {
+        "title": "BioTank",
+        "description": "Project aiming to provide a clean and sustainable source of kitchen gas.",
+        "modalDescription": "BioTank is a project that aims to provide a clean and sustainable source of cooking gas for the residents of Ilha das Onças Island"
+      },
+      "secondPlace": {
+        "title": "SICFAA",
+        "description": "Water treatment project for irrigation.",
+        "modalDescription": "The first instance of a water treatment project for irrigation, which involved the creation of an intelligent water capture, filtration, and storage system (IWCFSS)."
+      },
+      "thirdPlace": {
+        "title": "AutoDrops",
+        "description": "Automated irrigation system.",
+        "modalDescription": "An automated irrigation system for those who don't have time to take care of their plants on their balcony or for those who make a living from production."
+      }
+    }
+  },
+  "2023": {
+    "ecomp": {
+      "firstPlace": {
+        "title": "Tupã",
+        "description": "Modular system for cleaning priprioca and water filtration.",
+        "modalDescription": "Hélix presents Tupã, a system currently composed of two independent modules, a priprioca root cleaning system and a water purification system. This enables Tupã to increase both crop production and water quality.",
+        "youtubeId": "cpsJCcZOAbg"
+      },
+      "secondPlace": {
+        "title": "TucuExtract ",
+        "description": "Machine for tucumã extraction.",
+        "modalDescription": "Neo Plus introduces the revolutionary TucuExtract Machine, designed to extract the maximum potential from this powerful Amazon fruit. Combining advanced technology and unparalleled efficiency, our machine is the perfect solution for obtaining high-quality tucumã oil. The heart of this innovation is the TucuExtract from Neo Plus, which includes advanced extraction technology, processing tucumã with precision and efficiency, ensuring the production of pure and valuable oil.",
+        "youtubeId": "Mj86A7erp_k"
+      },
+      "thirdPlace": {
+        "title": "Inventory ",
+        "description": "Intelligent system for inventory control for NGOs and small businesses.",
+        "modalDescription": "Inventory is an intelligent system designed to simplify and modernize traditional inventory management for NGOs and small businesses.",
+        "youtubeId": "OEzTAA-EbUc"
+      }
+    },
+    "bcc": {
+      "firstPlace": {
+        "title": "Ceuci",
+        "description": "Machine developed to optimize paper production from banana leaves.",
+        "modalDescription": "Parajás presents Ceuci, an innovative machine developed to optimize paper production from banana leaf on Cotijuba Island. It aims to minimize the time and safety issues associated with manual paper production. Ceuci automates the cutting of banana plant pseudostems, making the cutting process efficient and quick, eliminating the need for manual labor. Ceuci also provides a safe experience for users, reducing the risks associated with manual handling of cutting tools. Parajás is proud to offer this innovative solution, promoting efficiency, safety, and growth opportunities for the community. Visit https://parajas.com.br to learn more.",
+        "youtubeId": "qC64t-FNUtw"
+      },
+      "secondPlace": {
+        "title": "Cotico",
+        "description": "App designed to encourage recycling.",
+        "modalDescription": "Cotico is an app designed to encourage recycling and reward users with badges each time they recycle using the app.",
+        "youtubeId": "A5pKL2PMNBA"
+      },
+      "thirdPlace": {
+        "title": "Curumim ",
+        "description": "Simple software for cataloging, lending, and returning books.",
+        "modalDescription": "Curumim is an accessible and straightforward software for cataloging, lending, and returning books using the open-source Biblivre system integrated with RFID technology.",
+        "youtubeId": "W27gwLN5LFs"
+      }
+    }
+  }
+  },
   "winners": {
     "ecomp": {
       "firstPlace": {

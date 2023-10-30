@@ -132,7 +132,7 @@ function WinnersCard({ name, description, btnLabel, modalLabel, modalDescription
             isZenith={isZenith}
             course={"ecomp"}
             trigger={
-              <Button className="block w-full rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
+              <Button className="block w-fit rounded-2xl border-[1px] border-pallete-primary bg-transparent py-3 text-sm font-bold text-white">
                 {btnLabel}
               </Button>
             }
